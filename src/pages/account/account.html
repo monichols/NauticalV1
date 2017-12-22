@@ -1,0 +1,98 @@
+<!--
+DEV: Monique Nichols
+Product: Nautical
+File: Account.html (Account page)
+Last Modified: 12/18/2017
+-->
+<!--
+ This page controls the profile or account view
+-->
+  <!--This is the navbar that shows when a user has triggered a scroll event.-->
+<ion-header  [hidden]="!showToolbar">
+    <ion-navbar [class.show-background]="showToolbar"> <!--class show-background is in app.scss-->
+      <!--NavButtons start here -->
+        <ion-buttons start>
+            <button ion-button><ion-icon color='light' class='menuButton' name="md-menu" item-right></ion-icon></button><!-- Class menuButton is in app.scss-->
+          </ion-buttons>
+          <ion-buttons start>
+              <button class='profileTxt' ion-button>Profile</button><!--class profileTxt is in app.scss-->
+            </ion-buttons>
+            <ion-buttons end>
+                <button ion-button tappable (click)="menu()"><ion-icon color='light' class='menuButton' name="ios-more-outline" item-right></ion-icon></button><!-- Class menuButton is in app.scss-->
+              </ion-buttons>
+              <!--NavButtons end here -->
+    </ion-navbar>
+  </ion-header>
+  <!--This is the navbar that shows when a user has not triggered a scroll event.-->
+  <ion-header  [hidden]="showToolbar">
+      <ion-navbar class='tool'><!--class tool is in app.scss-->
+        <!--NavButtons start here -->
+         <ion-buttons start>
+          <button ion-button><ion-icon color='light' class='menuButton' name="md-menu" item-right></ion-icon></button><!-- Class menuButton is in app.scss-->
+        </ion-buttons>
+        <ion-buttons start>
+            <button class='profileTxt' ion-button>Profile</button><!--class profileTxt is in app.scss-->
+          </ion-buttons>
+          <ion-buttons end>
+              <button ion-button tappable (click)="menu()"><ion-icon color='light' class='menuButton' name="ios-more-outline" item-right></ion-icon></button><!-- Class menuButton is in app.scss-->
+            </ion-buttons>
+            <!--NavButtons end here -->
+      </ion-navbar>
+    </ion-header>
+<!--Here is the content of the account.html page -->
+<ion-content class="content" (ionScroll)="onScroll($event)" [class.transition]="transition">
+<div *ngIf='user'><!--Content Only shows if there is a user-->
+    <div class='img'><!--Shows user's image-->
+        <img class='profileImg' src={{user.img}}/>
+    </div>
+<div class='wrapper'> 
+    <div class='bg'>
+      <div class='wrapper2'>
+          <h1 class='profileName'>{{user.name}}</h1><!--Shows user's name-->
+          <p class='userName'>@{{user.username}}</p><!--Shows user's username-->
+      </div>
+    <img class='bgImg' src='assets/images/profileBg.jpeg'/><!--Shows generic bg img-->
+  </div>
+  </div>
+  <ion-list inset class='list'><!--Shows all user options -->
+      <ion-item><!--item showing the trips taken in the past and upcoming trips-->
+        <div class='row'><!-- creates grid for our divs -->
+        <div class='col col-50'><!-- Places our past trips in a column of width 50% -->
+        <div item-left class='itemHeader'><!--wraps our past trips content -->
+          <h3 class ='listHeader'>{{past.length}}</h3><!-- displays number of past trips-->
+          <p lass='subtitle'>Trips Taken</p>
+         <div class='wrapper3'><div class='underLine'></div></div><!--Colored underline -->
+        </div>
+      </div>
+      <div class='col col-50'><!-- Places our future trips in a column of width 50% -->
+        <div item-left class='itemHeader'><!--wraps our future trips content -->
+            <h3 class ='listHeader'>{{upcoming.length}}</h3><!-- displays number of future trips-->
+            <p class='subtitle'>Upcoming Trips</p>
+           <div class='wrapper3'><div class='underLine2'></div></div><!--Colored underline -->
+          </div>
+        </div>
+        </div>
+        </ion-item>
+      <ion-item  tappable (click)='share()'><!--Click to show share options -->
+        <h3 class ='listTxt' item-left> Invite friends</h3>
+        <ion-icon color='gray' name ='ios-person-add-outline'item-right></ion-icon>
+      </ion-item>
+        <ion-item tappable (click)='goSettings()'><!--Click to go to settings page -->
+          <h3 class ='listTxt' item-left> Settings</h3>
+          <ion-icon color='gray' name ='ios-settings-outline'item-right></ion-icon>
+        </ion-item> 
+          <ion-item tappable (click)='goFeedback()'><!--Click to go to feedback page -->
+            <h3 class ='listTxt' item-left> Support & Feedback</h3>
+            <ion-icon color='gray' name ='ios-ribbon-outline'item-right></ion-icon>
+          </ion-item>
+          <ion-item tappable (click)='logout()'><!--Click to signout -->
+              <h3 class ='listTxt' item-left > Sign Out</h3>
+              <ion-icon color='gray' name ='ios-exit-outline'item-right></ion-icon>
+            </ion-item>
+            <ion-item tappable (click)='more()'><!--Click to show more options-->
+                <h3 class ='listTxt' item-left> More</h3>
+                <ion-icon color='gray' name ='ios-more-outline'item-right></ion-icon>
+              </ion-item>
+          </ion-list>
+</div>
+</ion-content>

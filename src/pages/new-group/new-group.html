@@ -1,0 +1,75 @@
+<ion-header  mode='ios'  [hidden]="!showToolbar">
+    
+      <ion-navbar  mode='ios' [class.show-background]="showToolbar">
+          <ion-buttons start>
+              <button ion-button tappable (click)='back()'><ion-icon color='light' class='menuButton' name="ios-close" item-right></ion-icon></button>
+            </ion-buttons>
+            <ion-buttons start>
+                <button class='profileTxt' ion-button>New Group</button>
+              </ion-buttons>
+              <ion-buttons end>
+                  <button ion-button color='light' tappable (click)="done()" [disabled]="!groupForm.valid || group.img == '' || groupMembers.length <= 1">Done</button>
+                </ion-buttons>
+      </ion-navbar>
+    </ion-header>
+<ion-header  [hidden]="showToolbar">
+      <ion-navbar mode='ios'class='tool'>
+         <ion-buttons  mode='ios' start>
+          <button ion-button tappable (click)='back()'><ion-icon color='light' class='menuButton' name="ios-close" item-right></ion-icon></button>
+        </ion-buttons>
+        <ion-buttons  mode='ios' start>
+            <button class='profileTxt' ion-button>New Group</button>
+          </ion-buttons>
+          <ion-buttons end>
+              <button ion-button color='light' tappable (click)="done()" [disabled]="!groupForm.valid || group.img == '' || groupMembers.length <= 1">Done</button>
+            </ion-buttons>
+        </ion-navbar>
+    </ion-header>
+    <ion-content class="content"
+    (ionScroll)="onScroll($event)"
+    [class.transition]="transition">
+    <img src='assets/images/bgAdd.jpeg'>
+      <div class='bg'>
+        <div class='wrapper'>
+      <!-- No friends yet to start a conversation with -->
+  <div class="empty-list" *ngIf="friends && friends.length == 0">
+        <h1><ion-icon name="md-contacts"></ion-icon></h1>
+        <p>Uh-oh! You have not added any friends yet.</p>
+        <button ion-button icon-left tappable (click)="addMember()"><ion-icon name="md-search"></ion-icon>Search People</button>
+      </div>
+      <!-- Show friends to start a conversation with -->
+      <div *ngIf="group">
+          <ion-list no-lines>
+              <button ion-button tappable (click)="addMember()" block color='teal'>Add Member</button>
+            <ion-list-header no-lines mode='md'>
+              <h2>Group Info</h2>
+            </ion-list-header>
+            <form [formGroup]="groupForm">
+              <ion-item no-lines>
+                <ion-avatar item-left>
+                  <img src="{{group.img}}" *ngIf="group.img != ''" tappable (click)="setGroupPhoto()" />
+                  <img src="assets/images/set.png" *ngIf="group.img == ''" tappable (click)="setGroupPhoto()" />
+                </ion-avatar>
+                <ion-input type="text" formControlName="name" placeholder="Name of Group" style='color:white;'></ion-input>
+              </ion-item>
+              <div *ngIf="groupMembers">
+              <ion-list-header no-lines mode='md'>
+                <h2>Group Members ({{groupMembers.length}})</h2>
+              </ion-list-header>
+              
+              <ion-item  *ngFor="let member of groupMembers">
+                <ion-avatar item-left>
+                  <img src="{{member.img}}"/>
+                </ion-avatar>
+                <h2>{{member.name}}</h2>
+                <ion-icon *ngIf='member.userId!=userId'color='danger' name="close-circle" item-right tappable (click)="removeFromGroup(member)"></ion-icon>
+              </ion-item>
+              </div>
+            </form>
+          </ion-list>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+
+        

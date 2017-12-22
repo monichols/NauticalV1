@@ -1,0 +1,36 @@
+page-verification {
+    ion-content{
+      padding-top: 20vh;
+      //background: url('../../assets/images/background.jpg');
+      background-image:linear-gradient(#42275a,#734b6d);
+    }
+  
+    .page{
+      margin-top: 30vh;
+    }
+    h4,
+    p {
+      text-align: center;
+    }
+  
+    h4 {
+      color: white;
+      font-family: Roboto;
+      text-transform: uppercase;
+    }
+  
+    p {
+      //color: purple;
+      font-family: DroidSans;
+          color:#ffffff;
+          font-size: 2.5vh !important;
+    }
+  
+    p span {
+      color: #fefefe;
+    }
+    ion-icon{
+      color: #fefefe;
+      font-size: 2.5em;
+    }
+  }

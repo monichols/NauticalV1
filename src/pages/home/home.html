@@ -1,0 +1,64 @@
+<!--
+DEV: Monique Nichols
+Product: Nautical
+File: Home.html (Home page)
+Last Modified: 12/18/2017
+-->
+<!--
+ This page controls the home or trips page view
+-->
+<!--This is the navbar that shows when a user has triggered a scroll event.-->
+<ion-header  [hidden]="!showToolbar">
+    <ion-navbar [class.show-background]="showToolbar"><!--class show-background in app.scss-->
+      <!--navbar buttons start here-->
+        <ion-buttons start>
+            <button ion-button tappable (click)="menu()"><ion-icon color='light' class='menuButton' name="md-menu" item-right></ion-icon></button>
+          </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  <!--This is the navbar that shows when a user has not triggered a scroll event.-->
+  <ion-header  [hidden]="showToolbar">
+      <ion-navbar class='tool'><!--class tool in app.scss-->
+        <!--navbar buttons start here-->
+         <ion-buttons start>
+          <button ion-button tappable (click)="menu()"><ion-icon color='light' class='menuButton' name="md-menu" item-right></ion-icon></button><!--class menuButton in app.scss -->
+        </ion-buttons>
+      </ion-navbar>
+    </ion-header>
+    <!--page content starts here-->
+<ion-content class="content" (ionScroll)="onScroll($event)" [class.transition]="transition">
+<div class='img'><!--addTrip fab wrapper -->
+    <button color='primary' class='addTrip' ion-button icon-only round tappable (click)='addTrip()'><ion-icon color='white' name='md-add'></ion-icon></button><!--displays set photo fab-->
+    </div>
+<div class='wrapper'> <!--holds out BG image out 'My Trips' title-->
+  <div class='bg'>
+    <div class='wrapper2'>
+      <h1 class='profileName'>My Trips</h1>
+    </div>
+  <img class='bgImg' src='assets/images/profileBg.jpeg'/><!-- displays our generic image-->
+</div>
+</div>
+<ion-list *ngIf='trips'  inset class='list'><!--list of user events starts here-->
+   <ion-item (click)='viewTrip(trip)' *ngFor="let trip of trips"><!--ion-items populate using *ngFor-->
+    <div item-left >
+     <h3 class='day'>{{trip.till}}</h3><!--shows the amount of time till the trip-->
+     <p class='type'>{{trip.amnt}}</p><!--shows the amount of money the trip will cost-->
+     </div>
+        <ion-avatar *ngFor='let image of trip.images' class='tripImg' item-left><!-- Shows the images of those who are attending the trip-->
+            <img src='{{image}}'/>
+          </ion-avatar>
+     <div class='myTrip' item-left><!--wrapper that contains trip location and amount saved-->
+       <p class='tripName'>{{trip.location}}</p>
+       <p>$500 saved.</p>
+     </div>
+     <div class='more-circle' item-right><!-- more circle that shows on the right-->
+     </div>
+   </ion-item>
+   <ion-item *ngIf='trips.length <= 0'>
+      <h2 class='tripName'>No events to display at this time.</h2><!--if there are no events to show-->
+    </ion-item>
+</ion-list>
+<ion-list>
+</ion-list>
+</ion-content>
+

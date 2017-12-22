@@ -1,0 +1,71 @@
+<!--
+DEV: Monique Nichols
+Product: Nautical
+File: Add-Trip.html (Add Trip page)
+Last Modified: 12/18/2017
+-->
+<!--
+ This page controls the add trip page where users can add trips
+-->
+ <!--This is the navbar that shows when a user has not triggered a scroll event.-->
+<ion-header  [hidden]="!showToolbar">
+      <ion-navbar [class.show-background]="showToolbar"><!--show-background class is in app.scss -->
+        <!--navbar buttons-->
+              <ion-buttons start>
+                  <button ion-button tappable (click)="close()"><ion-icon color='light' class='menuButton' name="ios-close" item-right></ion-icon></button><!-- class menuButton is in the app.scss file -->
+                </ion-buttons>
+      </ion-navbar>
+    </ion-header>
+     <!--This is the navbar that shows when a user has triggered a scroll event.-->
+    <ion-header  [hidden]="showToolbar">
+        <ion-navbar class='tool'><!--tool class is in the app.scss file-->
+            <!--navbar buttons-->
+           <ion-buttons start>
+            <button ion-button tappable (click)="close()"><ion-icon color='light' class='menuButton' name="ios-close" item-right></ion-icon></button><!-- class menuButton is in the app.scss file -->
+          </ion-buttons>
+        </ion-navbar>
+      </ion-header>
+     <!--page content is here--> 
+  <ion-content class="content" (ionScroll)="onScroll($event)" [class.transition]="transition">
+  <div class='img' tappable (click)='setGroupPhoto()'>
+  <ion-icon color='white' name='ios-camera-outline'>
+  </ion-icon>
+  </div>
+  <div class='wrapper'> 
+    <div class='bg'>
+      <div class='wrapper2'>
+        <h1 class='profileName'>Create Trip</h1>
+      </div>
+    <img *ngIf='group' class='bgImg' src='{{group.img}}'/>
+  </div>
+  </div>
+  <ion-list inset class='list'>
+    <ion-item>
+        <ion-input text-center placeholder='Location' [(ngModel)]='location' type="text" style="text-align:center; color:black;"></ion-input>
+    </ion-item>
+    <ion-item tappable (click)='dateRange()' text-center class='addPeople'>
+        <div *ngIf='!start'>Start Date</div>
+        <div *ngIf='start'>{{start | DayFormat}}</div>
+    </ion-item>
+    <ion-item tappable text-center class='addPeople'>
+        <div *ngIf='!end'>End Date</div>
+        <div *ngIf='end'>{{end | DayFormat}}</div>
+    </ion-item>
+    <ion-item>
+        <input currencyMask placeholder='Total Cost' [(ngModel)]='cost' />
+    <!-- <ion-input text-center placeholder='Total Cost' [(ngModel)]='cost' type="text" style="text-align:center"></ion-input>-->
+    </ion-item>
+    <ion-item (click)='addPeople()' text-center class='addPeople'>
+        Add People
+    </ion-item>
+    <div *ngIf='members.length>0'>
+    <ion-item tappable *ngFor="let member of members">
+            <ion-avatar item-left><img src='{{member.img}}'/></ion-avatar>
+            <h3>{{member.name}}</h3>
+            <p>@{{member.username}}</p>
+            <button (click)='removeMember(member)' item-right ion-button clear color='danger'><ion-icon name='ios-close-circle-outline'></ion-icon></button>
+        </ion-item>
+    </div>  
+    <button class='submit' ion-button  block color='primary'(click)='submit()'>DONE</button>
+          </ion-list>
+  </ion-content>

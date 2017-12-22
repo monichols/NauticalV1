@@ -1,0 +1,77 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-camera": {
+      "CAMERA_USAGE_DESCRIPTION": " ",
+      "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "NauticalApp.11222017"
+    },
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "NauticalApp.11222017"
+    },
+    "cordova-plugin-contacts": {
+      "CONTACTS_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "NauticalApp.11222017"
+    },
+    "cordova-plugin-datepicker": {
+      "PACKAGE_NAME": "NauticalApp.11222017"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "NauticalApp.11222017"
+    },
+    "cordova-plugin-email-composer": {
+      "PACKAGE_NAME": "NauticalApp.11222017"
+    },
+    "cordova-plugin-facebook4": {
+      "APP_ID": "128706657699939",
+      "APP_NAME": "VACA",
+      "PACKAGE_NAME": "NauticalApp.11222017"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "NauticalApp.11222017"
+    },
+    "cordova-plugin-geolocation": {
+      "GEOLOCATION_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "NauticalApp.11222017"
+    },
+    "cordova-plugin-googleplus": {
+      "REVERSED_CLIENT_ID": "com.googleusercontent.apps.978363958341-3ubj5f0qo6qcj2dtbbq7a5utt1ijp45j",
+      "PACKAGE_NAME": "NauticalApp.11222017"
+    },
+    "cordova-plugin-media-capture": {
+      "CAMERA_USAGE_DESCRIPTION": " ",
+      "MICROPHONE_USAGE_DESCRIPTION": " ",
+      "PHOTOLIBRARY_USAGE_DESCRIPTION": " ",
+      "PACKAGE_NAME": "NauticalApp.11222017"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "NauticalApp.11222017"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "NauticalApp.11222017"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "NauticalApp.11222017"
+    },
+    "cordova-plugin-x-socialsharing": {
+      "PACKAGE_NAME": "NauticalApp.11222017"
+    },
+    "ionic-plugin-keyboard": {
+      "PACKAGE_NAME": "NauticalApp.11222017"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "NauticalApp.11222017"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "NauticalApp.11222017"
+    }
+  }
+}

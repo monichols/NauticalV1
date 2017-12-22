@@ -1,0 +1,85 @@
+<!--<ion-header>
+    <ion-navbar>
+      <ion-title>Messages</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only tappable class='newMessage' color='blue' (click)="newMessage()"><ion-icon name="ios-create-outline"></ion-icon></button>
+      </ion-buttons>
+    </ion-navbar>
+  </ion-header>-->
+  <ion-header  mode='ios'  [hidden]="!showToolbar">
+      
+        <ion-navbar  mode='ios' [class.show-background]="showToolbar">
+            <ion-buttons  mode='ios' start>
+                <ion-icon color='light' class='menuButton' name="md-menu" item-right></ion-icon>
+              </ion-buttons>
+              <ion-buttons  mode='ios' start>
+                  <button class='profileTxt' ion-button>Chats</button>
+                </ion-buttons>
+                <ion-buttons  mode='ios' end>
+                    <button ion-button tappable (click)="newMessage()"><ion-icon color='light' class='menuButton' name="ios-more-outline" item-right></ion-icon></button>
+                  </ion-buttons>
+        </ion-navbar>
+      
+      </ion-header>
+
+  <ion-header  [hidden]="showToolbar">
+        <ion-navbar mode='ios'class='tool'>
+           <ion-buttons  mode='ios' start>
+           <ion-icon color='light' class='menuButton' name="md-menu" item-right></ion-icon>
+          </ion-buttons>
+          <ion-buttons  mode='ios' start>
+              <button class='profileTxt' ion-button>Chats</button>
+            </ion-buttons>
+            <ion-buttons  mode='ios' end>
+                <button ion-button tappable (click)="newMessage()"><ion-icon color='light' class='menuButton' name="ios-more-outline" item-right></ion-icon></button>
+              </ion-buttons>
+        </ion-navbar>
+      
+      </ion-header>
+  <ion-content class="content"
+  (ionScroll)="onScroll($event)"
+  [class.transition]="transition">
+      <div *ngIf='user' class='img' tappable>
+          <img class='profileImg' src={{user.img}}/>
+         
+        </div>
+      <div class='wrapper'> 
+          <div class='bg'>
+              <div class='wrapper2'>
+              </div>
+          <img class='bgImg' src='assets/images/profileBg.jpeg'/>
+        </div>
+        </div>
+    <!-- No conversations to show -->
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+    <div class="empty-list" *ngIf="conversations && conversations.length <= 0">
+      <h1><ion-icon name="text"></ion-icon></h1>
+      <p>No new conversation yet.</p>
+      <button ion-button icon-left tappable (click)="newMessage()"><ion-icon name="md-add"></ion-icon>Start Chat</button>
+    </div>
+    <!-- Show conversations -->
+    <ion-list mode='md'  no-lines class="avatar-list" *ngIf="conversations && conversations.length > 0">
+      <ion-item-sliding mode='md' *ngFor="let conversation of conversations | conversationFilter:searchFriend" #slidingItem>
+      <ion-item  no-lines tappable (click)="message(conversation.$key, conversation.type)">
+        <div>
+          <h2 class='messageTitle' *ngIf="conversation.friend">{{conversation.friend.name}}</h2>
+          <h2 class='messageTitle' *ngIf="conversation.type == 'group'">{{conversation.name}}</h2>
+          <ion-badge mode='ios' color="teal" *ngIf="conversation.unreadMessagesCount > 0">{{conversation.unreadMessagesCount}}</ion-badge>
+          <p [ngClass]=hasUnreadMessages(conversation)>{{conversation.message}}</p>
+          <p [ngClass]=hasUnreadMessages(conversation) *ngIf="conversation.type == 'group'">{{conversation.lastMessage}}</p>
+          <span class='messageDate'>{{conversation.date | Date2Format}}</span>
+        </div>
+      </ion-item>
+      <ion-item-options side="right" *ngIf="conversation.type == 'group'">
+          <button ion-button color='danger' (click)="leaveGroup(conversation)">Leave</button>
+        </ion-item-options>
+        <ion-item-options side="right" *ngIf="!conversation.type">
+            <button ion-button color='danger' (click)="deleteConversation(slidingItem, conversation)">Delete</button>
+          </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-content>
+
+

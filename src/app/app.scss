@@ -1,0 +1,70 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+@font-face{
+    font-family: DroidSans;
+    src: url('../assets/fonts/DroidSans.woff2') format('woff2');
+    }
+    @font-face{
+        font-family: Raleway;
+        src: url('../assets/fonts/Raleway.woff2') format('woff2');
+        }
+
+
+@font-face{
+    font-family: Monseratt;
+    src: url('../assets/fonts/Monseratt.woff2') format('woff2');
+    }
+    .menuButton{
+        font-size:6vh;
+    }
+    .transition{
+        transition: background-size .3s ease-in;
+      }
+      .content{
+        margin-top:0px !important;
+        background-color: #fff;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: top center;
+    
+      } 
+    .profileTxt{
+        font-family: Roboto;
+        color:#ffffff;
+        font-size: 4vh;
+       
+      }
+      .tool{
+        background-color:rgba(0, 0, 0, 0);
+       padding-top:3vh !important;
+      }
+      .header-md::after{
+        background-image: none;
+      }
+      
+    
+      .header-ios .toolbar-background-ios,.toolbar-background-md,.toolbar-background-wp{
+        border-style: none;
+        background: none;
+        border-color: rgba(0, 0, 0, 0)
+    
+      }
+      .show-background{
+        border-style: none;
+        background-color:rgba(0,0,0,.7);
+          padding-top:3vh !important;
+      }

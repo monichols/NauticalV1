@@ -1,0 +1,53 @@
+<ion-header  mode='ios'  [hidden]="!showToolbar">
+    
+      <ion-navbar  mode='ios' [class.show-background]="showToolbar">
+          <ion-buttons start>
+              <button ion-button tappable (click)='back()'><ion-icon color='light' class='menuButton' name="ios-close" item-right></ion-icon></button>
+            </ion-buttons>
+            <ion-buttons start>
+                <button class='profileTxt' ion-button>New Message</button>
+              </ion-buttons>
+      </ion-navbar>
+    
+    </ion-header>
+
+<ion-header  [hidden]="showToolbar">
+    
+      <ion-navbar mode='ios'class='tool'>
+         <ion-buttons  mode='ios' start>
+          <button ion-button tappable (click)='back()'><ion-icon color='light' class='menuButton' name="ios-close" item-right></ion-icon></button>
+        </ion-buttons>
+        <ion-buttons  mode='ios' start>
+            <button class='profileTxt' ion-button>New Message</button>
+          </ion-buttons>
+      </ion-navbar>
+    
+    </ion-header>
+<ion-content class="content"
+(ionScroll)="onScroll($event)"
+[class.transition]="transition">
+<img src='assets/images/bgAdd.jpeg'>
+  <div class='bg'>
+    <div class='wrapper'>
+  <!-- No friends yet to start a conversation with -->
+  <div class="empty-list" *ngIf="friends && friends.length == 0">
+    <h1><ion-icon name="md-contacts"></ion-icon></h1>
+    <p>Uh-oh! You have not added any friends yet.</p>
+    <button ion-button icon-left tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon>Search People</button>
+  </div>
+  <!-- Show friends to start a conversation with -->
+  <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">
+    <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>
+    <ion-list-header mode='md' no-lines>
+        <h2>Users</h2>
+            </ion-list-header>
+    <ion-item *ngFor="let friend of friends | searchFilter:[excludedIds, searchUser]" no-lines tappable (click)="message(friend.$key)">
+      <ion-avatar item-left>
+        <img src="{{friend.img}}">
+      </ion-avatar>
+      <h2>{{friend.name}}</h2>
+    </ion-item>
+  </ion-list>
+</div>
+</div>
+</ion-content>

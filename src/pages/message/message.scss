@@ -1,0 +1,336 @@
+page-message {
+	ion-textarea{
+		font-size: 12px;
+		resize: both;
+	}
+	.chatbox{
+		border-top:1px soild #eee;
+	}
+	video{
+		background: #000;
+    	border-radius: 5px;
+	}
+	.avi{
+		border-radius: 50%;
+		height: 8vh;
+		width: 8vh;
+		margin-bottom:1vh;
+		margin-right:1.5vh;
+		object-fit: cover;
+	}
+	  .toolbar-background-ios{
+	 background-color:#f8f8f8;
+	 color:white;
+  } 
+     .toolbar-background-md{
+     background-color:#f8f8f8;
+  } 
+  .content{
+    //margin-top:0px !important;
+    background-color: #fff;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top center;}
+    .showToolbar{
+        background: rgba(0,0,0,.8);
+    }
+    
+.tool{
+    background-color:rgba(0, 0, 0, 0);
+   //padding-top:3vh !important;
+  }
+
+	.img{
+		//width:10vh;
+		height: 20vh;
+		border-radius: 10px;
+	}
+	.header-ios .toolbar-background-ios,.toolbar-background-md,.toolbar-background-wp{
+		border-style: none;
+		background: none;
+		border-color: rgba(0, 0, 0, 0)
+	
+	  }
+	  .profileName{
+		color:white;
+		display: block;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+		font-family: Roboto;
+		margin:0!important;
+		padding: 0!important;
+	}
+	.list ion-avatar img{
+		object-fit: cover;
+	}
+	.wrapper{
+		height:35vh;
+		width: 100%;
+		top:0;
+		left:0;
+		background-color: rgba(10,10,10,0.5);
+		position: relative !important;
+		z-index: 3 !important;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+		clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+	 
+	}
+	.wrapper2{
+		height: 100%;
+		width: 100%;
+		top:0;
+		left:0;
+		background-color: rgba(10,10,10,0.5);
+		position: absolute !important;
+		z-index: 3 !important;
+	   text-align: center;
+	}
+	.bg{
+		width: 100%;
+		height:35vh;
+	//overflow: hidden;
+	position: relative;
+	}
+	.profileTxt{
+		font-family: Roboto;
+		color:#ffffff;
+		font-size: 3vh;
+}
+.profileImg{
+    border-radius: 50%;
+    object-fit: cover;
+    height: 8vh;
+    width: 8vh;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /*ion-avatar{
+	  border-radius: 50%;
+	  background-color: yellow;
+	  height: 1vh !important;
+	  width: 1vh !important;
+	  margin: 0;
+	  padding: 0;
+	  img{
+		object-fit: cover;
+	  }
+  }*/
+  .stripe{
+height: 10vh;
+width: .5vw;
+  }
+  .color{
+	  height: 100%;
+	  width: 100%;
+	background-color: red;
+  }
+  .img{
+	height: 15vh;
+	width: 100%;
+	//top:30vh;
+	top:27vh;
+	padding-right:4vh;
+	//transform: translateX(110%);
+	//border-radius: 50%;
+	position: absolute;
+	z-index: 5;
+  text-align: right !important;
+	object-fit: cover;
+	display: table;
+	margin: 0 auto;
+	//background-color: yellow;
+	ion-icon{
+		//transform: translateY(10%);
+		//background-color: red;
+		background-color: rgb(207,171,56);
+		font-size: 5vh;
+		padding-right: 2vh;
+		padding-top: 1.5vh;
+		border-radius: 50%;
+		width:8vh;
+		height: 8vh;
+		//padding-bottom: 3vh;
+	}
+	
+}
+/*.camera{
+	font-size: 5vh;
+	text-align: center;
+	border-radius: 50%;
+	//object-fit: cover;
+	width:8vh;
+	height: 8vh;
+	border-radius: 50%;
+	//object-fit: cover;
+	background-color: red;
+  }*/
+/*.img{
+    height: 8vh;
+    width: 100vw;
+    top:27vh;
+    transform: translateX(450%);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 5;
+  text-align: center;
+    object-fit: cover;
+    display: table;
+	margin: 0 auto;
+	background-color: red;
+	background-color: rgb(207,171,56);
+	text-align: center;
+	ion-icon{
+		font-size: 5vh;
+		transform: translateY(25%);
+	}
+}*/
+	.bgImg{
+		min-width: 100%;
+	   min-height:100%;
+	
+	 object-fit:cover;
+	
+	 position: relative;
+	
+	 }
+.sendButt{
+	padding-top: 2vh;
+	padding-bottom: 2vh;
+	border-radius: 50%;
+	ion-icon{
+		font-size: 4vh !important;
+	}
+}
+	
+	.messTitle{
+		color: rgba(0,0,0,.8);
+		  font-family:Roboto7;
+			 // text-transform: uppercase;
+			  padding: 0 !important;
+			margin-bottom: 0 !important;
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+			margin-top:2vh !important;
+	}
+	.location{
+		padding: 1em;
+	text-align: left;
+  line-height: 1.5em;
+  background-color:#ffffff;
+  border:2px solid rgba(235,235,235,1);
+  color:black;
+  border-radius: 10px;
+ 
+  font-family: Monseratt;
+   ion-icon{
+	  margin-right: 2vh;
+  }
+	}
+.location2{
+padding: 1em;
+	text-align: left;
+  line-height: 1.5em;
+  background-image:linear-gradient(rgb(44,142,250),rgb(24, 114, 250));
+  color:white;
+  border-radius: 10px;
+  font-family: Monseratt;
+  ion-icon{
+	  margin-right: 2vh;
+  }
+	}	
+		.messSubTitle{
+			color: rgba(0,0,0,.8);
+			padding: 0 !important;
+			margin: 0 !important;
+			font-family:Roboto7;
+			text-transform: uppercase;
+			font-size:2vh;
+			text-align: center;
+			ion-icon{
+				font-size:2.5vh;
+				margin-right:1vh;
+				margin-top:1vh;
+			}
+
+		}
+		.recip{
+	text-align: left;
+  line-height: 1.5em;
+  color:black;
+  font-family: Monseratt;
+		}
+.timeStampSender{
+	width:100%;
+	text-align: right;
+}
+.senderName{
+	text-align: left;
+	margin-left:4vh; 
+	margin-bottom:0; 
+	padding: 0;
+	color:(0,0,0,.3) !important;
+}
+.m{
+	text-align: right;
+}
+.system{
+    text-align: center;
+}
+.sender{
+	text-align: left;
+  line-height: 1.5em;
+  background-color:#ffffff;
+  color:black;
+  font-family: Monseratt;
+}
+.senderAvi{
+		width:3vh;
+		height: 3vh;
+		border-radius: 50%;
+		background: yellow;
+		text-align: center;
+		margin-bottom:8vh !important; 
+		margin-right:1vh !important; 
+		
+}
+.senderImg{
+	border-radius: 50%;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+	border-radius: 50%;
+}
+.leftS{
+	text-align: left;
+	margin-left: 2vh;
+	padding-top: 0 !important;
+	margin-top: 0 !important;
+	font-size: 2vh;
+	color:gray;
+	font-family: Monseratt;
+}
+.rightS{
+	text-align: right;
+	margin-right: 2vh;
+	padding-top: 0 !important;
+	margin-top: 0 !important;
+	font-size: 2vh;
+	color:gray;
+	font-family: Monseratt;
+}
+.inCommon{
+color: red;
+			padding: 0 !important;
+			margin: 0 !important;
+			font-family:Roboto7;
+			text-transform: uppercase;
+			font-size:2vh;
+			text-align: center;
+			border: 1px solid red;
+			border-radius: 60%;
+			width:auto !important;
+	
+}
+}

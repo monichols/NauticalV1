@@ -1,0 +1,145 @@
+/*
+DEV: Monique Nichols
+Product: Nautical
+File: Account.scss (Account page)
+Last Modified: 12/18/2017
+*/
+//this page contains the styling for the account page. please note that some styling can be found in the app.scss
+page-account {
+  //class img: div containing the users img
+  .img{
+    height: 15vh;
+    width: 100%;
+    top:35vh;
+    position: absolute;
+    z-index: 5;
+  text-align: center;
+    object-fit: cover;
+    display: table;
+    margin: 0 auto;
+}
+//class wrapper: div wrapping the bg and wrapper2
+.wrapper{
+  height: 45vh;
+  width: 100%;
+  top:0;
+  left:0;
+  background-color: rgba(10,10,10,0.5);
+  position: relative !important;
+  z-index: 3 !important;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+}
+//class bg: div wrapping wrapper2
+.bg{
+width: 100%;
+height:45vh;
+position: relative;
+}
+//class wrapper2: Overlay showing user name etc.
+.wrapper2{
+  height: 100%;
+  width: 100%;
+  top:0;
+  left:0;
+  background-color: rgba(10,10,10,0.5);
+  position: absolute !important;
+  z-index: 3 !important;
+ text-align: center;
+}
+//class profileName: styles the users name
+.profileName{
+  color:white;
+  display: block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: Roboto;
+  margin:0!important;
+  padding: 0!important;
+}
+//class profileImg: styles the user's img
+.profileImg{
+  border-radius: 50%;
+  object-fit: cover;
+  width:15vh;
+  height: 15vh;
+  border-radius: 50%;
+  object-fit: cover;
+}
+//class username: styles the user's username
+.userName{
+  font-family: Roboto;
+  font-size: 3vh;
+  color:rgba(255,255,255,.7);
+  padding-top:0!important;
+   margin-top:0!important;
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    
+}
+//class bgImg: Shows generic bg img.
+.bgImg{
+  min-width: 100%;
+ min-height:100%;
+object-fit:cover;
+position: relative;
+}
+//class list: Shows list of user options
+.list{
+  margin-top:6vh !important;
+  z-index: 3;
+  position: relative;
+}
+//class itemHeader: wrapper for past trips and future trips.
+.itemHeader{
+  text-align: center;
+  width: auto;
+  height: 100%;
+}
+//class listHeader: formats text for past and future trips.
+.listHeader{
+  font-size: 6vh;
+  font-family: Roboto;
+  color:rgba(0, 0, 0, .7);
+}
+//class subtitle: formats subtitle text 
+.subtitle{
+  font-family: Roboto;
+}
+//class wrapper3
+.wrapper3{
+  width:100%;
+  height: 100%;
+  text-align: center !important;
+}
+//class underline: underline under past trips
+.underLine{
+  margin: auto;
+  width: 50%;
+    height: 5px;
+    width: 5vh;
+    background-color: rgb(73,187,68);
+    margin-top: 2vh !important;
+    margin-bottom:2vh !important; 
+}
+//class underline2: underline under future trips
+.underLine2{
+  margin: auto;
+  width: 50%;
+    height: 5px;
+    width: 5vh;
+    margin-top: 2vh !important;
+    margin-bottom:2vh !important; 
+    background-color: orange;  
+}
+//class listTxt: styling of the text in the content items
+.listTxt{
+  font-size: 3vh;
+  font-family: Roboto;
+  color:rgba(0, 0, 0, .7);
+}       
+ 
+}

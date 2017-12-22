@@ -1,0 +1,130 @@
+/*
+DEV: Monique Nichols
+Product: Nautical
+File: Home.scss (Home page)
+Last Modified: 12/18/2017
+*/
+//this page contains the styling for the home page. please note that some styling can be found in the app.scss
+page-home {
+//class img: styles the wrapper that houses the addTrip button
+.img{
+    height: 12vh;
+    width: 100%;
+    top:35vh;
+    position: absolute;
+    z-index: 5;
+  text-align: right;
+    object-fit: cover;
+    display: table;
+    margin: 0 auto;
+  }
+  //class addTrip: styles the addTrip button fab
+  .addTrip{  
+    width:12vh !important;
+    height: 12vh !important;
+    border-radius: 50%;
+    object-fit: cover;
+    ion-icon{
+        font-size:6vh !important;
+    }
+  }
+  //class wrapper
+  .wrapper{
+    height: 45vh;
+    width: 100%;
+    top:0;
+    left:0;
+    background-color: rgba(10,10,10,0.5);
+    position: relative !important;
+    z-index: 3 !important;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+}
+  //class bg: top image div
+.bg{
+width: 100%;
+height:45vh;
+position: relative;
+}
+//class wrapper2: overlay with page title and text
+.wrapper2{
+    height: 100%;
+    width: 100%;
+    top:0;
+    left:0;
+    background-color: rgba(10,10,10,0.5);
+    position: absolute !important;
+    z-index: 3 !important;
+   text-align: center;
+}
+  //class profileName: styles our 'my trips' title
+  .profileName{
+    color:white;
+    display: block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: Roboto;
+    margin:0!important;
+    padding: 0!important;
+    font-size:6vh;
+}
+//class bgImg: styles generic bg img
+.bgImg{
+min-width: 100%;
+min-height:100%;
+object-fit:cover;
+position: relative;
+ }
+ //class list: styles list of user trips
+ .list{
+    z-index: 3;
+    position: relative;
+}
+//class day
+.day{
+    font-family: Raleway;
+    font-size: 5vh;
+    padding-bottom:0 !important;
+    margin-bottom:0 !important;
+}
+//class type
+.type{
+    font-family: Raleway;
+    text-transform: lowercase;
+    margin-top:0 !important;
+    padding-top:0 !important;
+    font-size:2.5vh;
+}
+//class tripImg
+.tripImg{
+    height: 8vh;
+    width: 8vh;
+    img{
+        height: 8vh;
+        width: 8vh;
+    }
+}
+//class myTrip
+.myTrip{
+    text-align: left;
+}
+//class tripName
+.tripName{
+    font-family: Raleway;
+    font-size: 3vh;
+    color:black;
+    margin-bottom:1vh;
+}
+//class moreCircle
+.more-circle{
+    height: 2vh;
+    width: 2vh;
+    border: 2px solid rgba(0,0,0,.2);
+    border-radius: 50%;
+}
+//class item: centers content within the ion-item
+.item{
+    text-align: center;
+}         
+}

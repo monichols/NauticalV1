@@ -1,0 +1,100 @@
+<ion-header  mode='ios'  [hidden]="!showToolbar">
+  
+    <ion-navbar  mode='ios' [class.show-background]="showToolbar">
+        <ion-buttons  mode='ios' start>
+            <button ion-button tappable (click)="back()"><ion-icon color='light' class='menuButton' name="arrow-back" item-right></ion-icon></button>
+          </ion-buttons>
+          <ion-buttons  mode='ios' start>
+              <button class='profileTxt' ion-button>Chats</button>
+            </ion-buttons>
+            <ion-buttons  mode='ios' end>
+                <button ion-button tappable (click)="menu()"><ion-icon color='light' class='menuButton' name="ios-more-outline" item-right></ion-icon></button>
+              </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+<ion-header  [hidden]="showToolbar">
+    <ion-navbar mode='ios'class='tool'>
+       <ion-buttons  mode='ios' start>
+        <button ion-button tappable (click)="back()"><ion-icon color='light' class='menuButton' name="arrow-back" item-right></ion-icon></button>
+      </ion-buttons>
+      <ion-buttons  mode='ios' start>
+          <button class='profileTxt' ion-button>Chats</button>
+        </ion-buttons>
+        <ion-buttons  mode='ios' end>
+            <button ion-button tappable (click)="menu()"><ion-icon color='light' class='menuButton' name="ios-more-outline" item-right></ion-icon></button>
+          </ion-buttons>
+        </ion-navbar>
+  </ion-header>
+<ion-content has-footer>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+  <div class='img' *ngIf='groupId' tappable (click)='setPhoto()'>
+      <!--<img class='profileImg' src='assets/images/profileBg.jpeg'/>-->
+      <ion-icon color='light' name='ios-camera-outline'></ion-icon>
+    </div>
+  <div class='wrapper'> 
+      <div class='bg'>
+          <div class='wrapper2'>
+              <h1 class='profileName'>{{title}}</h1>
+          </div>
+      <img class='bgImg' *ngIf='!groupId' src='assets/images/profileBg.jpeg'/>
+      <img class='bgImg' *ngIf='groupId' src='{{group.img}}'/>
+    </div>
+    </div>
+
+<!-- Messages -->
+
+<div class="messages">
+ <ion-list no-lines>
+   <div class='m' *ngFor="let message of messagesToShow">
+  <p class='senderName'*ngIf='!isSystemMessage(message) && !isSender(message)'>{{message.name}}</p>
+   <ion-item>
+
+       <!--  System Message -->
+    <div *ngIf="isSystemMessage(message)">
+      <p  class="system" >
+        <ion-icon name="{{message.icon}}"></ion-icon>
+        {{message.message}}
+      </p>
+     
+   </div>
+      <p item-right class="recip" *ngIf="message.type == 'text' && isSender(message)">{{message.message}}</p>
+    
+       <p item-right class="location2" *ngIf="message.type == 'location' && isSender(message)" (click)='showMap(message.lat,message.lon,message.sender)'><ion-icon name='pin'></ion-icon>You shared your location.</p>
+      <img class='img' *ngIf="message.type == 'image' && isSender(message)" item-right tappable (click)="enlargeImage(message.url)" src="{{message.url}}" (load)="doScroll()" />
+      <div item-right *ngIf='!isSystemMessage(message) && isSender(message)'class='stripe' >
+        <div [ngStyle]="getStyle(message.sender)">
+       </div>
+     </div>
+    
+     <div  item-left *ngIf="!isSender(message)" class='senderAvi' tappable (click)='setPhoto()'>
+        <img class='senderImg' src="{{message.avatar}}" (load)="doScroll()" />
+      </div> 
+   
+     <div *ngIf='!isSystemMessage(message) && !isSender(message)'class='stripe' item-left>
+        <div [ngStyle]="getStyle(message.sender)">
+       </div>
+     </div>
+    <p item-left class="sender" *ngIf="message.type == 'text' && !isSender(message)">{{message.message}}</p>
+    <p item-left class="location" *ngIf="message.type == 'location' && !isSender(message)"(click)='showMap(message.lat,message.lon,message.sender)'><ion-icon name='pin'></ion-icon>{{message.message}}</p>
+     <img class='img'  *ngIf="message.type == 'image' && !isSender(message)" item-left tappable (click)="enlargeImage(message.url)" src="{{message.url}}" (load)="doScroll()" />
+   
+   </ion-item>
+   <p class='rightS'*ngIf='messagesToShow.indexOf(message) >= (messagesToShow.length-1) && isSender(message)'>{{message.date |  Date2Format}}</p>
+   <p class='leftS'*ngIf='messagesToShow.indexOf(message) >= (messagesToShow.length-1) && !isSender(message) '>{{message.date |  Date2Format}}</p>
+   </div>
+ </ion-list>
+</div>
+</ion-content>
+<!-- Message Box -->
+<ion-footer>
+<ion-item class="bottom_bar">
+ <button item-left ion-button clear (click)="attach()"><ion-icon color='dark' name="md-attach"></ion-icon></button>
+ <ion-textarea type="text" rows="0" placeholder="Say something..." [(ngModel)]="message" (focus)="scrollBottom()" (keypress)="onType($event.keyCode)"></ion-textarea>
+ <!-- <ion-buttons item-right> -->
+ <button item-right ion-button clear (click)="connect(userId)"><ion-icon color='dark' name="md-videocam"></ion-icon></button>
+ <button item-right ion-button clear (click)="send()" [disabled]="!message"><ion-icon color='success' name="ios-arrow-dropup-circle-outline"></ion-icon></button>
+ <!-- </ion-buttons> -->
+</ion-item>
+</ion-footer>

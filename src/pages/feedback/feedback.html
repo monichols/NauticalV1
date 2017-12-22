@@ -1,0 +1,66 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title><p class='title'>{{title}}</p></ion-title>
+      <ion-buttons start>
+          <button class='close' ion-button clear (click)='close()'><ion-icon color= 'dark' name='ios-close'></ion-icon></button>
+      </ion-buttons>
+      <ion-buttons end>
+          <button class='Send'[disabled]="!isenabled" ion-button clear (click)='send()'>Send</button>
+      </ion-buttons>
+    </ion-navbar>
+  
+  
+  </ion-header>
+  
+  
+  <ion-content>
+      <div *ngIf='type ==0'>
+          <ion-item>
+            <ion-label color="primary">RE:</ion-label>
+            <ion-input [(ngModel)]='subject'  (input)='onChange(body, subject)' placeholder="Subject"></ion-input>
+          </ion-item>
+         
+          <ion-item>
+              <ion-textarea rows='10' [(ngModel)]='body' (input)='onChange(body, subject)' placeholder="Enter a brief description of the problem..."></ion-textarea>
+            </ion-item>
+          
+            <p class='count' *ngIf='body'>{{body.length}}/ 2000 chars</p>
+            <p class='warn' *ngIf='!subject'>*Subject cannot be empty.</p>
+            <div *ngIf='subject'>
+            <p class='warn' *ngIf='subject.length>50'>*Subject cannot be more than 50 chars.</p>
+            </div>
+            <div *ngIf='body'>
+                <p class='warn' *ngIf='body.length>2000'>*Subject cannot be more than 2000 chars.</p>
+                </div>
+            <p class='warn' *ngIf='!body'>*You must enter a description.</p>
+            
+        <button [disabled]="!isenabled" block ion-button color='primary' (click)="send(subject, body)">Send Message</button>
+        
+        
+        
+         
+          </div>
+      <div  *ngIf='type != 0'>
+          <ion-item>
+            <ion-label color="primary">RE:</ion-label>
+            <ion-input [(ngModel)]='subject'  (input)='onChange(body, subject)' placeholder="Subject"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-textarea rows='10' [(ngModel)]='body' (input)='onChange(body, subject)' placeholder="Enter a brief description of how we're doing..."></ion-textarea>
+            </ion-item>
+
+            <p class='count' *ngIf='body'>{{body.length}}/ 2000 chars</p>
+            <p class='warn' *ngIf='!subject'>*Subject cannot be empty.</p>
+            <div *ngIf='subject'>
+            <p class='warn' *ngIf='subject.length>50'>*Subject cannot be more than 50 chars.</p>
+            </div>
+            <div *ngIf='body'>
+                <p class='warn' *ngIf='body.length>2000'>*Subject cannot be more than 2000 chars.</p>
+                </div>
+            <p class='warn' *ngIf='!body'>*You must enter a description.</p>
+
+            <button [disabled]="!isenabled" block ion-button color='primary' (click)="send(subject, body)">Send Message</button>
+          </div>
+     
+  </ion-content>
+  

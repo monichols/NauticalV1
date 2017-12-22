@@ -1,0 +1,91 @@
+<!--
+DEV: Monique Nichols
+Product: Nautical
+File: Settings.html (Settings page)
+Last Modified: 12/18/2017
+-->
+<!--
+ This page controls how users are able edit their account information
+-->
+  <!--This is the navbar that shows when a user has triggered a scroll event.-->
+<ion-header  [hidden]="!showToolbar">
+    <ion-navbar [class.show-background]="showToolbar"><!--class show-background in app.scss-->
+          <!--navbar buttons-->
+        <ion-buttons start>
+            <button ion-button><ion-icon color='light' class='menuButton' name="md-menu" item-right></ion-icon></button><!--class menuButton in app.scss-->
+          </ion-buttons>
+          <ion-buttons start>
+              <button class='profileTxt' ion-button>Settings</button><!--Class profileTxt is in app.scss-->
+            </ion-buttons>
+            <ion-buttons end>
+                <button ion-button tappable (click)="close()"><ion-icon color='light' class='menuButton' name="ios-close" item-right></ion-icon></button><!--class menuButton in app.scss-->
+              </ion-buttons>
+    </ion-navbar>
+  </ion-header>
+  <!--This is the navbar that shows when a user has not triggered a scroll event.-->
+  <ion-header  [hidden]="showToolbar">
+      <ion-navbar class='tool'><!--class tool in app.scss-->
+        <!--navbar buttons-->
+         <ion-buttons start>
+          <button ion-button><ion-icon color='light' class='menuButton' name="md-menu" item-right></ion-icon></button><!--class menuButton in app.scss-->
+        </ion-buttons>
+        <ion-buttons start>
+            <button class='profileTxt' ion-button>Settings</button><!--Class profileTxt is in app.scss-->
+          </ion-buttons>
+          <ion-buttons end>
+              <button ion-button tappable (click)="close()"><ion-icon color='light' class='menuButton' name="ios-close" item-right></ion-icon></button><!--class menuButton in app.scss-->
+            </ion-buttons>
+      </ion-navbar>
+    </ion-header>
+<!-- this is the page content -->
+<ion-content class="content" (ionScroll)="onScroll($event)" [class.transition]="transition">
+<!-- this div displays if there is a user-->
+<div *ngIf='user'>
+<div class='img'>
+<img class='profileImg' src={{user.img}} tappable (click)='setPhoto()'/><!--displays user's image-->
+<button color='green' class='addPic' ion-button icon-only round tappable (click)='setPhoto()'><ion-icon name='ios-camera-outline'></ion-icon></button><!--displays set photo fab-->
+</div>
+<div class='wrapper'> 
+  <div class='bg'>   
+    <div class='wrapper2'>
+        <h1 class='profileName'>{{user.name}}</h1><!-- user name shown here-->
+        <p class='userName'>@{{user.username}}</p><!-- username shown here-->
+    </div>
+  <img class='bgImg' src='assets/images/profileBg.jpeg'/><!-- generic bg image shown here-->
+</div>
+</div>
+<!--Displays list of user options -->
+<ion-list inset class='list'>
+    <!--shows list header-->
+    <ion-item class='item'>
+        <h3 class ='listHeader'> Edit Profile</h3>
+       <div class='wrapper3'><div class='underLine'></div></div>
+      </ion-item>
+       <!--shows change name option-->
+    <ion-item tappable (click)='setName()' class='item'>
+      <h3 class ='listTxt'> Name</h3>
+     <h3 class='listTxt2'>{{user.name}}</h3>
+    </ion-item>
+     <!--shows change email option if user provider is firebase-->
+    <ion-item tappable *ngIf="user.provider=='Firebase'" (click)='setEmail()' class='item'>
+        <h3 class ='listTxt'>Email</h3>
+       <h3 class='listTxt2'>{{user.email}}</h3>
+      </ion-item>
+      <!--shows change username option-->
+      <ion-item tappable (click)='setUsername()' class='item'>
+          <h3 class ='listTxt'> Username</h3>
+         <h3 class='listTxt2'>@{{user.username}}</h3>
+        </ion-item>
+        <!--shows change phone number option-->
+          <ion-item tappable (click)='setPhone()' class='item'>
+              <h3 class ='listTxt'> Phone</h3>
+             <h3 class='listTxt2'>+1-{{user.phone}}</h3>
+            </ion-item>
+            <!--shows change password option if user provider is firebase-->
+            <ion-item *ngIf="user.provider=='Firebase'" tappable (click)='setPassword()' class='item'>
+                <h3 class ='listTxt'> Password</h3>
+               <h3 class='listTxt2'>{{user.Password}}</h3>
+              </ion-item>
+        </ion-list>
+</div>
+</ion-content>

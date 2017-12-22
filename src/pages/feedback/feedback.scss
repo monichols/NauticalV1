@@ -1,0 +1,33 @@
+page-feedback {
+    
+        .title{
+          
+            text-transform: uppercase;
+            font-family: Roboto;
+            color:rgba(0,0,0,.6);
+            font-size: 4vh;
+            margin-top:2vh;
+        }
+        .close{
+            font-size: 4vh;
+            margin-top:2vh;
+            color:rgba(0,0,0,.6);
+        }
+        .Send{
+            //font-size: 2vh;
+            margin-top:2vh !important;
+            color:rgba(0,0,0,.6);
+        }
+        .warn{
+            margin: 2vh;
+            color:red; 
+            font-family: Roboto;
+        }
+        .count{
+            margin: 2vh;
+            font-family: Roboto;
+            color:rgba(0,0,0,.6);
+        }
+    
+    }
+    
