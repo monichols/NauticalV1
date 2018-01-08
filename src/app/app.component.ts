@@ -6,21 +6,26 @@ import { Storage } from '@ionic/storage';
 import {IntroPage} from '../pages/intro/intro';
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
+import { VirtualcardPage } from '../pages/virtualcard/virtualcard';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = LoginPage;
+  
+  rootPage:any = VirtualcardPage;
+  //rootPage:any = LoginPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, public storage: Storage) {
     platform.ready().then(() => {
       this.storage.get('introShown').then((result) => {
  
         if(result){
-          this.rootPage = LoginPage;
+          this.rootPage = VirtualcardPage;
+          //this.rootPage = LoginPage;
         } else {
-          this.rootPage = IntroPage;
+          this.rootPage = VirtualcardPage;
+          //this.rootPage = IntroPage;
           this.storage.set('introShown', true);
         }
  
