@@ -1,4 +1,4 @@
-webpackJsonp([1],{
+webpackJsonp([2],{
 
 /***/ 102:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -36,6 +36,7 @@ var Login;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MessagePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(22);
@@ -43,6 +44,15 @@ var Login;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_image_image__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase__ = __webpack_require__(21);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_data_data__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_image_image__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase__ = __webpack_require__(18);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__user_info_user_info__ = __webpack_require__(464);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__image_modal_image_modal__ = __webpack_require__(465);
@@ -921,7 +931,11 @@ __decorate([
 ], MessagePage.prototype, "content", void 0);
 MessagePage = MessagePage_1 = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-message',template:/*ion-inline-start:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/message/message.html"*/'<ion-header  mode=\'ios\'  [hidden]="!showToolbar">\n  \n    <ion-navbar  mode=\'ios\' [class.show-background]="showToolbar">\n        <ion-buttons  mode=\'ios\' start>\n            <button ion-button tappable (click)="back()"><ion-icon color=\'light\' class=\'menuButton\' name="arrow-back" item-right></ion-icon></button>\n          </ion-buttons>\n          <ion-buttons  mode=\'ios\' start>\n              <button class=\'profileTxt\' ion-button>Chats</button>\n            </ion-buttons>\n            <ion-buttons  mode=\'ios\' end>\n                <button ion-button tappable (click)="menu()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-more-outline" item-right></ion-icon></button>\n              </ion-buttons>\n    </ion-navbar>\n  </ion-header>\n<ion-header  [hidden]="showToolbar">\n    <ion-navbar mode=\'ios\'class=\'tool\'>\n       <ion-buttons  mode=\'ios\' start>\n        <button ion-button tappable (click)="back()"><ion-icon color=\'light\' class=\'menuButton\' name="arrow-back" item-right></ion-icon></button>\n      </ion-buttons>\n      <ion-buttons  mode=\'ios\' start>\n          <button class=\'profileTxt\' ion-button>Chats</button>\n        </ion-buttons>\n        <ion-buttons  mode=\'ios\' end>\n            <button ion-button tappable (click)="menu()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-more-outline" item-right></ion-icon></button>\n          </ion-buttons>\n        </ion-navbar>\n  </ion-header>\n<ion-content has-footer>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n      <ion-refresher-content></ion-refresher-content>\n    </ion-refresher>\n  <div class=\'img\' *ngIf=\'groupId\' tappable (click)=\'setPhoto()\'>\n      <!--<img class=\'profileImg\' src=\'assets/images/profileBg.jpeg\'/>-->\n      <ion-icon color=\'light\' name=\'ios-camera-outline\'></ion-icon>\n    </div>\n  <div class=\'wrapper\'> \n      <div class=\'bg\'>\n          <div class=\'wrapper2\'>\n              <h1 class=\'profileName\'>{{title}}</h1>\n          </div>\n      <img class=\'bgImg\' *ngIf=\'!groupId\' src=\'assets/images/profileBg.jpeg\'/>\n      <img class=\'bgImg\' *ngIf=\'groupId\' src=\'{{group.img}}\'/>\n    </div>\n    </div>\n\n<!-- Messages -->\n\n<div class="messages">\n <ion-list no-lines>\n   <div class=\'m\' *ngFor="let message of messagesToShow">\n  <p class=\'senderName\'*ngIf=\'!isSystemMessage(message) && !isSender(message)\'>{{message.name}}</p>\n   <ion-item>\n\n       <!--  System Message -->\n    <div *ngIf="isSystemMessage(message)">\n      <p  class="system" >\n        <ion-icon name="{{message.icon}}"></ion-icon>\n        {{message.message}}\n      </p>\n     \n   </div>\n      <p item-right class="recip" *ngIf="message.type == \'text\' && isSender(message)">{{message.message}}</p>\n    \n       <p item-right class="location2" *ngIf="message.type == \'location\' && isSender(message)" (click)=\'showMap(message.lat,message.lon,message.sender)\'><ion-icon name=\'pin\'></ion-icon>You shared your location.</p>\n      <img class=\'img\' *ngIf="message.type == \'image\' && isSender(message)" item-right tappable (click)="enlargeImage(message.url)" src="{{message.url}}" (load)="doScroll()" />\n      <div item-right *ngIf=\'!isSystemMessage(message) && isSender(message)\'class=\'stripe\' >\n        <div [ngStyle]="getStyle(message.sender)">\n       </div>\n     </div>\n    \n     <div  item-left *ngIf="!isSender(message)" class=\'senderAvi\' tappable (click)=\'setPhoto()\'>\n        <img class=\'senderImg\' src="{{message.avatar}}" (load)="doScroll()" />\n      </div> \n   \n     <div *ngIf=\'!isSystemMessage(message) && !isSender(message)\'class=\'stripe\' item-left>\n        <div [ngStyle]="getStyle(message.sender)">\n       </div>\n     </div>\n    <p item-left class="sender" *ngIf="message.type == \'text\' && !isSender(message)">{{message.message}}</p>\n    <p item-left class="location" *ngIf="message.type == \'location\' && !isSender(message)"(click)=\'showMap(message.lat,message.lon,message.sender)\'><ion-icon name=\'pin\'></ion-icon>{{message.message}}</p>\n     <img class=\'img\'  *ngIf="message.type == \'image\' && !isSender(message)" item-left tappable (click)="enlargeImage(message.url)" src="{{message.url}}" (load)="doScroll()" />\n   \n   </ion-item>\n   <p class=\'rightS\'*ngIf=\'messagesToShow.indexOf(message) >= (messagesToShow.length-1) && isSender(message)\'>{{message.date |  Date2Format}}</p>\n   <p class=\'leftS\'*ngIf=\'messagesToShow.indexOf(message) >= (messagesToShow.length-1) && !isSender(message) \'>{{message.date |  Date2Format}}</p>\n   </div>\n </ion-list>\n</div>\n</ion-content>\n<!-- Message Box -->\n<ion-footer>\n<ion-item class="bottom_bar">\n <button item-left ion-button clear (click)="attach()"><ion-icon color=\'dark\' name="md-attach"></ion-icon></button>\n <ion-textarea type="text" rows="0" placeholder="Say something..." [(ngModel)]="message" (focus)="scrollBottom()" (keypress)="onType($event.keyCode)"></ion-textarea>\n <!-- <ion-buttons item-right> -->\n <button item-right ion-button clear (click)="connect(userId)"><ion-icon color=\'dark\' name="md-videocam"></ion-icon></button>\n <button item-right ion-button clear (click)="send()" [disabled]="!message"><ion-icon color=\'success\' name="ios-arrow-dropup-circle-outline"></ion-icon></button>\n <!-- </ion-buttons> -->\n</ion-item>\n</ion-footer>\n'/*ion-inline-end:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/message/message.html"*/
+=======
+        selector: 'page-message',template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/message/message.html"*/'<ion-header  mode=\'ios\'  [hidden]="!showToolbar">\n  \n    <ion-navbar  mode=\'ios\' [class.show-background]="showToolbar">\n        <ion-buttons  mode=\'ios\' start>\n            <button ion-button tappable (click)="back()"><ion-icon color=\'light\' class=\'menuButton\' name="arrow-back" item-right></ion-icon></button>\n          </ion-buttons>\n          <ion-buttons  mode=\'ios\' start>\n              <button class=\'profileTxt\' ion-button>Chats</button>\n            </ion-buttons>\n            <ion-buttons  mode=\'ios\' end>\n                <button ion-button tappable (click)="menu()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-more-outline" item-right></ion-icon></button>\n              </ion-buttons>\n    </ion-navbar>\n  </ion-header>\n<ion-header  [hidden]="showToolbar">\n    <ion-navbar mode=\'ios\'class=\'tool\'>\n       <ion-buttons  mode=\'ios\' start>\n        <button ion-button tappable (click)="back()"><ion-icon color=\'light\' class=\'menuButton\' name="arrow-back" item-right></ion-icon></button>\n      </ion-buttons>\n      <ion-buttons  mode=\'ios\' start>\n          <button class=\'profileTxt\' ion-button>Chats</button>\n        </ion-buttons>\n        <ion-buttons  mode=\'ios\' end>\n            <button ion-button tappable (click)="menu()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-more-outline" item-right></ion-icon></button>\n          </ion-buttons>\n        </ion-navbar>\n  </ion-header>\n<ion-content has-footer>\n  <ion-refresher (ionRefresh)="doRefresh($event)">\n      <ion-refresher-content></ion-refresher-content>\n    </ion-refresher>\n  <div class=\'img\' *ngIf=\'groupId\' tappable (click)=\'setPhoto()\'>\n      <!--<img class=\'profileImg\' src=\'assets/images/profileBg.jpeg\'/>-->\n      <ion-icon color=\'light\' name=\'ios-camera-outline\'></ion-icon>\n    </div>\n  <div class=\'wrapper\'> \n      <div class=\'bg\'>\n          <div class=\'wrapper2\'>\n              <h1 class=\'profileName\'>{{title}}</h1>\n          </div>\n      <img class=\'bgImg\' *ngIf=\'!groupId\' src=\'assets/images/profileBg.jpeg\'/>\n      <img class=\'bgImg\' *ngIf=\'groupId\' src=\'{{group.img}}\'/>\n    </div>\n    </div>\n\n<!-- Messages -->\n\n<div class="messages">\n <ion-list no-lines>\n   <div class=\'m\' *ngFor="let message of messagesToShow">\n  <p class=\'senderName\'*ngIf=\'!isSystemMessage(message) && !isSender(message)\'>{{message.name}}</p>\n   <ion-item>\n\n       <!--  System Message -->\n    <div *ngIf="isSystemMessage(message)">\n      <p  class="system" >\n        <ion-icon name="{{message.icon}}"></ion-icon>\n        {{message.message}}\n      </p>\n     \n   </div>\n      <p item-right class="recip" *ngIf="message.type == \'text\' && isSender(message)">{{message.message}}</p>\n    \n       <p item-right class="location2" *ngIf="message.type == \'location\' && isSender(message)" (click)=\'showMap(message.lat,message.lon,message.sender)\'><ion-icon name=\'pin\'></ion-icon>You shared your location.</p>\n      <img class=\'img\' *ngIf="message.type == \'image\' && isSender(message)" item-right tappable (click)="enlargeImage(message.url)" src="{{message.url}}" (load)="doScroll()" />\n      <div item-right *ngIf=\'!isSystemMessage(message) && isSender(message)\'class=\'stripe\' >\n        <div [ngStyle]="getStyle(message.sender)">\n       </div>\n     </div>\n    \n     <div  item-left *ngIf="!isSender(message)" class=\'senderAvi\' tappable (click)=\'setPhoto()\'>\n        <img class=\'senderImg\' src="{{message.avatar}}" (load)="doScroll()" />\n      </div> \n   \n     <div *ngIf=\'!isSystemMessage(message) && !isSender(message)\'class=\'stripe\' item-left>\n        <div [ngStyle]="getStyle(message.sender)">\n       </div>\n     </div>\n    <p item-left class="sender" *ngIf="message.type == \'text\' && !isSender(message)">{{message.message}}</p>\n    <p item-left class="location" *ngIf="message.type == \'location\' && !isSender(message)"(click)=\'showMap(message.lat,message.lon,message.sender)\'><ion-icon name=\'pin\'></ion-icon>{{message.message}}</p>\n     <img class=\'img\'  *ngIf="message.type == \'image\' && !isSender(message)" item-left tappable (click)="enlargeImage(message.url)" src="{{message.url}}" (load)="doScroll()" />\n   \n   </ion-item>\n   <p class=\'rightS\'*ngIf=\'messagesToShow.indexOf(message) >= (messagesToShow.length-1) && isSender(message)\'>{{message.date |  Date2Format}}</p>\n   <p class=\'leftS\'*ngIf=\'messagesToShow.indexOf(message) >= (messagesToShow.length-1) && !isSender(message) \'>{{message.date |  Date2Format}}</p>\n   </div>\n </ion-list>\n</div>\n</ion-content>\n<!-- Message Box -->\n<ion-footer>\n<ion-item class="bottom_bar">\n <button item-left ion-button clear (click)="attach()"><ion-icon color=\'dark\' name="md-attach"></ion-icon></button>\n <ion-textarea type="text" rows="0" placeholder="Say something..." [(ngModel)]="message" (focus)="scrollBottom()" (keypress)="onType($event.keyCode)"></ion-textarea>\n <!-- <ion-buttons item-right> -->\n <button item-right ion-button clear (click)="connect(userId)"><ion-icon color=\'dark\' name="md-videocam"></ion-icon></button>\n <button item-right ion-button clear (click)="send()" [disabled]="!message"><ion-icon color=\'success\' name="ios-arrow-dropup-circle-outline"></ion-icon></button>\n <!-- </ion-buttons> -->\n</ion-item>\n</ion-footer>\n'/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/message/message.html"*/
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_data_data__["a" /* DataProvider */], __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__["a" /* AngularFireDatabase */],
         __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_5__providers_image_image__["a" /* ImageProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ModalController */],
@@ -1010,7 +1024,11 @@ var LoginPage = (function () {
 }());
 LoginPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-login',template:/*ion-inline-start:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content class="no-scroll">\n  <div class=\'container\'>\n  <div class="top">\n    <h1 class="Passion">Nautical</h1>\n<img class="logo" src="assets/images/icon.png"/>\n\n    <!--<ion-icon class="md-heart" name="md-heart" style="color:#ff5757;font-size:60px"></ion-icon>-->\n  </div>\n\n  <ion-list inset>\n    <form [formGroup]="emailPasswordForm">\n    <ion-item no-lines>\n        <ion-label ><ion-icon name=\'ios-person-outline\'></ion-icon></ion-label>\n        <ion-input placeholder=\'Email\' [(ngModel)]=\'emailString\' type="text" formControlName="email" style="text-align:left"></ion-input>\n      </ion-item>\n      <ion-item no-lines>\n        <ion-note><button item-right ion-button color="gray" clear tappable (click)="forgotPassword()">RESET</button></ion-note>\n        <ion-label ><ion-icon name=\'ios-lock-outline\'></ion-icon></ion-label>\n        <ion-input placeholder=\'Password\' type="password" formControlName="password" style="text-align:left"></ion-input>\n      </ion-item>\n      <ion-row>\n         <button ion-button full color="primary" block tappable (click)="login()" [disabled]="!emailPasswordForm.valid">Log in</button>\n      </ion-row>\n         <ion-row>\n        <button ion-button color="dark" block tappable (click)="register()" [disabled]="!emailPasswordForm.valid">Signup</button>\n      </ion-row>\n     <!-- <ion-row>\n        <ion-col>\n          <button ion-button color="primary" block tappable (click)="login()" [disabled]="!emailPasswordForm.valid">Log in</button>\n        </ion-col>\n        <ion-col>\n          <button ion-button color="dark" block tappable (click)="register()" [disabled]="!emailPasswordForm.valid">Signup</button>\n        </ion-col>\n      </ion-row>-->\n      </form>\n      <p style="text-align: center;font-size:10px;color:rgba(255,255,255,.8);">--- OR CONTINUE WITH ---</p>\n      <ion-row>\n        <ion-col>\n      <button ion-fab class=\'fabButt\' color="facebook" icon-only tappable (click)="loginProvider.facebookLogin()"><ion-icon name="logo-facebook"></ion-icon></button>\n        </ion-col>\n    <ion-col>\n      <button ion-fab class=\'fabButt\' icon-only color="google" tappable (click)="loginProvider.googleLogin()"><ion-icon name="logo-google"></ion-icon></button>\n    </ion-col>  \n    </ion-row>\n  <ion-row>\n    <button ion-button full clear tappable (click)="forgotPassword()" color=\'light\'> Forgot Password</button>\n  </ion-row>\n\n    </ion-list>\n</div>\n  <div class=\'wrapper\'>\n    <div class=\'bg\'>\n      <div class=\'wrapper2\'>\n      </div>\n    <img class=\'bgImg\' src=\'assets/images/background.jpg\'/>\n  </div>\n  </div>\n   \n \n</ion-content>'/*ion-inline-end:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/login/login.html"*/
+=======
+        selector: 'page-login',template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content class="no-scroll">\n  <div class=\'container\'>\n  <div class="top">\n    <h1 class="Passion">Nautical</h1>\n<img class="logo" src="assets/images/icon.png"/>\n\n    <!--<ion-icon class="md-heart" name="md-heart" style="color:#ff5757;font-size:60px"></ion-icon>-->\n  </div>\n\n  <ion-list inset>\n    <form [formGroup]="emailPasswordForm">\n    <ion-item no-lines>\n        <ion-label ><ion-icon name=\'ios-person-outline\'></ion-icon></ion-label>\n        <ion-input placeholder=\'Email\' [(ngModel)]=\'emailString\' type="text" formControlName="email" style="text-align:left"></ion-input>\n      </ion-item>\n      <ion-item no-lines>\n        <ion-note><button item-right ion-button color="gray" clear tappable (click)="forgotPassword()">RESET</button></ion-note>\n        <ion-label ><ion-icon name=\'ios-lock-outline\'></ion-icon></ion-label>\n        <ion-input placeholder=\'Password\' type="password" formControlName="password" style="text-align:left"></ion-input>\n      </ion-item>\n      <ion-row>\n         <button ion-button full color="primary" block tappable (click)="login()" [disabled]="!emailPasswordForm.valid">Log in</button>\n      </ion-row>\n         <ion-row>\n        <button ion-button color="dark" block tappable (click)="register()" [disabled]="!emailPasswordForm.valid">Signup</button>\n      </ion-row>\n     <!-- <ion-row>\n        <ion-col>\n          <button ion-button color="primary" block tappable (click)="login()" [disabled]="!emailPasswordForm.valid">Log in</button>\n        </ion-col>\n        <ion-col>\n          <button ion-button color="dark" block tappable (click)="register()" [disabled]="!emailPasswordForm.valid">Signup</button>\n        </ion-col>\n      </ion-row>-->\n      </form>\n      <p style="text-align: center;font-size:10px;color:rgba(255,255,255,.8);">--- OR CONTINUE WITH ---</p>\n      <ion-row>\n        <ion-col>\n      <button ion-fab class=\'fabButt\' color="facebook" icon-only tappable (click)="loginProvider.facebookLogin()"><ion-icon name="logo-facebook"></ion-icon></button>\n        </ion-col>\n    <ion-col>\n      <button ion-fab class=\'fabButt\' icon-only color="google" tappable (click)="loginProvider.googleLogin()"><ion-icon name="logo-google"></ion-icon></button>\n    </ion-col>  \n    </ion-row>\n  <ion-row>\n    <button ion-button full clear tappable (click)="forgotPassword()" color=\'light\'> Forgot Password</button>\n  </ion-row>\n\n    </ion-list>\n</div>\n  <div class=\'wrapper\'>\n    <div class=\'bg\'>\n      <div class=\'wrapper2\'>\n      </div>\n    <img class=\'bgImg\' src=\'assets/images/background.jpg\'/>\n  </div>\n  </div>\n   \n \n</ion-content>'/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/login/login.html"*/
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */],
         __WEBPACK_IMPORTED_MODULE_2__providers_login_login__["a" /* LoginProvider */],
@@ -1031,9 +1049,15 @@ LoginPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_data_data__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_loading_loading__ = __webpack_require__(22);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_data_data__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_loading_loading__ = __webpack_require__(20);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1173,7 +1197,11 @@ __decorate([
 ], AddMembersPage.prototype, "content", void 0);
 AddMembersPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-add-members',template:/*ion-inline-start:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/add-members/add-members.html"*/'<!--\n  Generated template for the AddMembersPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header  mode=\'ios\'  [hidden]="!showToolbar">\n    \n      <ion-navbar  mode=\'ios\' [class.show-background]="showToolbar">\n          <ion-buttons start>\n              <button ion-button tappable (click)=\'back()\'><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button>\n            </ion-buttons>\n            <ion-buttons start>\n                <button class=\'profileTxt\' ion-button>Add Member</button>\n              </ion-buttons>\n      </ion-navbar>\n    \n    </ion-header>\n\n<ion-header  [hidden]="showToolbar">\n    \n      <ion-navbar mode=\'ios\'class=\'tool\'>\n         <ion-buttons  mode=\'ios\' start>\n          <button ion-button tappable (click)=\'back()\'><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button>\n        </ion-buttons>\n        <ion-buttons  mode=\'ios\' start>\n            <button class=\'profileTxt\' ion-button>Add Member</button>\n          </ion-buttons>\n      </ion-navbar>\n    \n    </ion-header>\n<ion-content class="content"\n(ionScroll)="onScroll($event)"\n[class.transition]="transition">\n<img src=\'assets/images/bgAdd.jpeg\'>\n  <div class=\'bg\'>\n    <div class=\'wrapper\'>\n  <!-- No friends yet to start a conversation with -->\n  <div class="empty-list" *ngIf="friends && friends.length == 0">\n    <h1><ion-icon name="md-contacts"></ion-icon></h1>\n    <p>Uh-oh! You have not added any friends yet.</p>\n    <button ion-button icon-left tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon>Search People</button>\n  </div>\n  <!-- Show friends to start a conversation with -->\n  <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">\n    <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n    <ion-list-header mode=\'md\' no-lines>\n        <h2>Users</h2>\n            </ion-list-header>\n    <ion-item *ngFor="let friend of friends | searchFilter:[excludedIds, searchUser]" no-lines tappable (click)="addFriend(friend)">\n      <ion-avatar item-left>\n        <img src="{{friend.img}}">\n      </ion-avatar>\n      <h2>{{friend.name}}</h2>\n    </ion-item>\n  </ion-list>\n</div>\n</div>\n</ion-content>'/*ion-inline-end:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/add-members/add-members.html"*/,
+=======
+        selector: 'page-add-members',template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/add-members/add-members.html"*/'<!--\n  Generated template for the AddMembersPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header  mode=\'ios\'  [hidden]="!showToolbar">\n    \n      <ion-navbar  mode=\'ios\' [class.show-background]="showToolbar">\n          <ion-buttons start>\n              <button ion-button tappable (click)=\'back()\'><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button>\n            </ion-buttons>\n            <ion-buttons start>\n                <button class=\'profileTxt\' ion-button>Add Member</button>\n              </ion-buttons>\n      </ion-navbar>\n    \n    </ion-header>\n\n<ion-header  [hidden]="showToolbar">\n    \n      <ion-navbar mode=\'ios\'class=\'tool\'>\n         <ion-buttons  mode=\'ios\' start>\n          <button ion-button tappable (click)=\'back()\'><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button>\n        </ion-buttons>\n        <ion-buttons  mode=\'ios\' start>\n            <button class=\'profileTxt\' ion-button>Add Member</button>\n          </ion-buttons>\n      </ion-navbar>\n    \n    </ion-header>\n<ion-content class="content"\n(ionScroll)="onScroll($event)"\n[class.transition]="transition">\n<img src=\'assets/images/bgAdd.jpeg\'>\n  <div class=\'bg\'>\n    <div class=\'wrapper\'>\n  <!-- No friends yet to start a conversation with -->\n  <div class="empty-list" *ngIf="friends && friends.length == 0">\n    <h1><ion-icon name="md-contacts"></ion-icon></h1>\n    <p>Uh-oh! You have not added any friends yet.</p>\n    <button ion-button icon-left tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon>Search People</button>\n  </div>\n  <!-- Show friends to start a conversation with -->\n  <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">\n    <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n    <ion-list-header mode=\'md\' no-lines>\n        <h2>Users</h2>\n            </ion-list-header>\n    <ion-item *ngFor="let friend of friends | searchFilter:[excludedIds, searchUser]" no-lines tappable (click)="addFriend(friend)">\n      <ion-avatar item-left>\n        <img src="{{friend.img}}">\n      </ion-avatar>\n      <h2>{{friend.name}}</h2>\n    </ion-item>\n  </ion-list>\n</div>\n</div>\n</ion-content>'/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/add-members/add-members.html"*/,
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
     }),
     __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__providers_data_data__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_data_data__["a" /* DataProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["w" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["w" /* ViewController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_5__providers_loading_loading__["a" /* LoadingProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_loading_loading__["a" /* LoadingProvider */]) === "function" && _h || Object])
 ], AddMembersPage);
@@ -1356,7 +1384,7 @@ webpackEmptyAsyncContext.id = 186;
 
 /***/ }),
 
-/***/ 22:
+/***/ 20:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1416,7 +1444,15 @@ LoadingProvider = __decorate([
 
 var map = {
 	"../pages/group/group.module": [
+<<<<<<< HEAD
 		699,
+=======
+		641,
+		1
+	],
+	"../pages/virtualcard/virtualcard.module": [
+		642,
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 		0
 	]
 };
@@ -1477,7 +1513,11 @@ var IntroPage = (function () {
 }());
 IntroPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-intro',template:/*ion-inline-start:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/intro/intro.html"*/'<ion-slides pager="true">\n  <ion-slide>\n    <ion-row>\n      <ion-col class="header">\n        Plan your next getaway with friends.\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <img src="assets/images/slide1.png"/>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n         <button ion-button round outline color="light" (click)="goToHome()">Get Started with Nautical</button>\n      </ion-col>\n    </ion-row>\n  </ion-slide>\n \n  <ion-slide>\n    <ion-row>\n      <ion-col class="header">\n       Save money for important expenses.\n      </ion-col>\n    </ion-row>\n     <ion-row>\n      <ion-col>\n        <img src="assets/images/slide2.png"/>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n   <button ion-button round outline color="light" (click)="goToHome()">Get Started with Nautical</button>\n      </ion-col>\n    </ion-row>\n  </ion-slide>\n\n  <ion-slide>\n    <ion-row>\n      <ion-col class="header">\n        Make memories that will last a lifetime.\n      </ion-col>\n    </ion-row>\n     <ion-row>\n      <ion-col>\n        <img src="assets/images/slide3.png"/>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <button ion-button round outline color="light" (click)="goToHome()">Get Started with Nautical</button>\n      </ion-col>\n    </ion-row>\n  </ion-slide>\n'/*ion-inline-end:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/intro/intro.html"*/,
+=======
+        selector: 'page-intro',template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/intro/intro.html"*/'<ion-slides pager="true">\n  <ion-slide>\n    <ion-row>\n      <ion-col class="header">\n        Plan your next getaway with friends.\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <img src="assets/images/slide1.png"/>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n         <button ion-button round outline color="light" (click)="goToHome()">Get Started with Nautical</button>\n      </ion-col>\n    </ion-row>\n  </ion-slide>\n \n  <ion-slide>\n    <ion-row>\n      <ion-col class="header">\n       Save money for important expenses.\n      </ion-col>\n    </ion-row>\n     <ion-row>\n      <ion-col>\n        <img src="assets/images/slide2.png"/>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n   <button ion-button round outline color="light" (click)="goToHome()">Get Started with Nautical</button>\n      </ion-col>\n    </ion-row>\n  </ion-slide>\n\n  <ion-slide>\n    <ion-row>\n      <ion-col class="header">\n        Make memories that will last a lifetime.\n      </ion-col>\n    </ion-row>\n     <ion-row>\n      <ion-col>\n        <img src="assets/images/slide3.png"/>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <button ion-button round outline color="light" (click)="goToHome()">Get Started with Nautical</button>\n      </ion-col>\n    </ion-row>\n  </ion-slide>\n'/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/intro/intro.html"*/,
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
 ], IntroPage);
@@ -1494,11 +1534,19 @@ IntroPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_firebase__);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__loading_loading__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__alert_alert__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_google_plus__ = __webpack_require__(472);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_facebook__ = __webpack_require__(473);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__loading_loading__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__alert_alert__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_google_plus__ = __webpack_require__(461);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_facebook__ = __webpack_require__(462);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1685,10 +1733,16 @@ LoginProvider = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AlertProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__validator__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__logout_logout__ = __webpack_require__(81);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1862,6 +1916,7 @@ var AlertProvider = (function () {
             buttons: ['OK']
         }).present();
     };
+<<<<<<< HEAD
     // Show group updated.
     AlertProvider.prototype.showGroupUpdatedMessage = function () {
         this.alert = this.alertCtrl.create({
@@ -1869,6 +1924,70 @@ var AlertProvider = (function () {
             subTitle: successMessages.groupUpdated["subTitle"],
             buttons: ['OK']
         }).present();
+=======
+    return DataProvider;
+}());
+DataProvider = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]])
+], DataProvider);
+
+//# sourceMappingURL=data.js.map
+
+/***/ }),
+
+/***/ 306:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic2_super_tabs__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__account_account__ = __webpack_require__(446);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__messages_messages__ = __webpack_require__(451);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_loading_loading__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_firebase__);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+/*
+DEV: Monique Nichols
+Product: Nautical
+File: Tabs.Ts (tabs page)
+Last Modified: 12/18/2017
+*/
+//Pages, Packages, and Provider imports.
+
+
+
+
+
+
+
+
+//This page controls the tabs that appear at the bottom of the screen. This page
+//serves as the home page in the event that a user is logged in.
+var TabsPage = (function () {
+    function TabsPage(angularfire, loadingProvider) {
+        this.angularfire = angularfire;
+        this.loadingProvider = loadingProvider;
+        this.tab1Root = __WEBPACK_IMPORTED_MODULE_4__messages_messages__["a" /* MessagesPage */]; //sets first root to messages
+        this.tab2Root = __WEBPACK_IMPORTED_MODULE_2__home_home__["a" /* HomePage */]; //sets second root to home(trips page)
+        this.tab3Root = __WEBPACK_IMPORTED_MODULE_3__account_account__["a" /* AccountPage */]; //sets third root to profile(account page)
+        this.createUserData();
+    }
+    TabsPage.prototype.ionViewDidLoad = function () {
+        this.superTabs.showToolbar(false); //hides the tabs from view.
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
     };
     // Show error messages depending on the code
     // If you added custom error codes on top, make sure to add a case block for it.
@@ -1902,6 +2021,7 @@ var AlertProvider = (function () {
                     subTitle: errorMessages.userDisabled["subTitle"],
                     buttons: ['OK']
                 });
+<<<<<<< HEAD
                 this.alert.present();
                 break;
             case 'auth/user-not-found':
@@ -2109,6 +2229,42 @@ AlertProvider = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_loading_loading__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_firebase__);
+=======
+            }
+        });
+    };
+    return TabsPage;
+}());
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic2_super_tabs__["a" /* SuperTabs */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic2_super_tabs__["a" /* SuperTabs */])
+], TabsPage.prototype, "superTabs", void 0);
+TabsPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/tabs/tabs.html"*/'<!--\nDEV: Monique Nichols\nProduct: Nautical\nFile: Tabs.html (tabs page)\nLast Modified: 12/18/2017\n-->\n<!--\n  this page controls the swipable tabs.\n-->\n<super-tabs selectedTabIndex=\'1\' [config]="{dragThreshold: 90}">\n  <super-tab [root]="tab1Root" title="First page"></super-tab>\n  <super-tab [root]="tab2Root" title="Second page"></super-tab>\n  <super-tab [root]="tab3Root" title="Third page"></super-tab>\n</super-tabs>\n'/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/tabs/tabs.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_6__providers_loading_loading__["a" /* LoadingProvider */]])
+], TabsPage);
+
+//# sourceMappingURL=tabs.js.map
+
+/***/ }),
+
+/***/ 316:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_trip_add_trip__ = __webpack_require__(317);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_data_data__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_moment__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_moment__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_agenda_agenda__ = __webpack_require__(444);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2210,6 +2366,7 @@ var TabsPage = (function () {
     return TabsPage;
 }());
 __decorate([
+<<<<<<< HEAD
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic2_super_tabs__["a" /* SuperTabs */]),
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic2_super_tabs__["a" /* SuperTabs */])
 ], TabsPage.prototype, "superTabs", void 0);
@@ -2220,6 +2377,20 @@ TabsPage = __decorate([
 ], TabsPage);
 
 //# sourceMappingURL=tabs.js.map
+=======
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Content */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Content */])
+], HomePage.prototype, "content", void 0);
+HomePage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'page-home',template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/home/home.html"*/'<!--\nDEV: Monique Nichols\nProduct: Nautical\nFile: Home.html (Home page)\nLast Modified: 12/18/2017\n-->\n<!--\n This page controls the home or trips page view\n-->\n<!--This is the navbar that shows when a user has triggered a scroll event.-->\n<ion-header  [hidden]="!showToolbar">\n    <ion-navbar [class.show-background]="showToolbar"><!--class show-background in app.scss-->\n      <!--navbar buttons start here-->\n        <ion-buttons start>\n            <button ion-button tappable (click)="menu()"><ion-icon color=\'light\' class=\'menuButton\' name="md-menu" item-right></ion-icon></button>\n          </ion-buttons>\n    </ion-navbar>\n  </ion-header>\n  <!--This is the navbar that shows when a user has not triggered a scroll event.-->\n  <ion-header  [hidden]="showToolbar">\n      <ion-navbar class=\'tool\'><!--class tool in app.scss-->\n        <!--navbar buttons start here-->\n         <ion-buttons start>\n          <button ion-button tappable (click)="menu()"><ion-icon color=\'light\' class=\'menuButton\' name="md-menu" item-right></ion-icon></button><!--class menuButton in app.scss -->\n        </ion-buttons>\n      </ion-navbar>\n    </ion-header>\n    <!--page content starts here-->\n<ion-content class="content" (ionScroll)="onScroll($event)" [class.transition]="transition">\n<div class=\'img\'><!--addTrip fab wrapper -->\n    <button color=\'primary\' class=\'addTrip\' ion-button icon-only round tappable (click)=\'addTrip()\'><ion-icon color=\'white\' name=\'md-add\'></ion-icon></button><!--displays set photo fab-->\n    </div>\n<div class=\'wrapper\'> <!--holds out BG image out \'My Trips\' title-->\n  <div class=\'bg\'>\n    <div class=\'wrapper2\'>\n      <h1 class=\'profileName\'>My Trips</h1>\n    </div>\n  <img class=\'bgImg\' src=\'assets/images/profileBg.jpeg\'/><!-- displays our generic image-->\n</div>\n</div>\n<ion-list *ngIf=\'trips\'  inset class=\'list\'><!--list of user events starts here-->\n   <ion-item (click)=\'viewTrip(trip)\' *ngFor="let trip of trips"><!--ion-items populate using *ngFor-->\n    <div item-left >\n     <h3 class=\'day\'>{{trip.till}}</h3><!--shows the amount of time till the trip-->\n     <p class=\'type\'>{{trip.amnt}}</p><!--shows the amount of money the trip will cost-->\n     </div>\n        <ion-avatar *ngFor=\'let image of trip.images\' class=\'tripImg\' item-left><!-- Shows the images of those who are attending the trip-->\n            <img src=\'{{image}}\'/>\n          </ion-avatar>\n     <div class=\'myTrip\' item-left><!--wrapper that contains trip location and amount saved-->\n       <p class=\'tripName\'>{{trip.location}}</p>\n       <p>$500 saved.</p>\n     </div>\n     <div class=\'more-circle\' item-right><!-- more circle that shows on the right-->\n     </div>\n   </ion-item>\n   <ion-item *ngIf=\'trips.length <= 0\'>\n      <h2 class=\'tripName\'>No events to display at this time.</h2><!--if there are no events to show-->\n    </ion-item>\n</ion-list>\n<ion-list>\n</ion-list>\n</ion-content>\n\n'/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/home/home.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ModalController */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"],
+        __WEBPACK_IMPORTED_MODULE_5__providers_data_data__["a" /* DataProvider */], __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */]])
+], HomePage);
+
+//# sourceMappingURL=home.js.map
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 
 /***/ }),
 
@@ -2232,6 +2403,15 @@ TabsPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase__);
+<<<<<<< HEAD
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_image_image__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_data_data__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_add_members_add_members__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ion2_calendar__ = __webpack_require__(326);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2326,12 +2506,29 @@ var DataProvider = (function () {
     };
     return DataProvider;
 }());
+<<<<<<< HEAD
 DataProvider = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]])
 ], DataProvider);
 
 //# sourceMappingURL=data.js.map
+=======
+__decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Content */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Content */])
+], AddTripPage.prototype, "content", void 0);
+AddTripPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'page-add-trip',template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/add-trip/add-trip.html"*/'<!--\nDEV: Monique Nichols\nProduct: Nautical\nFile: Add-Trip.html (Add Trip page)\nLast Modified: 12/18/2017\n-->\n<!--\n This page controls the add trip page where users can add trips\n-->\n <!--This is the navbar that shows when a user has not triggered a scroll event.-->\n<ion-header  [hidden]="!showToolbar">\n      <ion-navbar [class.show-background]="showToolbar"><!--show-background class is in app.scss -->\n        <!--navbar buttons-->\n              <ion-buttons start>\n                  <button ion-button tappable (click)="close()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button><!-- class menuButton is in the app.scss file -->\n                </ion-buttons>\n      </ion-navbar>\n    </ion-header>\n     <!--This is the navbar that shows when a user has triggered a scroll event.-->\n    <ion-header  [hidden]="showToolbar">\n        <ion-navbar class=\'tool\'><!--tool class is in the app.scss file-->\n            <!--navbar buttons-->\n           <ion-buttons start>\n            <button ion-button tappable (click)="close()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button><!-- class menuButton is in the app.scss file -->\n          </ion-buttons>\n        </ion-navbar>\n      </ion-header>\n     <!--page content is here--> \n  <ion-content class="content" (ionScroll)="onScroll($event)" [class.transition]="transition">\n  <div class=\'img\' tappable (click)=\'setGroupPhoto()\'>\n  <ion-icon color=\'white\' name=\'ios-camera-outline\'>\n  </ion-icon>\n  </div>\n  <div class=\'wrapper\'> \n    <div class=\'bg\'>\n      <div class=\'wrapper2\'>\n        <h1 class=\'profileName\'>Create Trip</h1>\n      </div>\n    <img *ngIf=\'group\' class=\'bgImg\' src=\'{{group.img}}\'/>\n  </div>\n  </div>\n  <ion-list inset class=\'list\'>\n    <ion-item>\n        <ion-input text-center placeholder=\'Location\' [(ngModel)]=\'location\' type="text" style="text-align:center; color:black;"></ion-input>\n    </ion-item>\n    <ion-item tappable (click)=\'dateRange()\' text-center class=\'addPeople\'>\n        <div *ngIf=\'!start\'>Start Date</div>\n        <div *ngIf=\'start\'>{{start | DayFormat}}</div>\n    </ion-item>\n    <ion-item tappable text-center class=\'addPeople\'>\n        <div *ngIf=\'!end\'>End Date</div>\n        <div *ngIf=\'end\'>{{end | DayFormat}}</div>\n    </ion-item>\n    <ion-item>\n        <input currencyMask placeholder=\'Total Cost\' [(ngModel)]=\'cost\' />\n    <!-- <ion-input text-center placeholder=\'Total Cost\' [(ngModel)]=\'cost\' type="text" style="text-align:center"></ion-input>-->\n    </ion-item>\n    <ion-item (click)=\'addPeople()\' text-center class=\'addPeople\'>\n        Add People\n    </ion-item>\n    <div *ngIf=\'members.length>0\'>\n    <ion-item tappable *ngFor="let member of members">\n            <ion-avatar item-left><img src=\'{{member.img}}\'/></ion-avatar>\n            <h3>{{member.name}}</h3>\n            <p>@{{member.username}}</p>\n            <button (click)=\'removeMember(member)\' item-right ion-button clear color=\'danger\'><ion-icon name=\'ios-close-circle-outline\'></ion-icon></button>\n        </ion-item>\n    </div>  \n    <button class=\'submit\' ion-button  block color=\'primary\'(click)=\'submit()\'>DONE</button>\n          </ion-list>\n  </ion-content>\n'/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/add-trip/add-trip.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["v" /* ViewController */], __WEBPACK_IMPORTED_MODULE_6__providers_data_data__["a" /* DataProvider */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera__["a" /* Camera */],
+        __WEBPACK_IMPORTED_MODULE_5__providers_image_image__["a" /* ImageProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ModalController */], __WEBPACK_IMPORTED_MODULE_8_ion2_calendar__["a" /* CalendarController */]])
+], AddTripPage);
+
+//# sourceMappingURL=add-trip.js.map
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 
 /***/ }),
 
@@ -2752,7 +2949,11 @@ __decorate([
 ], AddTripPage.prototype, "content", void 0);
 AddTripPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-add-trip',template:/*ion-inline-start:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/add-trip/add-trip.html"*/'<!--\nDEV: Monique Nichols\nProduct: Nautical\nFile: Add-Trip.html (Add Trip page)\nLast Modified: 12/18/2017\n-->\n<!--\n This page controls the add trip page where users can add trips\n-->\n <!--This is the navbar that shows when a user has not triggered a scroll event.-->\n<ion-header  [hidden]="!showToolbar">\n      <ion-navbar [class.show-background]="showToolbar"><!--show-background class is in app.scss -->\n        <!--navbar buttons-->\n              <ion-buttons start>\n                  <button ion-button tappable (click)="close()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button><!-- class menuButton is in the app.scss file -->\n                </ion-buttons>\n      </ion-navbar>\n    </ion-header>\n     <!--This is the navbar that shows when a user has triggered a scroll event.-->\n    <ion-header  [hidden]="showToolbar">\n        <ion-navbar class=\'tool\'><!--tool class is in the app.scss file-->\n            <!--navbar buttons-->\n           <ion-buttons start>\n            <button ion-button tappable (click)="close()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button><!-- class menuButton is in the app.scss file -->\n          </ion-buttons>\n        </ion-navbar>\n      </ion-header>\n     <!--page content is here--> \n  <ion-content class="content" (ionScroll)="onScroll($event)" [class.transition]="transition">\n  <div class=\'img\' tappable (click)=\'setGroupPhoto()\'>\n  <ion-icon color=\'white\' name=\'ios-camera-outline\'>\n  </ion-icon>\n  </div>\n  <div class=\'wrapper\'> \n    <div class=\'bg\'>\n      <div class=\'wrapper2\'>\n        <h1 class=\'profileName\'>Create Trip</h1>\n      </div>\n    <img *ngIf=\'group\' class=\'bgImg\' src=\'{{group.img}}\'/>\n  </div>\n  </div>\n  <ion-list inset class=\'list\'>\n    <ion-item>\n        <ion-input text-center placeholder=\'Location\' [(ngModel)]=\'location\' type="text" style="text-align:center; color:black;"></ion-input>\n    </ion-item>\n    <ion-item tappable (click)=\'dateRange()\' text-center class=\'addPeople\'>\n        <div *ngIf=\'!start\'>Start Date</div>\n        <div *ngIf=\'start\'>{{start | DayFormat}}</div>\n    </ion-item>\n    <ion-item tappable text-center class=\'addPeople\'>\n        <div *ngIf=\'!end\'>End Date</div>\n        <div *ngIf=\'end\'>{{end | DayFormat}}</div>\n    </ion-item>\n    <ion-item>\n        <input currencyMask placeholder=\'Total Cost\' [(ngModel)]=\'cost\' />\n    <!-- <ion-input text-center placeholder=\'Total Cost\' [(ngModel)]=\'cost\' type="text" style="text-align:center"></ion-input>-->\n    </ion-item>\n    <ion-item (click)=\'addPeople()\' text-center class=\'addPeople\'>\n        Add People\n    </ion-item>\n    <div *ngIf=\'members.length>0\'>\n    <ion-item tappable *ngFor="let member of members">\n            <ion-avatar item-left><img src=\'{{member.img}}\'/></ion-avatar>\n            <h3>{{member.name}}</h3>\n            <p>@{{member.username}}</p>\n            <button (click)=\'removeMember(member)\' item-right ion-button clear color=\'danger\'><ion-icon name=\'ios-close-circle-outline\'></ion-icon></button>\n        </ion-item>\n    </div>  \n    <button class=\'submit\' ion-button  block color=\'primary\'(click)=\'submit()\'>DONE</button>\n          </ion-list>\n  </ion-content>\n'/*ion-inline-end:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/add-trip/add-trip.html"*/
+=======
+        selector: 'page-agenda',template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/agenda/agenda.html"*/'<!--\n  Generated template for the AgendaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header  [hidden]="!showToolbar">\n  \n    <ion-navbar [class.show-background]="showToolbar">\n        <ion-buttons start>\n            <button ion-button tappable (click)="menu()"><ion-icon color=\'light\' class=\'menuButton\' name="md-menu" item-right></ion-icon></button>\n          </ion-buttons>\n          <ion-buttons start>\n              <button class=\'profileTxt\' ion-button>Agenda</button>\n            </ion-buttons>\n            <ion-buttons end>\n                <button ion-button tappable (click)="menu()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-more-outline" item-right></ion-icon></button>\n              </ion-buttons>\n    </ion-navbar>\n  \n  </ion-header>\n  <ion-header  [hidden]="showToolbar">\n    \n      <ion-navbar class=\'tool\'>\n         <ion-buttons start>\n          <button ion-button tappable (click)="menu()"><ion-icon color=\'light\' class=\'menuButton\' name="md-menu" item-right></ion-icon></button>\n        </ion-buttons>\n        <ion-buttons start>\n            <button class=\'profileTxt\' ion-button>Agenda</button>\n          </ion-buttons>\n          <ion-buttons end>\n              <button ion-button tappable (click)="menu()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-more-outline" item-right></ion-icon></button>\n            </ion-buttons>\n          \n       \n      </ion-navbar>\n    \n    </ion-header>\n\n\n    <ion-content class="content"\n    (ionScroll)="onScroll($event)"\n    [class.transition]="transition">\n    <div>\n        <div class=\'img\' tappable (click)=\'addEvent()\'>\n            <ion-icon color=\'white\' name=\'md-add\'>\n            </ion-icon>\n            \n            </div>\n    <div class=\'wrapper\'> \n        <div class=\'bg\'>\n            \n          <div class=\'wrapper2\'>\n              <ion-grid class=\'halfway\'>\n                  <ion-row>\n                      <ion-col>\n                          <button ion-button clear color=\'light\' icon-only>\n                              <ion-icon name="ios-arrow-back-outline"></ion-icon>\n                            </button>\n                      </ion-col>\n                      <ion-col>\n                          <h1 class=\'profileName\'>{{trip.location}}</h1>\n                      </ion-col>\n                      <ion-col>\n                          <button clear ion-button color=\'light\' icon-only>\n                              <ion-icon name="ios-arrow-forward-outline"></ion-icon>\n                            </button>\n                      </ion-col>\n                    </ion-row>\n                  <ion-row>\n                    <ion-col>\n                        <p class=\'userName\'>{{trip.header}}</p>\n                    </ion-col>\n                  </ion-row>\n                </ion-grid>\n             <!-- <h1 class=\'profileName\'>{{trip.location}}</h1>\n              <p class=\'userName\'>{{trip.header}}</p>-->\n             <!-- <div class=\'profImage\'>\n                </div>-->\n           \n          </div>\n        <img class=\'bgImg\' src=\'{{trip.img}}\'/>\n      </div>\n      </div>\n      <ion-list no-lines inset class=\'list\'>\n        <ion-item>\n          <h4>No events to display at this time.</h4>\n        </ion-item>\n        <ion-item>\n          <div class=\'timeLine\' item-left>\n          </div>\n        </ion-item>\n        <ion-item>\n          </ion-item>\n      </ion-list>\n          \n    </div>\n  \n    </ion-content>\n'/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/agenda/agenda.html"*/,
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
     }),
     __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["w" /* ViewController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["w" /* ViewController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_6__providers_data_data__["a" /* DataProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_data_data__["a" /* DataProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera__["a" /* Camera */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_camera__["a" /* Camera */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_5__providers_image_image__["a" /* ImageProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_image_image__["a" /* ImageProvider */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */]) === "function" && _j || Object, typeof (_k = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _k || Object, typeof (_l = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ModalController */]) === "function" && _l || Object, typeof (_m = typeof __WEBPACK_IMPORTED_MODULE_9_ion2_calendar__["a" /* CalendarController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_9_ion2_calendar__["a" /* CalendarController */]) === "function" && _m || Object, typeof (_o = typeof __WEBPACK_IMPORTED_MODULE_7__providers_alert_alert__["a" /* AlertProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__providers_alert_alert__["a" /* AlertProvider */]) === "function" && _o || Object])
 ], AddTripPage);
@@ -2882,7 +3083,11 @@ __decorate([
 ], OverviewPage.prototype, "content", void 0);
 OverviewPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-overview',template:/*ion-inline-start:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/overview/overview.html"*/'<!--\n  Generated template for the AgendaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header [hidden]="!showToolbar">\n  \n  <ion-navbar hideBackButton [class.show-background]="showToolbar">\n      <ion-buttons start>\n          <button ion-button tappable (click)="back()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-arrow-back" item-right></ion-icon></button>\n        </ion-buttons>\n        <ion-buttons start>\n            <button class=\'profileTxt\' ion-button>{{trip.location}}</button>\n          </ion-buttons>\n          <ion-buttons end>\n              <button ion-button tappable (click)="menu()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-more-outline" item-right></ion-icon></button>\n            </ion-buttons>\n  </ion-navbar>\n</ion-header>\n<ion-header hidebackbutton [hidden]="showToolbar">\n    <ion-navbar hideBackButton class=\'tool\'>\n       <ion-buttons start>\n        <button ion-button tappable (click)="back()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-arrow-back" item-right></ion-icon></button>\n      </ion-buttons>\n      <ion-buttons start>\n          <button class=\'profileTxt\' ion-button>{{trip.location}}</button>\n        </ion-buttons>\n        <ion-buttons end>\n            <button ion-button tappable (click)="menu()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-more-outline" item-right></ion-icon></button>\n          </ion-buttons>\n    </ion-navbar>\n  </ion-header>\n\n<ion-content  class="content"\n(ionScroll)="onScroll($event)"\n[class.transition]="transition">\n  <div>\n<div class=\'img\' tappable (click)=\'addEvent()\'>\n     <h2>$+</h2>\n        </div>\n<div class=\'wrapper\'> \n    <div class=\'bg\'>\n      <div class=\'wrapper2\'>\n          <ion-grid class=\'halfway\'>\n              <ion-row>\n                  <ion-col>\n                      <h1 class=\'profileName\'>Budget</h1>\n                  </ion-col>\n                </ion-row>\n              <ion-row>\n                <ion-col>\n                    <p class=\'userName\'>Total: {{trip.cost}} USD</p>\n                </ion-col>\n              </ion-row>\n            </ion-grid>\n      </div>\n      <img class=\'bgImg\' src=\'{{trip.img}}\'/>\n    </div>\n</div>\n<ion-segment mode=\'md\' [(ngModel)]="view" color="primary" (ionChange)="segmentChanged($event)">\n    <ion-segment-button value="0">\n      Overview\n    </ion-segment-button>\n    <ion-segment-button value="1">\n      Make Payment\n    </ion-segment-button>\n    <ion-segment-button value="2">\n      History\n      </ion-segment-button>\n  </ion-segment>\n  <ion-list-header no-lines style="text-align:center;">\n      <h2>{{this.remaining}}</h2>\n  </ion-list-header>\n  <ion-item no-lines style=\'padding:0; margin:0;\'>\n      <canvas #doughnutCanvas>\n      </canvas>\n  </ion-item>\n  <ion-list-header no-lines mode=\'md\' center style=\'text-align:center;\'>\n    <h2>Categories</h2>\n  </ion-list-header>\n            <canvas #doughnutCanvasAdventure>\n              </canvas>\n <ion-row>\n   <ion-item class=\'alert\' text-wrap no-lines *ngIf=\'remaining == trip.cost\'>\n   Looks like you haven\'t allocated any funds yet. Add an event to your itenerary here!\n   </ion-item>\n </ion-row>\n <ion-list-header no-lines mode=\'md\'>\n  <h2 item-left>Itenerary Overview</h2>\n  <button item-right ion-button clear item-right icon-only (click)=\'addEvent()\'>\n      <ion-icon color=\'primary\' name=\'add-circle\'></ion-icon>\n  </button>\n </ion-list-header>\n <ion-item no-lines>\n   <p style=\'text-align:center\' *ngIf=\'!trip.events || trip.events.length<=0\'>No events to show at this time.</p>\n </ion-item>\n</div>\n</ion-content>\n'/*ion-inline-end:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/overview/overview.html"*/,
+=======
+        selector: 'page-add-event',template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/add-event/add-event.html"*/'<ion-header  [hidden]="!showToolbar">\n    \n      <ion-navbar [class.show-background]="showToolbar">\n         \n              <ion-buttons start>\n                  <button ion-button tappable (click)="close()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button>\n                </ion-buttons>\n      </ion-navbar>\n    \n    </ion-header>\n  \n    <ion-header  [hidden]="showToolbar">\n      \n        <ion-navbar class=\'tool\'>\n           <ion-buttons start>\n            <button ion-button tappable (click)="close()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button>\n          </ion-buttons>\n         \n            \n         \n        </ion-navbar>\n      \n      </ion-header>\n  \n  \n  <ion-content class="content"\n  (ionScroll)="onScroll($event)"\n  [class.transition]="transition">\n  <div>\n  <div class=\'img\' tappable (click)=\'setGroupPhoto()\'>\n  <ion-icon color=\'white\' name=\'ios-camera-outline\'>\n  </ion-icon>\n  \n  </div>\n  \n  <div class=\'wrapper\'> \n    <div class=\'bg\'>\n        \n      <div class=\'wrapper2\'>\n        <h1 class=\'profileName\'>Create Activity</h1>\n          <!--<p class=\'userName\'>@{{user.username}}</p>-->\n    \n       \n      </div>\n    <img *ngIf=\'group\' class=\'bgImg\' src=\'{{group.img}}\'/>\n  </div>\n  </div>\n \n  <ion-list inset class=\'list\'>\n    <ion-item>\n        <ion-input text-center placeholder=\'Title\' [(ngModel)]=\'title\' type="text" style="text-align:center; color:black;"></ion-input>\n    </ion-item>\n    <ion-item tappable (click)=\'dateRange()\' text-center class=\'addPeople\'>\n        <div *ngIf=\'!start\'>Date</div>\n        <div *ngIf=\'start\'>{{start | DayFormat}}</div>\n    </ion-item>\n  <ion-item>\n    <h4 item-left>Start</h4>\n    <h4 item-right>End</h4>\n  </ion-item>\n  <ion-item>\n      <ion-input text-center placeholder=\'Details\' [(ngModel)]=\'details\' type="text" style="text-align:center; color:black;"></ion-input>\n  </ion-item>\n    <ion-item>\n        <input currencyMask placeholder=\'Budget Amount\' [(ngModel)]=\'cost\' />\n    <!-- <ion-input text-center placeholder=\'Total Cost\' [(ngModel)]=\'cost\' type="text" style="text-align:center"></ion-input>-->\n    </ion-item>\n   \n                \n    <button class=\'submit\' ion-button  block color=\'primary\'(click)=\'submit()\'>DONE</button>\n          </ion-list>\n         \n  </div>\n  </ion-content>\n'/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/add-event/add-event.html"*/,
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ModalController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _g || Object])
 ], OverviewPage);
@@ -2898,6 +3103,7 @@ var _a, _b, _c, _d, _e, _f, _g;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccountPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_logout_logout__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(22);
@@ -2911,6 +3117,21 @@ var _a, _b, _c, _d, _e, _f, _g;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_moment__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angularfire2_database__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_firebase__ = __webpack_require__(21);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_logout_logout__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_data_data__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__settings_settings__ = __webpack_require__(447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__feedback_feedback__ = __webpack_require__(448);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_social_sharing__ = __webpack_require__(450);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_image_image__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_alert_alert__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_moment__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10_moment__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_angularfire2_database__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_firebase__ = __webpack_require__(18);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3231,7 +3452,11 @@ __decorate([
 ], AccountPage.prototype, "content", void 0);
 AccountPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-account',template:/*ion-inline-start:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/account/account.html"*/'<!--\nDEV: Monique Nichols\nProduct: Nautical\nFile: Account.html (Account page)\nLast Modified: 12/18/2017\n-->\n<!--\n This page controls the profile or account view\n-->\n  <!--This is the navbar that shows when a user has triggered a scroll event.-->\n<ion-header  [hidden]="!showToolbar">\n    <ion-navbar [class.show-background]="showToolbar"> <!--class show-background is in app.scss-->\n      <!--NavButtons start here -->\n        <ion-buttons start>\n            <button ion-button><ion-icon color=\'light\' class=\'menuButton\' name="md-menu" item-right></ion-icon></button><!-- Class menuButton is in app.scss-->\n          </ion-buttons>\n          <ion-buttons start>\n              <button class=\'profileTxt\' ion-button>Profile</button><!--class profileTxt is in app.scss-->\n            </ion-buttons>\n            <ion-buttons end>\n                <button ion-button tappable (click)="menu()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-more-outline" item-right></ion-icon></button><!-- Class menuButton is in app.scss-->\n              </ion-buttons>\n              <!--NavButtons end here -->\n    </ion-navbar>\n  </ion-header>\n  <!--This is the navbar that shows when a user has not triggered a scroll event.-->\n  <ion-header  [hidden]="showToolbar">\n      <ion-navbar class=\'tool\'><!--class tool is in app.scss-->\n        <!--NavButtons start here -->\n         <ion-buttons start>\n          <button ion-button><ion-icon color=\'light\' class=\'menuButton\' name="md-menu" item-right></ion-icon></button><!-- Class menuButton is in app.scss-->\n        </ion-buttons>\n        <ion-buttons start>\n            <button class=\'profileTxt\' ion-button>Profile</button><!--class profileTxt is in app.scss-->\n          </ion-buttons>\n          <ion-buttons end>\n              <button ion-button tappable (click)="menu()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-more-outline" item-right></ion-icon></button><!-- Class menuButton is in app.scss-->\n            </ion-buttons>\n            <!--NavButtons end here -->\n      </ion-navbar>\n    </ion-header>\n<!--Here is the content of the account.html page -->\n<ion-content class="content" (ionScroll)="onScroll($event)" [class.transition]="transition">\n<div *ngIf=\'user\'><!--Content Only shows if there is a user-->\n    <div class=\'img\'><!--Shows user\'s image-->\n        <img class=\'profileImg\' src={{user.img}}/>\n    </div>\n<div class=\'wrapper\'> \n    <div class=\'bg\'>\n      <div class=\'wrapper2\'>\n          <h1 class=\'profileName\'>{{user.name}}</h1><!--Shows user\'s name-->\n          <p class=\'userName\'>@{{user.username}}</p><!--Shows user\'s username-->\n      </div>\n    <img class=\'bgImg\' src=\'assets/images/profileBg.jpeg\'/><!--Shows generic bg img-->\n  </div>\n  </div>\n  <ion-list inset class=\'list\'><!--Shows all user options -->\n      <ion-item><!--item showing the trips taken in the past and upcoming trips-->\n        <div class=\'row\'><!-- creates grid for our divs -->\n        <div class=\'col col-50\'><!-- Places our past trips in a column of width 50% -->\n        <div item-left class=\'itemHeader\'><!--wraps our past trips content -->\n          <h3 class =\'listHeader\'>{{past.length}}</h3><!-- displays number of past trips-->\n          <p lass=\'subtitle\'>Trips Taken</p>\n         <div class=\'wrapper3\'><div class=\'underLine\'></div></div><!--Colored underline -->\n        </div>\n      </div>\n      <div class=\'col col-50\'><!-- Places our future trips in a column of width 50% -->\n        <div item-left class=\'itemHeader\'><!--wraps our future trips content -->\n            <h3 class =\'listHeader\'>{{upcoming.length}}</h3><!-- displays number of future trips-->\n            <p class=\'subtitle\'>Upcoming Trips</p>\n           <div class=\'wrapper3\'><div class=\'underLine2\'></div></div><!--Colored underline -->\n          </div>\n        </div>\n        </div>\n        </ion-item>\n      <ion-item  tappable (click)=\'share()\'><!--Click to show share options -->\n        <h3 class =\'listTxt\' item-left> Invite friends</h3>\n        <ion-icon color=\'gray\' name =\'ios-person-add-outline\'item-right></ion-icon>\n      </ion-item>\n        <ion-item tappable (click)=\'goSettings()\'><!--Click to go to settings page -->\n          <h3 class =\'listTxt\' item-left> Settings</h3>\n          <ion-icon color=\'gray\' name =\'ios-settings-outline\'item-right></ion-icon>\n        </ion-item> \n          <ion-item tappable (click)=\'goFeedback()\'><!--Click to go to feedback page -->\n            <h3 class =\'listTxt\' item-left> Support & Feedback</h3>\n            <ion-icon color=\'gray\' name =\'ios-ribbon-outline\'item-right></ion-icon>\n          </ion-item>\n          <ion-item tappable (click)=\'logout()\'><!--Click to signout -->\n              <h3 class =\'listTxt\' item-left > Sign Out</h3>\n              <ion-icon color=\'gray\' name =\'ios-exit-outline\'item-right></ion-icon>\n            </ion-item>\n            <ion-item tappable (click)=\'more()\'><!--Click to show more options-->\n                <h3 class =\'listTxt\' item-left> More</h3>\n                <ion-icon color=\'gray\' name =\'ios-more-outline\'item-right></ion-icon>\n              </ion-item>\n          </ion-list>\n</div>\n</ion-content>'/*ion-inline-end:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/account/account.html"*/,
+=======
+        selector: 'page-account',template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/account/account.html"*/'<!--\nDEV: Monique Nichols\nProduct: Nautical\nFile: Account.html (Account page)\nLast Modified: 12/18/2017\n-->\n<!--\n This page controls the profile or account view\n-->\n  <!--This is the navbar that shows when a user has triggered a scroll event.-->\n<ion-header  [hidden]="!showToolbar">\n    <ion-navbar [class.show-background]="showToolbar"> <!--class show-background is in app.scss-->\n      <!--NavButtons start here -->\n        <ion-buttons start>\n            <button ion-button><ion-icon color=\'light\' class=\'menuButton\' name="md-menu" item-right></ion-icon></button><!-- Class menuButton is in app.scss-->\n          </ion-buttons>\n          <ion-buttons start>\n              <button class=\'profileTxt\' ion-button>Profile</button><!--class profileTxt is in app.scss-->\n            </ion-buttons>\n            <ion-buttons end>\n                <button ion-button tappable (click)="menu()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-more-outline" item-right></ion-icon></button><!-- Class menuButton is in app.scss-->\n              </ion-buttons>\n              <!--NavButtons end here -->\n    </ion-navbar>\n  </ion-header>\n  <!--This is the navbar that shows when a user has not triggered a scroll event.-->\n  <ion-header  [hidden]="showToolbar">\n      <ion-navbar class=\'tool\'><!--class tool is in app.scss-->\n        <!--NavButtons start here -->\n         <ion-buttons start>\n          <button ion-button><ion-icon color=\'light\' class=\'menuButton\' name="md-menu" item-right></ion-icon></button><!-- Class menuButton is in app.scss-->\n        </ion-buttons>\n        <ion-buttons start>\n            <button class=\'profileTxt\' ion-button>Profile</button><!--class profileTxt is in app.scss-->\n          </ion-buttons>\n          <ion-buttons end>\n              <button ion-button tappable (click)="menu()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-more-outline" item-right></ion-icon></button><!-- Class menuButton is in app.scss-->\n            </ion-buttons>\n            <!--NavButtons end here -->\n      </ion-navbar>\n    </ion-header>\n<!--Here is the content of the account.html page -->\n<ion-content class="content" (ionScroll)="onScroll($event)" [class.transition]="transition">\n<div *ngIf=\'user\'><!--Content Only shows if there is a user-->\n    <div class=\'img\'><!--Shows user\'s image-->\n        <img class=\'profileImg\' src={{user.img}}/>\n    </div>\n<div class=\'wrapper\'> \n    <div class=\'bg\'>\n      <div class=\'wrapper2\'>\n          <h1 class=\'profileName\'>{{user.name}}</h1><!--Shows user\'s name-->\n          <p class=\'userName\'>@{{user.username}}</p><!--Shows user\'s username-->\n      </div>\n    <img class=\'bgImg\' src=\'assets/images/profileBg.jpeg\'/><!--Shows generic bg img-->\n  </div>\n  </div>\n  <ion-list inset class=\'list\'><!--Shows all user options -->\n      <ion-item><!--item showing the trips taken in the past and upcoming trips-->\n        <div class=\'row\'><!-- creates grid for our divs -->\n        <div class=\'col col-50\'><!-- Places our past trips in a column of width 50% -->\n        <div item-left class=\'itemHeader\'><!--wraps our past trips content -->\n          <h3 class =\'listHeader\'>{{past.length}}</h3><!-- displays number of past trips-->\n          <p lass=\'subtitle\'>Trips Taken</p>\n         <div class=\'wrapper3\'><div class=\'underLine\'></div></div><!--Colored underline -->\n        </div>\n      </div>\n      <div class=\'col col-50\'><!-- Places our future trips in a column of width 50% -->\n        <div item-left class=\'itemHeader\'><!--wraps our future trips content -->\n            <h3 class =\'listHeader\'>{{upcoming.length}}</h3><!-- displays number of future trips-->\n            <p class=\'subtitle\'>Upcoming Trips</p>\n           <div class=\'wrapper3\'><div class=\'underLine2\'></div></div><!--Colored underline -->\n          </div>\n        </div>\n        </div>\n        </ion-item>\n      <ion-item  tappable (click)=\'share()\'><!--Click to show share options -->\n        <h3 class =\'listTxt\' item-left> Invite friends</h3>\n        <ion-icon color=\'gray\' name =\'ios-person-add-outline\'item-right></ion-icon>\n      </ion-item>\n        <ion-item tappable (click)=\'goSettings()\'><!--Click to go to settings page -->\n          <h3 class =\'listTxt\' item-left> Settings</h3>\n          <ion-icon color=\'gray\' name =\'ios-settings-outline\'item-right></ion-icon>\n        </ion-item> \n          <ion-item tappable (click)=\'goFeedback()\'><!--Click to go to feedback page -->\n            <h3 class =\'listTxt\' item-left> Support & Feedback</h3>\n            <ion-icon color=\'gray\' name =\'ios-ribbon-outline\'item-right></ion-icon>\n          </ion-item>\n          <ion-item tappable (click)=\'logout()\'><!--Click to signout -->\n              <h3 class =\'listTxt\' item-left > Sign Out</h3>\n              <ion-icon color=\'gray\' name =\'ios-exit-outline\'item-right></ion-icon>\n            </ion-item>\n            <ion-item tappable (click)=\'more()\'><!--Click to show more options-->\n                <h3 class =\'listTxt\' item-left> More</h3>\n                <ion-icon color=\'gray\' name =\'ios-more-outline\'item-right></ion-icon>\n              </ion-item>\n          </ion-list>\n</div>\n</ion-content>'/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/account/account.html"*/,
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"], __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */],
         __WEBPACK_IMPORTED_MODULE_4__providers_data_data__["a" /* DataProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2__providers_logout_logout__["a" /* LogoutProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ModalController */],
@@ -3248,6 +3473,7 @@ AccountPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SettingsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_logout_logout__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(22);
@@ -3258,6 +3484,18 @@ AccountPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angularfire2_database__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__validator__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_take__ = __webpack_require__(679);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_logout_logout__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_data_data__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_angularfire2_database__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__validator__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_take__ = __webpack_require__(622);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_take___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_rxjs_add_operator_take__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__login__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__providers_image_image__ = __webpack_require__(67);
@@ -3691,11 +3929,19 @@ __decorate([
 ], SettingsPage.prototype, "content", void 0);
 SettingsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-settings',template:/*ion-inline-start:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/settings/settings.html"*/'<!--\nDEV: Monique Nichols\nProduct: Nautical\nFile: Settings.html (Settings page)\nLast Modified: 12/18/2017\n-->\n<!--\n This page controls how users are able edit their account information\n-->\n  <!--This is the navbar that shows when a user has triggered a scroll event.-->\n<ion-header  [hidden]="!showToolbar">\n    <ion-navbar [class.show-background]="showToolbar"><!--class show-background in app.scss-->\n          <!--navbar buttons-->\n        <ion-buttons start>\n            <button ion-button><ion-icon color=\'light\' class=\'menuButton\' name="md-menu" item-right></ion-icon></button><!--class menuButton in app.scss-->\n          </ion-buttons>\n          <ion-buttons start>\n              <button class=\'profileTxt\' ion-button>Settings</button><!--Class profileTxt is in app.scss-->\n            </ion-buttons>\n            <ion-buttons end>\n                <button ion-button tappable (click)="close()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button><!--class menuButton in app.scss-->\n              </ion-buttons>\n    </ion-navbar>\n  </ion-header>\n  <!--This is the navbar that shows when a user has not triggered a scroll event.-->\n  <ion-header  [hidden]="showToolbar">\n      <ion-navbar class=\'tool\'><!--class tool in app.scss-->\n        <!--navbar buttons-->\n         <ion-buttons start>\n          <button ion-button><ion-icon color=\'light\' class=\'menuButton\' name="md-menu" item-right></ion-icon></button><!--class menuButton in app.scss-->\n        </ion-buttons>\n        <ion-buttons start>\n            <button class=\'profileTxt\' ion-button>Settings</button><!--Class profileTxt is in app.scss-->\n          </ion-buttons>\n          <ion-buttons end>\n              <button ion-button tappable (click)="close()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button><!--class menuButton in app.scss-->\n            </ion-buttons>\n      </ion-navbar>\n    </ion-header>\n<!-- this is the page content -->\n<ion-content class="content" (ionScroll)="onScroll($event)" [class.transition]="transition">\n<!-- this div displays if there is a user-->\n<div *ngIf=\'user\'>\n<div class=\'img\'>\n<img class=\'profileImg\' src={{user.img}} tappable (click)=\'setPhoto()\'/><!--displays user\'s image-->\n<button color=\'green\' class=\'addPic\' ion-button icon-only round tappable (click)=\'setPhoto()\'><ion-icon name=\'ios-camera-outline\'></ion-icon></button><!--displays set photo fab-->\n</div>\n<div class=\'wrapper\'> \n  <div class=\'bg\'>   \n    <div class=\'wrapper2\'>\n        <h1 class=\'profileName\'>{{user.name}}</h1><!-- user name shown here-->\n        <p class=\'userName\'>@{{user.username}}</p><!-- username shown here-->\n    </div>\n  <img class=\'bgImg\' src=\'assets/images/profileBg.jpeg\'/><!-- generic bg image shown here-->\n</div>\n</div>\n<!--Displays list of user options -->\n<ion-list inset class=\'list\'>\n    <!--shows list header-->\n    <ion-item class=\'item\'>\n        <h3 class =\'listHeader\'> Edit Profile</h3>\n       <div class=\'wrapper3\'><div class=\'underLine\'></div></div>\n      </ion-item>\n       <!--shows change name option-->\n    <ion-item tappable (click)=\'setName()\' class=\'item\'>\n      <h3 class =\'listTxt\'> Name</h3>\n     <h3 class=\'listTxt2\'>{{user.name}}</h3>\n    </ion-item>\n     <!--shows change email option if user provider is firebase-->\n    <ion-item tappable *ngIf="user.provider==\'Firebase\'" (click)=\'setEmail()\' class=\'item\'>\n        <h3 class =\'listTxt\'>Email</h3>\n       <h3 class=\'listTxt2\'>{{user.email}}</h3>\n      </ion-item>\n      <!--shows change username option-->\n      <ion-item tappable (click)=\'setUsername()\' class=\'item\'>\n          <h3 class =\'listTxt\'> Username</h3>\n         <h3 class=\'listTxt2\'>@{{user.username}}</h3>\n        </ion-item>\n        <!--shows change phone number option-->\n          <ion-item tappable (click)=\'setPhone()\' class=\'item\'>\n              <h3 class =\'listTxt\'> Phone</h3>\n             <h3 class=\'listTxt2\'>+1-{{user.phone}}</h3>\n            </ion-item>\n            <!--shows change password option if user provider is firebase-->\n            <ion-item *ngIf="user.provider==\'Firebase\'" tappable (click)=\'setPassword()\' class=\'item\'>\n                <h3 class =\'listTxt\'> Password</h3>\n               <h3 class=\'listTxt2\'>{{user.Password}}</h3>\n              </ion-item>\n        </ion-list>\n</div>\n</ion-content>\n'/*ion-inline-end:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/settings/settings.html"*/,
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"], __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */],
         __WEBPACK_IMPORTED_MODULE_4__providers_data_data__["a" /* DataProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2__providers_logout_logout__["a" /* LogoutProvider */],
         __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */], __WEBPACK_IMPORTED_MODULE_7_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["w" /* ViewController */],
+=======
+        selector: 'page-settings',template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/settings/settings.html"*/'<!--\nDEV: Monique Nichols\nProduct: Nautical\nFile: Settings.html (Settings page)\nLast Modified: 12/18/2017\n-->\n<!--\n This page controls how users are able edit their account information\n-->\n  <!--This is the navbar that shows when a user has triggered a scroll event.-->\n<ion-header  [hidden]="!showToolbar">\n    <ion-navbar [class.show-background]="showToolbar"><!--class show-background in app.scss-->\n          <!--navbar buttons-->\n        <ion-buttons start>\n            <button ion-button><ion-icon color=\'light\' class=\'menuButton\' name="md-menu" item-right></ion-icon></button><!--class menuButton in app.scss-->\n          </ion-buttons>\n          <ion-buttons start>\n              <button class=\'profileTxt\' ion-button>Settings</button><!--Class profileTxt is in app.scss-->\n            </ion-buttons>\n            <ion-buttons end>\n                <button ion-button tappable (click)="close()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button><!--class menuButton in app.scss-->\n              </ion-buttons>\n    </ion-navbar>\n  </ion-header>\n  <!--This is the navbar that shows when a user has not triggered a scroll event.-->\n  <ion-header  [hidden]="showToolbar">\n      <ion-navbar class=\'tool\'><!--class tool in app.scss-->\n        <!--navbar buttons-->\n         <ion-buttons start>\n          <button ion-button><ion-icon color=\'light\' class=\'menuButton\' name="md-menu" item-right></ion-icon></button><!--class menuButton in app.scss-->\n        </ion-buttons>\n        <ion-buttons start>\n            <button class=\'profileTxt\' ion-button>Settings</button><!--Class profileTxt is in app.scss-->\n          </ion-buttons>\n          <ion-buttons end>\n              <button ion-button tappable (click)="close()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button><!--class menuButton in app.scss-->\n            </ion-buttons>\n      </ion-navbar>\n    </ion-header>\n<!-- this is the page content -->\n<ion-content class="content" (ionScroll)="onScroll($event)" [class.transition]="transition">\n<!-- this div displays if there is a user-->\n<div *ngIf=\'user\'>\n<div class=\'img\'>\n<img class=\'profileImg\' src={{user.img}} tappable (click)=\'setPhoto()\'/><!--displays user\'s image-->\n<button color=\'green\' class=\'addPic\' ion-button icon-only round tappable (click)=\'setPhoto()\'><ion-icon name=\'ios-camera-outline\'></ion-icon></button><!--displays set photo fab-->\n</div>\n<div class=\'wrapper\'> \n  <div class=\'bg\'>   \n    <div class=\'wrapper2\'>\n        <h1 class=\'profileName\'>{{user.name}}</h1><!-- user name shown here-->\n        <p class=\'userName\'>@{{user.username}}</p><!-- username shown here-->\n    </div>\n  <img class=\'bgImg\' src=\'assets/images/profileBg.jpeg\'/><!-- generic bg image shown here-->\n</div>\n</div>\n<!--Displays list of user options -->\n<ion-list inset class=\'list\'>\n    <!--shows list header-->\n    <ion-item class=\'item\'>\n        <h3 class =\'listHeader\'> Edit Profile</h3>\n       <div class=\'wrapper3\'><div class=\'underLine\'></div></div>\n      </ion-item>\n       <!--shows change name option-->\n    <ion-item tappable (click)=\'setName()\' class=\'item\'>\n      <h3 class =\'listTxt\'> Name</h3>\n     <h3 class=\'listTxt2\'>{{user.name}}</h3>\n    </ion-item>\n     <!--shows change email option if user provider is firebase-->\n    <ion-item tappable *ngIf="user.provider==\'Firebase\'" (click)=\'setEmail()\' class=\'item\'>\n        <h3 class =\'listTxt\'>Email</h3>\n       <h3 class=\'listTxt2\'>{{user.email}}</h3>\n      </ion-item>\n      <!--shows change username option-->\n      <ion-item tappable (click)=\'setUsername()\' class=\'item\'>\n          <h3 class =\'listTxt\'> Username</h3>\n         <h3 class=\'listTxt2\'>@{{user.username}}</h3>\n        </ion-item>\n        <!--shows change phone number option-->\n          <ion-item tappable (click)=\'setPhone()\' class=\'item\'>\n              <h3 class =\'listTxt\'> Phone</h3>\n             <h3 class=\'listTxt2\'>+1-{{user.phone}}</h3>\n            </ion-item>\n            <!--shows change password option if user provider is firebase-->\n            <ion-item *ngIf="user.provider==\'Firebase\'" tappable (click)=\'setPassword()\' class=\'item\'>\n                <h3 class =\'listTxt\'> Password</h3>\n               <h3 class=\'listTxt2\'>{{user.Password}}</h3>\n              </ion-item>\n        </ion-list>\n</div>\n</ion-content>\n'/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/settings/settings.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"], __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */],
+        __WEBPACK_IMPORTED_MODULE_4__providers_data_data__["a" /* DataProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_2__providers_logout_logout__["a" /* LogoutProvider */],
+        __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */], __WEBPACK_IMPORTED_MODULE_7_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["v" /* ViewController */],
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
         __WEBPACK_IMPORTED_MODULE_11__providers_image_image__["a" /* ImageProvider */], __WEBPACK_IMPORTED_MODULE_12__ionic_native_camera__["a" /* Camera */]])
 ], SettingsPage);
 
@@ -3709,12 +3955,21 @@ SettingsPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FeedbackPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer__ = __webpack_require__(460);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_data_data__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__ = __webpack_require__(20);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer__ = __webpack_require__(449);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_data_data__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angularfire2_database__ = __webpack_require__(19);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_moment__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -3807,7 +4062,11 @@ var FeedbackPage = (function () {
 }());
 FeedbackPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-feedback',template:/*ion-inline-start:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/feedback/feedback.html"*/'<ion-header>\n    <ion-navbar>\n      <ion-title><p class=\'title\'>{{title}}</p></ion-title>\n      <ion-buttons start>\n          <button class=\'close\' ion-button clear (click)=\'close()\'><ion-icon color= \'dark\' name=\'ios-close\'></ion-icon></button>\n      </ion-buttons>\n      <ion-buttons end>\n          <button class=\'Send\'[disabled]="!isenabled" ion-button clear (click)=\'send()\'>Send</button>\n      </ion-buttons>\n    </ion-navbar>\n  \n  \n  </ion-header>\n  \n  \n  <ion-content>\n      <div *ngIf=\'type ==0\'>\n          <ion-item>\n            <ion-label color="primary">RE:</ion-label>\n            <ion-input [(ngModel)]=\'subject\'  (input)=\'onChange(body, subject)\' placeholder="Subject"></ion-input>\n          </ion-item>\n         \n          <ion-item>\n              <ion-textarea rows=\'10\' [(ngModel)]=\'body\' (input)=\'onChange(body, subject)\' placeholder="Enter a brief description of the problem..."></ion-textarea>\n            </ion-item>\n          \n            <p class=\'count\' *ngIf=\'body\'>{{body.length}}/ 2000 chars</p>\n            <p class=\'warn\' *ngIf=\'!subject\'>*Subject cannot be empty.</p>\n            <div *ngIf=\'subject\'>\n            <p class=\'warn\' *ngIf=\'subject.length>50\'>*Subject cannot be more than 50 chars.</p>\n            </div>\n            <div *ngIf=\'body\'>\n                <p class=\'warn\' *ngIf=\'body.length>2000\'>*Subject cannot be more than 2000 chars.</p>\n                </div>\n            <p class=\'warn\' *ngIf=\'!body\'>*You must enter a description.</p>\n            \n        <button [disabled]="!isenabled" block ion-button color=\'primary\' (click)="send(subject, body)">Send Message</button>\n        \n        \n        \n         \n          </div>\n      <div  *ngIf=\'type != 0\'>\n          <ion-item>\n            <ion-label color="primary">RE:</ion-label>\n            <ion-input [(ngModel)]=\'subject\'  (input)=\'onChange(body, subject)\' placeholder="Subject"></ion-input>\n          </ion-item>\n          <ion-item>\n              <ion-textarea rows=\'10\' [(ngModel)]=\'body\' (input)=\'onChange(body, subject)\' placeholder="Enter a brief description of how we\'re doing..."></ion-textarea>\n            </ion-item>\n\n            <p class=\'count\' *ngIf=\'body\'>{{body.length}}/ 2000 chars</p>\n            <p class=\'warn\' *ngIf=\'!subject\'>*Subject cannot be empty.</p>\n            <div *ngIf=\'subject\'>\n            <p class=\'warn\' *ngIf=\'subject.length>50\'>*Subject cannot be more than 50 chars.</p>\n            </div>\n            <div *ngIf=\'body\'>\n                <p class=\'warn\' *ngIf=\'body.length>2000\'>*Subject cannot be more than 2000 chars.</p>\n                </div>\n            <p class=\'warn\' *ngIf=\'!body\'>*You must enter a description.</p>\n\n            <button [disabled]="!isenabled" block ion-button color=\'primary\' (click)="send(subject, body)">Send Message</button>\n          </div>\n     \n  </ion-content>\n  '/*ion-inline-end:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/feedback/feedback.html"*/,
+=======
+        selector: 'page-feedback',template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/feedback/feedback.html"*/'<ion-header>\n    <ion-navbar>\n      <ion-title><p class=\'title\'>{{title}}</p></ion-title>\n      <ion-buttons start>\n          <button class=\'close\' ion-button clear (click)=\'close()\'><ion-icon color= \'dark\' name=\'ios-close\'></ion-icon></button>\n      </ion-buttons>\n      <ion-buttons end>\n          <button class=\'Send\'[disabled]="!isenabled" ion-button clear (click)=\'send()\'>Send</button>\n      </ion-buttons>\n    </ion-navbar>\n  \n  \n  </ion-header>\n  \n  \n  <ion-content>\n      <div *ngIf=\'type ==0\'>\n          <ion-item>\n            <ion-label color="primary">RE:</ion-label>\n            <ion-input [(ngModel)]=\'subject\'  (input)=\'onChange(body, subject)\' placeholder="Subject"></ion-input>\n          </ion-item>\n         \n          <ion-item>\n              <ion-textarea rows=\'10\' [(ngModel)]=\'body\' (input)=\'onChange(body, subject)\' placeholder="Enter a brief description of the problem..."></ion-textarea>\n            </ion-item>\n          \n            <p class=\'count\' *ngIf=\'body\'>{{body.length}}/ 2000 chars</p>\n            <p class=\'warn\' *ngIf=\'!subject\'>*Subject cannot be empty.</p>\n            <div *ngIf=\'subject\'>\n            <p class=\'warn\' *ngIf=\'subject.length>50\'>*Subject cannot be more than 50 chars.</p>\n            </div>\n            <div *ngIf=\'body\'>\n                <p class=\'warn\' *ngIf=\'body.length>2000\'>*Subject cannot be more than 2000 chars.</p>\n                </div>\n            <p class=\'warn\' *ngIf=\'!body\'>*You must enter a description.</p>\n            \n        <button [disabled]="!isenabled" block ion-button color=\'primary\' (click)="send(subject, body)">Send Message</button>\n        \n        \n        \n         \n          </div>\n      <div  *ngIf=\'type != 0\'>\n          <ion-item>\n            <ion-label color="primary">RE:</ion-label>\n            <ion-input [(ngModel)]=\'subject\'  (input)=\'onChange(body, subject)\' placeholder="Subject"></ion-input>\n          </ion-item>\n          <ion-item>\n              <ion-textarea rows=\'10\' [(ngModel)]=\'body\' (input)=\'onChange(body, subject)\' placeholder="Enter a brief description of how we\'re doing..."></ion-textarea>\n            </ion-item>\n\n            <p class=\'count\' *ngIf=\'body\'>{{body.length}}/ 2000 chars</p>\n            <p class=\'warn\' *ngIf=\'!subject\'>*Subject cannot be empty.</p>\n            <div *ngIf=\'subject\'>\n            <p class=\'warn\' *ngIf=\'subject.length>50\'>*Subject cannot be more than 50 chars.</p>\n            </div>\n            <div *ngIf=\'body\'>\n                <p class=\'warn\' *ngIf=\'body.length>2000\'>*Subject cannot be more than 2000 chars.</p>\n                </div>\n            <p class=\'warn\' *ngIf=\'!body\'>*You must enter a description.</p>\n\n            <button [disabled]="!isenabled" block ion-button color=\'primary\' (click)="send(subject, body)">Send Message</button>\n          </div>\n     \n  </ion-content>\n  '/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/feedback/feedback.html"*/,
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["w" /* ViewController */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer__["a" /* EmailComposer */], __WEBPACK_IMPORTED_MODULE_3__providers_data_data__["a" /* DataProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__["a" /* LoadingProvider */],
@@ -3824,6 +4083,7 @@ FeedbackPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MessagesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(22);
@@ -3833,6 +4093,17 @@ FeedbackPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__new_group_new_group__ = __webpack_require__(469);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__message_message__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_firebase__ = __webpack_require__(21);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_data_data__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__new_message_new_message__ = __webpack_require__(452);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__new_group_new_group__ = __webpack_require__(458);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__message_message__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_firebase__ = __webpack_require__(18);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_firebase_firebase__ = __webpack_require__(470);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -4195,7 +4466,11 @@ __decorate([
 ], MessagesPage.prototype, "content", void 0);
 MessagesPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-messages',template:/*ion-inline-start:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/messages/messages.html"*/'<!--<ion-header>\n    <ion-navbar>\n      <ion-title>Messages</ion-title>\n      <ion-buttons end>\n        <button ion-button icon-only tappable class=\'newMessage\' color=\'blue\' (click)="newMessage()"><ion-icon name="ios-create-outline"></ion-icon></button>\n      </ion-buttons>\n    </ion-navbar>\n  </ion-header>-->\n  <ion-header  mode=\'ios\'  [hidden]="!showToolbar">\n      \n        <ion-navbar  mode=\'ios\' [class.show-background]="showToolbar">\n            <ion-buttons  mode=\'ios\' start>\n                <ion-icon color=\'light\' class=\'menuButton\' name="md-menu" item-right></ion-icon>\n              </ion-buttons>\n              <ion-buttons  mode=\'ios\' start>\n                  <button class=\'profileTxt\' ion-button>Chats</button>\n                </ion-buttons>\n                <ion-buttons  mode=\'ios\' end>\n                    <button ion-button tappable (click)="newMessage()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-more-outline" item-right></ion-icon></button>\n                  </ion-buttons>\n        </ion-navbar>\n      \n      </ion-header>\n\n  <ion-header  [hidden]="showToolbar">\n        <ion-navbar mode=\'ios\'class=\'tool\'>\n           <ion-buttons  mode=\'ios\' start>\n           <ion-icon color=\'light\' class=\'menuButton\' name="md-menu" item-right></ion-icon>\n          </ion-buttons>\n          <ion-buttons  mode=\'ios\' start>\n              <button class=\'profileTxt\' ion-button>Chats</button>\n            </ion-buttons>\n            <ion-buttons  mode=\'ios\' end>\n                <button ion-button tappable (click)="newMessage()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-more-outline" item-right></ion-icon></button>\n              </ion-buttons>\n        </ion-navbar>\n      \n      </ion-header>\n  <ion-content class="content"\n  (ionScroll)="onScroll($event)"\n  [class.transition]="transition">\n      <div *ngIf=\'user\' class=\'img\' tappable>\n          <img class=\'profileImg\' src={{user.img}}/>\n         \n        </div>\n      <div class=\'wrapper\'> \n          <div class=\'bg\'>\n              <div class=\'wrapper2\'>\n              </div>\n          <img class=\'bgImg\' src=\'assets/images/profileBg.jpeg\'/>\n        </div>\n        </div>\n    <!-- No conversations to show -->\n    <ion-refresher (ionRefresh)="doRefresh($event)">\n        <ion-refresher-content></ion-refresher-content>\n      </ion-refresher>\n    <div class="empty-list" *ngIf="conversations && conversations.length <= 0">\n      <h1><ion-icon name="text"></ion-icon></h1>\n      <p>No new conversation yet.</p>\n      <button ion-button icon-left tappable (click)="newMessage()"><ion-icon name="md-add"></ion-icon>Start Chat</button>\n    </div>\n    <!-- Show conversations -->\n    <ion-list mode=\'md\'  no-lines class="avatar-list" *ngIf="conversations && conversations.length > 0">\n      <ion-item-sliding mode=\'md\' *ngFor="let conversation of conversations | conversationFilter:searchFriend" #slidingItem>\n      <ion-item  no-lines tappable (click)="message(conversation.$key, conversation.type)">\n        <div>\n          <h2 class=\'messageTitle\' *ngIf="conversation.friend">{{conversation.friend.name}}</h2>\n          <h2 class=\'messageTitle\' *ngIf="conversation.type == \'group\'">{{conversation.name}}</h2>\n          <ion-badge mode=\'ios\' color="teal" *ngIf="conversation.unreadMessagesCount > 0">{{conversation.unreadMessagesCount}}</ion-badge>\n          <p [ngClass]=hasUnreadMessages(conversation)>{{conversation.message}}</p>\n          <p [ngClass]=hasUnreadMessages(conversation) *ngIf="conversation.type == \'group\'">{{conversation.lastMessage}}</p>\n          <span class=\'messageDate\'>{{conversation.date | Date2Format}}</span>\n        </div>\n      </ion-item>\n      <ion-item-options side="right" *ngIf="conversation.type == \'group\'">\n          <button ion-button color=\'danger\' (click)="leaveGroup(conversation)">Leave</button>\n        </ion-item-options>\n        <ion-item-options side="right" *ngIf="!conversation.type">\n            <button ion-button color=\'danger\' (click)="deleteConversation(slidingItem, conversation)">Delete</button>\n          </ion-item-options>\n      </ion-item-sliding>\n    </ion-list>\n  </ion-content>\n\n\n'/*ion-inline-end:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/messages/messages.html"*/
+=======
+        selector: 'page-messages',template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/messages/messages.html"*/'<!--<ion-header>\n    <ion-navbar>\n      <ion-title>Messages</ion-title>\n      <ion-buttons end>\n        <button ion-button icon-only tappable class=\'newMessage\' color=\'blue\' (click)="newMessage()"><ion-icon name="ios-create-outline"></ion-icon></button>\n      </ion-buttons>\n    </ion-navbar>\n  </ion-header>-->\n  <ion-header  mode=\'ios\'  [hidden]="!showToolbar">\n      \n        <ion-navbar  mode=\'ios\' [class.show-background]="showToolbar">\n            <ion-buttons  mode=\'ios\' start>\n                <ion-icon color=\'light\' class=\'menuButton\' name="md-menu" item-right></ion-icon>\n              </ion-buttons>\n              <ion-buttons  mode=\'ios\' start>\n                  <button class=\'profileTxt\' ion-button>Chats</button>\n                </ion-buttons>\n                <ion-buttons  mode=\'ios\' end>\n                    <button ion-button tappable (click)="newMessage()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-more-outline" item-right></ion-icon></button>\n                  </ion-buttons>\n        </ion-navbar>\n      \n      </ion-header>\n\n  <ion-header  [hidden]="showToolbar">\n        <ion-navbar mode=\'ios\'class=\'tool\'>\n           <ion-buttons  mode=\'ios\' start>\n           <ion-icon color=\'light\' class=\'menuButton\' name="md-menu" item-right></ion-icon>\n          </ion-buttons>\n          <ion-buttons  mode=\'ios\' start>\n              <button class=\'profileTxt\' ion-button>Chats</button>\n            </ion-buttons>\n            <ion-buttons  mode=\'ios\' end>\n                <button ion-button tappable (click)="newMessage()"><ion-icon color=\'light\' class=\'menuButton\' name="ios-more-outline" item-right></ion-icon></button>\n              </ion-buttons>\n        </ion-navbar>\n      \n      </ion-header>\n  <ion-content class="content"\n  (ionScroll)="onScroll($event)"\n  [class.transition]="transition">\n      <div *ngIf=\'user\' class=\'img\' tappable>\n          <img class=\'profileImg\' src={{user.img}}/>\n         \n        </div>\n      <div class=\'wrapper\'> \n          <div class=\'bg\'>\n              <div class=\'wrapper2\'>\n              </div>\n          <img class=\'bgImg\' src=\'assets/images/profileBg.jpeg\'/>\n        </div>\n        </div>\n    <!-- No conversations to show -->\n    <ion-refresher (ionRefresh)="doRefresh($event)">\n        <ion-refresher-content></ion-refresher-content>\n      </ion-refresher>\n    <div class="empty-list" *ngIf="conversations && conversations.length <= 0">\n      <h1><ion-icon name="text"></ion-icon></h1>\n      <p>No new conversation yet.</p>\n      <button ion-button icon-left tappable (click)="newMessage()"><ion-icon name="md-add"></ion-icon>Start Chat</button>\n    </div>\n    <!-- Show conversations -->\n    <ion-list mode=\'md\'  no-lines class="avatar-list" *ngIf="conversations && conversations.length > 0">\n      <ion-item-sliding mode=\'md\' *ngFor="let conversation of conversations | conversationFilter:searchFriend" #slidingItem>\n      <ion-item  no-lines tappable (click)="message(conversation.$key, conversation.type)">\n        <div>\n          <h2 class=\'messageTitle\' *ngIf="conversation.friend">{{conversation.friend.name}}</h2>\n          <h2 class=\'messageTitle\' *ngIf="conversation.type == \'group\'">{{conversation.name}}</h2>\n          <ion-badge mode=\'ios\' color="teal" *ngIf="conversation.unreadMessagesCount > 0">{{conversation.unreadMessagesCount}}</ion-badge>\n          <p [ngClass]=hasUnreadMessages(conversation)>{{conversation.message}}</p>\n          <p [ngClass]=hasUnreadMessages(conversation) *ngIf="conversation.type == \'group\'">{{conversation.lastMessage}}</p>\n          <span class=\'messageDate\'>{{conversation.date | Date2Format}}</span>\n        </div>\n      </ion-item>\n      <ion-item-options side="right" *ngIf="conversation.type == \'group\'">\n          <button ion-button color=\'danger\' (click)="leaveGroup(conversation)">Leave</button>\n        </ion-item-options>\n        <ion-item-options side="right" *ngIf="!conversation.type">\n            <button ion-button color=\'danger\' (click)="deleteConversation(slidingItem, conversation)">Delete</button>\n          </ion-item-options>\n      </ion-item-sliding>\n    </ion-list>\n  </ion-content>\n\n\n'/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/messages/messages.html"*/
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__["a" /* AngularFireDatabase */],
         __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_5__providers_alert_alert__["a" /* AlertProvider */], __WEBPACK_IMPORTED_MODULE_4__providers_data_data__["a" /* DataProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */],
@@ -4212,10 +4487,17 @@ MessagesPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewMessagePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__message_message__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_data_data__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(22);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__message_message__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_data_data__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(20);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4326,7 +4608,11 @@ __decorate([
 ], NewMessagePage.prototype, "content", void 0);
 NewMessagePage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-new-message',template:/*ion-inline-start:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/new-message/new-message.html"*/'<ion-header  mode=\'ios\'  [hidden]="!showToolbar">\n    \n      <ion-navbar  mode=\'ios\' [class.show-background]="showToolbar">\n          <ion-buttons start>\n              <button ion-button tappable (click)=\'back()\'><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button>\n            </ion-buttons>\n            <ion-buttons start>\n                <button class=\'profileTxt\' ion-button>New Message</button>\n              </ion-buttons>\n      </ion-navbar>\n    \n    </ion-header>\n\n<ion-header  [hidden]="showToolbar">\n    \n      <ion-navbar mode=\'ios\'class=\'tool\'>\n         <ion-buttons  mode=\'ios\' start>\n          <button ion-button tappable (click)=\'back()\'><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button>\n        </ion-buttons>\n        <ion-buttons  mode=\'ios\' start>\n            <button class=\'profileTxt\' ion-button>New Message</button>\n          </ion-buttons>\n      </ion-navbar>\n    \n    </ion-header>\n<ion-content class="content"\n(ionScroll)="onScroll($event)"\n[class.transition]="transition">\n<img src=\'assets/images/bgAdd.jpeg\'>\n  <div class=\'bg\'>\n    <div class=\'wrapper\'>\n  <!-- No friends yet to start a conversation with -->\n  <div class="empty-list" *ngIf="friends && friends.length == 0">\n    <h1><ion-icon name="md-contacts"></ion-icon></h1>\n    <p>Uh-oh! You have not added any friends yet.</p>\n    <button ion-button icon-left tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon>Search People</button>\n  </div>\n  <!-- Show friends to start a conversation with -->\n  <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">\n    <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n    <ion-list-header mode=\'md\' no-lines>\n        <h2>Users</h2>\n            </ion-list-header>\n    <ion-item *ngFor="let friend of friends | searchFilter:[excludedIds, searchUser]" no-lines tappable (click)="message(friend.$key)">\n      <ion-avatar item-left>\n        <img src="{{friend.img}}">\n      </ion-avatar>\n      <h2>{{friend.name}}</h2>\n    </ion-item>\n  </ion-list>\n</div>\n</div>\n</ion-content>'/*ion-inline-end:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/new-message/new-message.html"*/
+=======
+        selector: 'page-new-message',template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/new-message/new-message.html"*/'<ion-header  mode=\'ios\'  [hidden]="!showToolbar">\n    \n      <ion-navbar  mode=\'ios\' [class.show-background]="showToolbar">\n          <ion-buttons start>\n              <button ion-button tappable (click)=\'back()\'><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button>\n            </ion-buttons>\n            <ion-buttons start>\n                <button class=\'profileTxt\' ion-button>New Message</button>\n              </ion-buttons>\n      </ion-navbar>\n    \n    </ion-header>\n\n<ion-header  [hidden]="showToolbar">\n    \n      <ion-navbar mode=\'ios\'class=\'tool\'>\n         <ion-buttons  mode=\'ios\' start>\n          <button ion-button tappable (click)=\'back()\'><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button>\n        </ion-buttons>\n        <ion-buttons  mode=\'ios\' start>\n            <button class=\'profileTxt\' ion-button>New Message</button>\n          </ion-buttons>\n      </ion-navbar>\n    \n    </ion-header>\n<ion-content class="content"\n(ionScroll)="onScroll($event)"\n[class.transition]="transition">\n<img src=\'assets/images/bgAdd.jpeg\'>\n  <div class=\'bg\'>\n    <div class=\'wrapper\'>\n  <!-- No friends yet to start a conversation with -->\n  <div class="empty-list" *ngIf="friends && friends.length == 0">\n    <h1><ion-icon name="md-contacts"></ion-icon></h1>\n    <p>Uh-oh! You have not added any friends yet.</p>\n    <button ion-button icon-left tappable (click)="searchPeople()"><ion-icon name="md-search"></ion-icon>Search People</button>\n  </div>\n  <!-- Show friends to start a conversation with -->\n  <ion-list class="avatar-list" *ngIf="friends && friends.length > 0">\n    <ion-searchbar [(ngModel)]="searchFriend" placeholder="Search for friend or username" showCancelButton="true" cancelButtonText="Done"></ion-searchbar>\n    <ion-list-header mode=\'md\' no-lines>\n        <h2>Users</h2>\n            </ion-list-header>\n    <ion-item *ngFor="let friend of friends | searchFilter:[excludedIds, searchUser]" no-lines tappable (click)="message(friend.$key)">\n      <ion-avatar item-left>\n        <img src="{{friend.img}}">\n      </ion-avatar>\n      <h2>{{friend.name}}</h2>\n    </ion-item>\n  </ion-list>\n</div>\n</div>\n</ion-content>'/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/new-message/new-message.html"*/
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_3__providers_data_data__["a" /* DataProvider */],
         __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__["a" /* LoadingProvider */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]])
@@ -4372,7 +4658,11 @@ var UserInfoPage = (function () {
 }());
 UserInfoPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-user-info',template:/*ion-inline-start:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/user-info/user-info.html"*/'<!--\n  Generated template for the UserInfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>userInfo</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/user-info/user-info.html"*/,
+=======
+        selector: 'page-user-info',template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/user-info/user-info.html"*/'<!--\n  Generated template for the UserInfoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>userInfo</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/user-info/user-info.html"*/,
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
 ], UserInfoPage);
@@ -4417,7 +4707,11 @@ var ImageModalPage = (function () {
 }());
 ImageModalPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-image-modal',template:/*ion-inline-start:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/image-modal/image-modal.html"*/'<!--\n  Generated template for the ImageModalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>imageModal</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/image-modal/image-modal.html"*/,
+=======
+        selector: 'page-image-modal',template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/image-modal/image-modal.html"*/'<!--\n  Generated template for the ImageModalPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>imageModal</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/image-modal/image-modal.html"*/,
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
 ], ImageModalPage);
@@ -4432,6 +4726,7 @@ ImageModalPage = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NewGroupPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_image_image__ = __webpack_require__(67);
@@ -4444,6 +4739,20 @@ ImageModalPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__message_message__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__add_members_add_members__ = __webpack_require__(176);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_firebase__ = __webpack_require__(21);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_image_image__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_data_data__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_alert_alert__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__validator__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_camera__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_database__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__message_message__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__add_members_add_members__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_firebase__ = __webpack_require__(18);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4703,7 +5012,11 @@ __decorate([
 ], NewGroupPage.prototype, "content", void 0);
 NewGroupPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-new-group',template:/*ion-inline-start:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/new-group/new-group.html"*/'<ion-header  mode=\'ios\'  [hidden]="!showToolbar">\n    \n      <ion-navbar  mode=\'ios\' [class.show-background]="showToolbar">\n          <ion-buttons start>\n              <button ion-button tappable (click)=\'back()\'><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button>\n            </ion-buttons>\n            <ion-buttons start>\n                <button class=\'profileTxt\' ion-button>New Group</button>\n              </ion-buttons>\n              <ion-buttons end>\n                  <button ion-button color=\'light\' tappable (click)="done()" [disabled]="!groupForm.valid || group.img == \'\' || groupMembers.length <= 1">Done</button>\n                </ion-buttons>\n      </ion-navbar>\n    </ion-header>\n<ion-header  [hidden]="showToolbar">\n      <ion-navbar mode=\'ios\'class=\'tool\'>\n         <ion-buttons  mode=\'ios\' start>\n          <button ion-button tappable (click)=\'back()\'><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button>\n        </ion-buttons>\n        <ion-buttons  mode=\'ios\' start>\n            <button class=\'profileTxt\' ion-button>New Group</button>\n          </ion-buttons>\n          <ion-buttons end>\n              <button ion-button color=\'light\' tappable (click)="done()" [disabled]="!groupForm.valid || group.img == \'\' || groupMembers.length <= 1">Done</button>\n            </ion-buttons>\n        </ion-navbar>\n    </ion-header>\n    <ion-content class="content"\n    (ionScroll)="onScroll($event)"\n    [class.transition]="transition">\n    <img src=\'assets/images/bgAdd.jpeg\'>\n      <div class=\'bg\'>\n        <div class=\'wrapper\'>\n      <!-- No friends yet to start a conversation with -->\n  <div class="empty-list" *ngIf="friends && friends.length == 0">\n        <h1><ion-icon name="md-contacts"></ion-icon></h1>\n        <p>Uh-oh! You have not added any friends yet.</p>\n        <button ion-button icon-left tappable (click)="addMember()"><ion-icon name="md-search"></ion-icon>Search People</button>\n      </div>\n      <!-- Show friends to start a conversation with -->\n      <div *ngIf="group">\n          <ion-list no-lines>\n              <button ion-button tappable (click)="addMember()" block color=\'teal\'>Add Member</button>\n            <ion-list-header no-lines mode=\'md\'>\n              <h2>Group Info</h2>\n            </ion-list-header>\n            <form [formGroup]="groupForm">\n              <ion-item no-lines>\n                <ion-avatar item-left>\n                  <img src="{{group.img}}" *ngIf="group.img != \'\'" tappable (click)="setGroupPhoto()" />\n                  <img src="assets/images/set.png" *ngIf="group.img == \'\'" tappable (click)="setGroupPhoto()" />\n                </ion-avatar>\n                <ion-input type="text" formControlName="name" placeholder="Name of Group" style=\'color:white;\'></ion-input>\n              </ion-item>\n              <div *ngIf="groupMembers">\n              <ion-list-header no-lines mode=\'md\'>\n                <h2>Group Members ({{groupMembers.length}})</h2>\n              </ion-list-header>\n              \n              <ion-item  *ngFor="let member of groupMembers">\n                <ion-avatar item-left>\n                  <img src="{{member.img}}"/>\n                </ion-avatar>\n                <h2>{{member.name}}</h2>\n                <ion-icon *ngIf=\'member.userId!=userId\'color=\'danger\' name="close-circle" item-right tappable (click)="removeFromGroup(member)"></ion-icon>\n              </ion-item>\n              </div>\n            </form>\n          </ion-list>\n          </div>\n        </div>\n      </div>\n    </ion-content>\n\n        '/*ion-inline-end:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/new-group/new-group.html"*/
+=======
+        selector: 'page-new-group',template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/new-group/new-group.html"*/'<ion-header  mode=\'ios\'  [hidden]="!showToolbar">\n    \n      <ion-navbar  mode=\'ios\' [class.show-background]="showToolbar">\n          <ion-buttons start>\n              <button ion-button tappable (click)=\'back()\'><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button>\n            </ion-buttons>\n            <ion-buttons start>\n                <button class=\'profileTxt\' ion-button>New Group</button>\n              </ion-buttons>\n              <ion-buttons end>\n                  <button ion-button color=\'light\' tappable (click)="done()" [disabled]="!groupForm.valid || group.img == \'\' || groupMembers.length <= 1">Done</button>\n                </ion-buttons>\n      </ion-navbar>\n    </ion-header>\n<ion-header  [hidden]="showToolbar">\n      <ion-navbar mode=\'ios\'class=\'tool\'>\n         <ion-buttons  mode=\'ios\' start>\n          <button ion-button tappable (click)=\'back()\'><ion-icon color=\'light\' class=\'menuButton\' name="ios-close" item-right></ion-icon></button>\n        </ion-buttons>\n        <ion-buttons  mode=\'ios\' start>\n            <button class=\'profileTxt\' ion-button>New Group</button>\n          </ion-buttons>\n          <ion-buttons end>\n              <button ion-button color=\'light\' tappable (click)="done()" [disabled]="!groupForm.valid || group.img == \'\' || groupMembers.length <= 1">Done</button>\n            </ion-buttons>\n        </ion-navbar>\n    </ion-header>\n    <ion-content class="content"\n    (ionScroll)="onScroll($event)"\n    [class.transition]="transition">\n    <img src=\'assets/images/bgAdd.jpeg\'>\n      <div class=\'bg\'>\n        <div class=\'wrapper\'>\n      <!-- No friends yet to start a conversation with -->\n  <div class="empty-list" *ngIf="friends && friends.length == 0">\n        <h1><ion-icon name="md-contacts"></ion-icon></h1>\n        <p>Uh-oh! You have not added any friends yet.</p>\n        <button ion-button icon-left tappable (click)="addMember()"><ion-icon name="md-search"></ion-icon>Search People</button>\n      </div>\n      <!-- Show friends to start a conversation with -->\n      <div *ngIf="group">\n          <ion-list no-lines>\n              <button ion-button tappable (click)="addMember()" block color=\'teal\'>Add Member</button>\n            <ion-list-header no-lines mode=\'md\'>\n              <h2>Group Info</h2>\n            </ion-list-header>\n            <form [formGroup]="groupForm">\n              <ion-item no-lines>\n                <ion-avatar item-left>\n                  <img src="{{group.img}}" *ngIf="group.img != \'\'" tappable (click)="setGroupPhoto()" />\n                  <img src="assets/images/set.png" *ngIf="group.img == \'\'" tappable (click)="setGroupPhoto()" />\n                </ion-avatar>\n                <ion-input type="text" formControlName="name" placeholder="Name of Group" style=\'color:white;\'></ion-input>\n              </ion-item>\n              <div *ngIf="groupMembers">\n              <ion-list-header no-lines mode=\'md\'>\n                <h2>Group Members ({{groupMembers.length}})</h2>\n              </ion-list-header>\n              \n              <ion-item  *ngFor="let member of groupMembers">\n                <ion-avatar item-left>\n                  <img src="{{member.img}}"/>\n                </ion-avatar>\n                <h2>{{member.name}}</h2>\n                <ion-icon *ngIf=\'member.userId!=userId\'color=\'danger\' name="close-circle" item-right tappable (click)="removeFromGroup(member)"></ion-icon>\n              </ion-item>\n              </div>\n            </form>\n          </ion-list>\n          </div>\n        </div>\n      </div>\n    </ion-content>\n\n        '/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/new-group/new-group.html"*/
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__providers_image_image__["a" /* ImageProvider */], __WEBPACK_IMPORTED_MODULE_5__providers_data_data__["a" /* DataProvider */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormBuilder"],
         __WEBPACK_IMPORTED_MODULE_6__providers_alert_alert__["a" /* AlertProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_9_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */], __WEBPACK_IMPORTED_MODULE_4__providers_loading_loading__["a" /* LoadingProvider */],
@@ -4722,11 +5035,19 @@ NewGroupPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(682);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__loading_loading__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__alert_alert__ = __webpack_require__(31);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_database__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__loading_loading__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__alert_alert__ = __webpack_require__(32);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4795,6 +5116,7 @@ FirebaseProvider = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VerificationPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_logout_logout__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(22);
@@ -4802,6 +5124,15 @@ FirebaseProvider = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__validator__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase__ = __webpack_require__(21);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_logout_logout__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__validator__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase__ = __webpack_require__(18);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -5007,7 +5338,11 @@ var VerificationPage = (function () {
 }());
 VerificationPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+<<<<<<< HEAD
         selector: 'page-verification',template:/*ion-inline-start:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/verification/verification.html"*/'<ion-content>\n  \n   <div *ngIf="user" class="page">\n     <h4 class="title">Verify your account</h4>\n     <p>Please verify <span>{{user.email}}</span> to continue</p>\n     <!-- Verification Menu -->\n     <ion-row style="text-align: center;">\n       <ion-col>\n         <ion-icon name="refresh" tappable (click)="sendEmailVerification()"></ion-icon>\n         <p>Resend</p>\n       </ion-col>\n       <ion-col>\n         <ion-icon name="mail" tappable (click)="setEmail()"></ion-icon>\n         <p>Update Email</p>\n       </ion-col>\n       <ion-col>\n         <ion-icon name="log-out" tappable (click)="logout()"></ion-icon>\n         <p>Logout</p>\n       </ion-col>\n     </ion-row>\n   </div>\n \n </ion-content>\n \n '/*ion-inline-end:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/pages/verification/verification.html"*/
+=======
+        selector: 'page-verification',template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/verification/verification.html"*/'<ion-content>\n  \n   <div *ngIf="user" class="page">\n     <h4 class="title">Verify your account</h4>\n     <p>Please verify <span>{{user.email}}</span> to continue</p>\n     <!-- Verification Menu -->\n     <ion-row style="text-align: center;">\n       <ion-col>\n         <ion-icon name="refresh" tappable (click)="sendEmailVerification()"></ion-icon>\n         <p>Resend</p>\n       </ion-col>\n       <ion-col>\n         <ion-icon name="mail" tappable (click)="setEmail()"></ion-icon>\n         <p>Update Email</p>\n       </ion-col>\n       <ion-col>\n         <ion-icon name="log-out" tappable (click)="logout()"></ion-icon>\n         <p>Logout</p>\n       </ion-col>\n     </ion-row>\n   </div>\n \n </ion-content>\n \n '/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/verification/verification.html"*/
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* App */],
         __WEBPACK_IMPORTED_MODULE_2__providers_logout_logout__["a" /* LogoutProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_loading_loading__["a" /* LoadingProvider */],
@@ -5039,6 +5374,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* unused harmony export CustomCurrencyMaskConfig */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(60);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(533);
@@ -5085,9 +5421,58 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pipes_conversation__ = __webpack_require__(688);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_add_members_add_members__ = __webpack_require__(176);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_45_ng2_currency_mask__ = __webpack_require__(689);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(522);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_login_login__ = __webpack_require__(151);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_verification_verification__ = __webpack_require__(460);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_intro_intro__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__login__ = __webpack_require__(97);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_google_plus__ = __webpack_require__(461);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ionic2_super_tabs__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_message_message__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_settings_settings__ = __webpack_require__(447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_add_trip_add_trip__ = __webpack_require__(317);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_add_event_add_event__ = __webpack_require__(445);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_home_home__ = __webpack_require__(316);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_tabs_tabs__ = __webpack_require__(306);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_storage__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_status_bar__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_splash_screen__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_login_login__ = __webpack_require__(266);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__providers_loading_loading__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__providers_alert_alert__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__providers_logout_logout__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__providers_data_data__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__ionic_native_camera__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__ionic_native_facebook__ = __webpack_require__(462);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_firebase__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_26_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_angularfire2__ = __webpack_require__(626);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28_angularfire2_auth__ = __webpack_require__(627);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_angularfire2_database__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__providers_image_image__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__ionic_native_media_capture__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__ionic_native_file__ = __webpack_require__(325);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__ionic_native_email_composer__ = __webpack_require__(449);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__pages_feedback_feedback__ = __webpack_require__(448);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__pages_account_account__ = __webpack_require__(446);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__pages_messages_messages__ = __webpack_require__(451);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__pages_new_message_new_message__ = __webpack_require__(452);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__pages_new_group_new_group__ = __webpack_require__(458);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__ionic_native_social_sharing__ = __webpack_require__(450);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__angular_forms__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__pipes_date__ = __webpack_require__(629);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_42__pipes_day__ = __webpack_require__(630);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_43__pipes_conversation__ = __webpack_require__(631);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_44__pages_add_members_add_members__ = __webpack_require__(170);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_45_ng2_currency_mask__ = __webpack_require__(632);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_45_ng2_currency_mask___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_45_ng2_currency_mask__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_46_ng2_currency_mask_src_currency_mask_config__ = __webpack_require__(476);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_46_ng2_currency_mask_src_currency_mask_config___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_46_ng2_currency_mask_src_currency_mask_config__);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pages_user_info_user_info__ = __webpack_require__(464);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_48_ion2_calendar__ = __webpack_require__(333);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pages_agenda_agenda__ = __webpack_require__(694);
@@ -5101,6 +5486,21 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__pages_image_modal_image_modal__ = __webpack_require__(465);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__providers_firebase_firebase__ = __webpack_require__(470);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__pages_overview_overview__ = __webpack_require__(451);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_47__pages_user_info_user_info__ = __webpack_require__(453);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_48_ion2_calendar__ = __webpack_require__(326);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_49__pages_agenda_agenda__ = __webpack_require__(444);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_50__pipes_date2__ = __webpack_require__(637);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_51__pipes_friend__ = __webpack_require__(638);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_52__pipes_search__ = __webpack_require__(639);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__pipes_messages__ = __webpack_require__(640);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__ionic_native_geolocation__ = __webpack_require__(457);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__ionic_native_keyboard__ = __webpack_require__(456);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__ionic_native_contacts__ = __webpack_require__(455);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_57__pages_image_modal_image_modal__ = __webpack_require__(454);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_58__providers_firebase_firebase__ = __webpack_require__(459);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_59__pages_virtualcard_virtualcard__ = __webpack_require__(644);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5215,7 +5615,11 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_38__pages_new_group_new_group__["a" /* NewGroupPage */],
             __WEBPACK_IMPORTED_MODULE_57__pages_image_modal_image_modal__["a" /* ImageModalPage */],
             __WEBPACK_IMPORTED_MODULE_53__pipes_messages__["a" /* MessagesPipe */],
+<<<<<<< HEAD
             __WEBPACK_IMPORTED_MODULE_59__pages_overview_overview__["a" /* OverviewPage */]
+=======
+            __WEBPACK_IMPORTED_MODULE_59__pages_virtualcard_virtualcard__["a" /* VirtualcardPage */]
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_45_ng2_currency_mask__["CurrencyMaskModule"],
@@ -5227,7 +5631,8 @@ AppModule = __decorate([
                 autoFocusAssist: false
             }, {
                 links: [
-                    { loadChildren: '../pages/group/group.module#GroupPageModule', name: 'GroupPage', segment: 'group', priority: 'low', defaultHistory: [] }
+                    { loadChildren: '../pages/group/group.module#GroupPageModule', name: 'GroupPage', segment: 'group', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/virtualcard/virtualcard.module#VirtualcardPageModule', name: 'VirtualcardPage', segment: 'virtualcard', priority: 'low', defaultHistory: [] }
                 ]
             }),
             __WEBPACK_IMPORTED_MODULE_27_angularfire2__["a" /* AngularFireModule */].initializeApp(__WEBPACK_IMPORTED_MODULE_7__login__["a" /* Login */].firebaseConfig, 'ionic3chat'),
@@ -5258,7 +5663,11 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_10__pages_message_message__["a" /* MessagePage */],
             __WEBPACK_IMPORTED_MODULE_38__pages_new_group_new_group__["a" /* NewGroupPage */],
             __WEBPACK_IMPORTED_MODULE_57__pages_image_modal_image_modal__["a" /* ImageModalPage */],
+<<<<<<< HEAD
             __WEBPACK_IMPORTED_MODULE_59__pages_overview_overview__["a" /* OverviewPage */]
+=======
+            __WEBPACK_IMPORTED_MODULE_59__pages_virtualcard_virtualcard__["a" /* VirtualcardPage */]
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_17__ionic_native_status_bar__["a" /* StatusBar */],
@@ -5300,12 +5709,20 @@ AppModule = __decorate([
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(267);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(270);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(271);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_intro_intro__ = __webpack_require__(272);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(157);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_storage__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_virtualcard_virtualcard__ = __webpack_require__(644);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5321,19 +5738,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var MyApp = (function () {
+    //rootPage:any = LoginPage;
     function MyApp(platform, statusBar, splashScreen, storage) {
         var _this = this;
         this.storage = storage;
-        this.rootPage = __WEBPACK_IMPORTED_MODULE_6__pages_login_login__["a" /* LoginPage */];
+        this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_virtualcard_virtualcard__["a" /* VirtualcardPage */];
         platform.ready().then(function () {
             _this.storage.get('introShown').then(function (result) {
                 if (result) {
-                    _this.rootPage = __WEBPACK_IMPORTED_MODULE_6__pages_login_login__["a" /* LoginPage */];
+                    _this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_virtualcard_virtualcard__["a" /* VirtualcardPage */];
+                    //this.rootPage = LoginPage;
                 }
                 else {
-                    _this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_intro_intro__["a" /* IntroPage */];
+                    _this.rootPage = __WEBPACK_IMPORTED_MODULE_5__pages_virtualcard_virtualcard__["a" /* VirtualcardPage */];
+                    //this.rootPage = IntroPage;
                     _this.storage.set('introShown', true);
                 }
                 //this.loader.dismiss();
@@ -5347,7 +5766,11 @@ var MyApp = (function () {
     return MyApp;
 }());
 MyApp = __decorate([
+<<<<<<< HEAD
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/moniquenichols/Documents/GitHub/NauticalV1/src/app/app.html"*/
+=======
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/app/app.html"*/
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["t" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_4__ionic_storage__["b" /* Storage */]])
 ], MyApp);
@@ -5615,6 +6038,7 @@ webpackContext.id = 630;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ImageProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__alert_alert__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__loading_loading__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(66);
@@ -5623,6 +6047,16 @@ webpackContext.id = 630;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_media_capture__ = __webpack_require__(331);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(332);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__alert_alert__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__loading_loading__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_camera__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_media_capture__ = __webpack_require__(324);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_file__ = __webpack_require__(325);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6339,7 +6773,57 @@ MessagesPipe = __decorate([
 
 /***/ }),
 
+<<<<<<< HEAD
 /***/ 80:
+=======
+/***/ 644:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return VirtualcardPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the VirtualcardPage page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var VirtualcardPage = (function () {
+    function VirtualcardPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    VirtualcardPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad VirtualcardPage');
+    };
+    return VirtualcardPage;
+}());
+VirtualcardPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* IonicPage */])(),
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'page-virtualcard',template:/*ion-inline-start:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/virtualcard/virtualcard.html"*/'<!--\n  Generated template for the VirtualcardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar>\n        <ion-title>virtualcard</ion-title>\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <ion-img width="330px" height="150px" src="assets/imgs/VirtualCard2.png"></ion-img>\n\n\n    <div class="switch">\n        <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox">\n        <label for="cmn-toggle-1"></label>\n    </div>\n\n    <div class=\'button1\'>\n        <button class=\'addcash\' ion-button color="dark">Add Cash</button>\n    </div>\n\n    <div class=\'button2\'>\n        <button class=\'cashout\' ion-button color="dark">Cash Out</button>\n    </div>\n\n</ion-content>'/*ion-inline-end:"/Users/Home/Documents/GitHub/NauticalV1/src/pages/virtualcard/virtualcard.html"*/,
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
+], VirtualcardPage);
+
+//# sourceMappingURL=virtualcard.js.map
+
+/***/ }),
+
+/***/ 76:
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6398,10 +6882,17 @@ var Validator;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LogoutProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__loading_loading__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_data__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase__ = __webpack_require__(21);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__loading_loading__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__data_data__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase__ = __webpack_require__(18);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_firebase__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;

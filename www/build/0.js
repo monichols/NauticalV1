@@ -1,14 +1,23 @@
 webpackJsonp([0],{
 
+<<<<<<< HEAD
 /***/ 699:
+=======
+/***/ 642:
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GroupPageModule", function() { return GroupPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "VirtualcardPageModule", function() { return VirtualcardPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__group__ = __webpack_require__(700);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__virtualcard__ = __webpack_require__(644);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,20 +27,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var GroupPageModule = (function () {
-    function GroupPageModule() {
+var VirtualcardPageModule = (function () {
+    function VirtualcardPageModule() {
     }
-    return GroupPageModule;
+    return VirtualcardPageModule;
 }());
-GroupPageModule = __decorate([
+VirtualcardPageModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_2__group__["a" /* GroupPage */],
+            __WEBPACK_IMPORTED_MODULE_2__virtualcard__["a" /* VirtualcardPage */],
         ],
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__group__["a" /* GroupPage */]),
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__virtualcard__["a" /* VirtualcardPage */]),
         ],
     })
+<<<<<<< HEAD
 ], GroupPageModule);
 
 //# sourceMappingURL=group.module.js.map
@@ -79,8 +89,11 @@ GroupPage = __decorate([
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]])
 ], GroupPage);
+=======
+], VirtualcardPageModule);
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 
-//# sourceMappingURL=group.js.map
+//# sourceMappingURL=virtualcard.module.js.map
 
 /***/ })
 

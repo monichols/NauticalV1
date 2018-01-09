@@ -60,7 +60,11 @@ import { Keyboard } from '@ionic-native/keyboard';
 import { Contacts } from '@ionic-native/contacts';
 import{ImageModalPage} from'../pages/image-modal/image-modal';
 import { FirebaseProvider } from '../providers/firebase/firebase';
+<<<<<<< HEAD
 import { OverviewPage } from '../pages/overview/overview';
+=======
+import { VirtualcardPage } from '../pages/virtualcard/virtualcard';
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
 firebase.initializeApp(Login.firebaseConfig);
 export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
    align: "center",
@@ -103,7 +107,11 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     NewGroupPage,
     ImageModalPage,
     MessagesPipe,
+<<<<<<< HEAD
     OverviewPage
+=======
+    VirtualcardPage
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
      
   ],
   imports: [
@@ -143,7 +151,11 @@ export const CustomCurrencyMaskConfig: CurrencyMaskConfig = {
     MessagePage,
     NewGroupPage,
     ImageModalPage,
+<<<<<<< HEAD
     OverviewPage
+=======
+    VirtualcardPage
+>>>>>>> 13e174e5e08359026723884d6d2a0a0a312513f1
   ],
   providers: [
     StatusBar,
