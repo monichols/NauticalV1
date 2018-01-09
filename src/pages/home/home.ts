@@ -13,6 +13,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 import { DataProvider } from '../../providers/data/data';
 import * as moment from 'moment';
 import {AgendaPage} from '../../pages/agenda/agenda';
+import {OverviewPage} from '../../pages/overview/overview';
 
 @Component({
   selector: 'page-home',
@@ -30,6 +31,7 @@ export class HomePage {
   private subscr
   private userId;
   public trips:any;
+  private tripsToShow: any=4;
   constructor(public app:App,public navCtrl: NavController, public modalCtrl:ModalController, public ref:ChangeDetectorRef,
   public dataProvider:DataProvider, public afDatabase:AngularFireDatabase) {
 //sets value for this.userId
@@ -62,62 +64,28 @@ getTrips(){
           trip.members.forEach((member)=>{
             //gets user information of each trip member
           this.dataProvider.getUser(member).take(1).subscribe((user)=>{
+            if(user.userId != this.userId){
               images.push(user.img);
+            }
             })
           });
           trip.images=images;
-            if(till/24 < 1 ){
-              trip.till=Math.round(till);
-              trip.amnt='hours'
-              if(temp<0){
-                trip.amt= trip.amnt+' ago';
-              }
-            }else if (till/168 <1){
-                trip.till=Math.round(till/24);
-                if(trip.till ==1){
-                  trip.amnt='day'
-                }else{
-                  trip.amnt='days';
-                }
-                if(temp<0){
-                  trip.amt= trip.amnt+' ago';
-                }
-              }else if (till/730<1 ){
-                  trip.till= Math.round(till/168);
-                  if(trip.till ==1){
-                    trip.amnt='week'
-                  }else{
-                    trip.amnt='weeks';
-                  }
-                  if(temp<0){
-                    trip.amt= trip.amnt+' ago';
-                  }
-                }else if (till/8760<1){
-                    trip.till=Math.round(till/730);
-                    if(trip.till ==1){
-                      trip.amnt='month'
-                    }else{
-                      trip.amnt='months';
-                    }
-                    if(temp<0){
-                      trip.amt= trip.amnt+' ago';
-                    }
-                  }else if (till/8760>=1){
-                      trip.till=Math.round(till/8760);
-                      if(trip.till ==1){
-                        trip.amnt='year'
-                      }else{
-                        trip.amnt='years';
-                      }
-                      if(temp<0){
-                        trip.amt= trip.amnt+' ago';
-                      }
-                  }
         });
        });
       }
     }
   });
+}
+getClass(trip){
+  if(trip.images.length == 2){
+    return 'container2';
+  }
+  if(trip.images.length == 1){
+    return 'container1';
+  }
+  if(trip.images.length >= 3){
+    return 'container3';
+  }
 }
 //takes users to addTrip page
   addTrip(){
@@ -125,8 +93,8 @@ getTrips(){
   }
   //takes users to agenda page
   viewTrip(trip){
-        this.app.getRootNav().push(AgendaPage, {trip:trip});
-      }
+    this.app.getRootNav().push(OverviewPage, {trip:trip.$key});
+  }
 //handles scroll events and detects changes
   onScroll($event: any){
     let scrollTop = $event.scrollTop;
@@ -139,5 +107,15 @@ getTrips(){
         this.headerImgSize = '100%'
     }
     this.ref.detectChanges();
+}
+showTrips(){
+  return this.tripsToShow;
+}
+//starts the infinite scroll
+doInfinite(infiniteScroll){
+  this.tripsToShow = this.tripsToShow + 4;
+  setTimeout(() => {
+   infiniteScroll.complete();
+ }, 1000);
 }
 }
