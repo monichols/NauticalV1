@@ -1,4 +1,17 @@
 page-virtualcard {
+    .background {
+        background: url('../../assets/images/background.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    .title {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 33px;
+        position: relative;
+        left: 50px;
+        top: 10px;
+    }
     .switch {
         position: fixed;
         bottom: 220px;
@@ -74,5 +87,35 @@ page-virtualcard {
         border: 1px solid #f1f1f1;
         background-color: #ffbc04e1;
         box-shadow: none;
+    }
+    .hambutton {
+        opacity: 0;
+        top: 1px;
+    }
+    .hamburger {
+        top: 1px;
+    }
+    .menu {
+        background-color: #f10808;
+        height: 20px;
+        width: 10px;
+    }
+    .line1 {
+        width: 17px;
+        height: 1px;
+        background-color: rgb(0, 0, 0);
+        margin: 5px 0;
+    }
+    .line2 {
+        width: 14px;
+        height: 1px;
+        background-color: rgb(0, 0, 0);
+        margin: 5px 0;
+    }
+    .line3 {
+        width: 17px;
+        height: 1px;
+        background-color: rgb(0, 0, 0);
+        margin: 5px 0;
     }
 }

@@ -39041,6 +39041,21 @@ page-verification ion-icon {
   font-size: 2.5em;
 }
 
+page-virtualcard .background {
+  background: url("../../assets/images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+page-virtualcard .title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 33px;
+  position: relative;
+  left: 50px;
+  top: 10px;
+}
+
 page-virtualcard .switch {
   position: fixed;
   bottom: 220px;
@@ -39136,4 +39151,40 @@ page-virtualcard .cashout {
   background-color: #ffbc04e1;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+page-virtualcard .hambutton {
+  opacity: 0;
+  top: 1px;
+}
+
+page-virtualcard .hamburger {
+  top: 1px;
+}
+
+page-virtualcard .menu {
+  background-color: #f10808;
+  height: 20px;
+  width: 10px;
+}
+
+page-virtualcard .line1 {
+  width: 17px;
+  height: 1px;
+  background-color: black;
+  margin: 5px 0;
+}
+
+page-virtualcard .line2 {
+  width: 14px;
+  height: 1px;
+  background-color: black;
+  margin: 5px 0;
+}
+
+page-virtualcard .line3 {
+  width: 17px;
+  height: 1px;
+  background-color: black;
+  margin: 5px 0;
 }
