@@ -6,11 +6,13 @@ page-virtualcard {
         background-position: center;
     }
     .title {
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 33px;
+        font-family: Roboto;
+        font-size: 6vh;
         position: relative;
+        display: block;
         left: 40px;
         top: 1px;
+        font-weight: normal;
     }
     .switch {
         position: fixed;
@@ -96,7 +98,7 @@ page-virtualcard {
         width: 3px;
     }
     .hamburger {
-        margin-top: -45px;
+        margin-top: -50px;
         left: 15px;
     }
     .line1 {
@@ -116,5 +118,12 @@ page-virtualcard {
         height: 1px;
         background-color: rgb(0, 0, 0);
         margin: 5px 0;
+    }
+    .physicalCard {
+        margin-top: 70px;
+    }
+    .h3 {
+        position: absolute;
+        margin-top: 200px;
     }
 }

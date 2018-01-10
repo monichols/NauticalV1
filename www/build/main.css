@@ -39459,11 +39459,13 @@ page-virtualcard .background {
 }
 
 page-virtualcard .title {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 33px;
+  font-family: Roboto;
+  font-size: 6vh;
   position: relative;
+  display: block;
   left: 40px;
   top: 1px;
+  font-weight: normal;
 }
 
 page-virtualcard .switch {
@@ -39572,7 +39574,7 @@ page-virtualcard .hambutton {
 }
 
 page-virtualcard .hamburger {
-  margin-top: -45px;
+  margin-top: -50px;
   left: 15px;
 }
 
@@ -39595,4 +39597,13 @@ page-virtualcard .line3 {
   height: 1px;
   background-color: black;
   margin: 5px 0;
+}
+
+page-virtualcard .physicalCard {
+  margin-top: 70px;
+}
+
+page-virtualcard .h3 {
+  position: absolute;
+  margin-top: 200px;
 }
