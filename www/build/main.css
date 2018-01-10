@@ -39465,7 +39465,7 @@ page-virtualcard .title {
   display: block;
   left: 40px;
   top: 1px;
-  font-weight: normal;
+  font-weight: lighter;
 }
 
 page-virtualcard .switch {
@@ -39600,10 +39600,15 @@ page-virtualcard .line3 {
 }
 
 page-virtualcard .physicalCard {
-  margin-top: 70px;
+  margin-top: 10px;
 }
 
-page-virtualcard .h3 {
-  position: absolute;
-  margin-top: 200px;
+page-virtualcard .currency {
+  font-family: Roboto;
+  font-size: 3vh;
+  position: relative;
+  display: block;
+  margin-left: 135px;
+  margin-top: 85px;
+  font-weight: lighter;
 }

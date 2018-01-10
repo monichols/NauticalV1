@@ -12,7 +12,7 @@ page-virtualcard {
         display: block;
         left: 40px;
         top: 1px;
-        font-weight: normal;
+        font-weight: lighter;
     }
     .switch {
         position: fixed;
@@ -120,10 +120,15 @@ page-virtualcard {
         margin: 5px 0;
     }
     .physicalCard {
-        margin-top: 70px;
+        margin-top: 10px;
     }
-    .h3 {
-        position: absolute;
-        margin-top: 200px;
+    .currency {
+        font-family: Roboto;
+        font-size: 3vh;
+        position: relative;
+        display: block;
+        margin-left: 135px;
+        margin-top: 85px;
+        font-weight: lighter;
     }
 }
