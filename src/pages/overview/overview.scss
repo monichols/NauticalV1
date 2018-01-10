@@ -1,0 +1,240 @@
+page-overview {
+
+    .tool{
+        background-color:rgba(0, 0, 0, 0);
+       padding-top:3vh !important;
+      }
+      .nameTxt{
+        color:white;
+        font-family:Roboto7;
+               text-transform: uppercase;
+             font-size: 3vh;
+         }
+
+         .header-md::after{
+            background-image: none;
+          }
+          
+        
+          .header-ios .toolbar-background-ios,.toolbar-background-md,.toolbar-background-wp{
+            border-style: none;
+            background: none;
+            border-color: rgba(0, 0, 0, 0)
+        
+          }
+      
+          
+           
+        .profileImg{
+            border-radius: 50%;
+            object-fit: cover;
+            width:15vh;
+            height: 15vh;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+     
+        .nameTxt{
+         color:white;
+         font-family:Roboto7;
+                text-transform: uppercase;
+              font-size: 3vh;
+              text-align: left;
+          }
+         
+        
+          .show-background{
+            border-style: none;
+            background-color:rgba(0,0,0,.7);
+              padding-top:3vh !important;
+          }
+          .wrapper{
+            height: 35vh;
+            width: 100%;
+            top:0;
+            left:0;
+            background-color: rgba(10,10,10,0.5);
+            position: relative !important;
+            z-index: 3 !important;
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+         
+        }
+        .wrapper2{
+            height: 100%;
+            width: 100%;
+            top:0;
+            left:0;
+            background-color: rgba(10,10,10,0.5);
+            position: absolute !important;
+            z-index: 3 !important;
+           text-align: center;
+        }
+          .profileTxt{
+            font-family: Roboto;
+            color:#ffffff;
+            font-size: 4vh;
+           
+          }
+          .itemHeader{
+              text-align: center;
+              width: auto;
+              height: 100%
+          }
+          .listHeader{
+            font-size: 6vh;
+            font-family: Roboto;
+            color:rgba(0, 0, 0, .7);
+            margin-bottom:1.5vh;
+            
+          }
+          .wrapper3{
+            width:100%;
+            height: 100%;
+            text-align: center !important;
+        }
+          .profImage{
+            object-fit:cover;
+            height: 15vh;
+            width:100%;
+            background-color: red;
+            position: absolute;
+            z-index:4;
+            margin-top:40%;
+          }
+          .listTxt{
+            font-size: 3vh;
+            font-family: Roboto;
+            color:rgba(0, 0, 0, .7);
+          }
+          .underLine{
+            margin: auto;
+            width: 50%;
+              height: 5px;
+              width: 5vh;
+              background-color: rgb(73,187,68);
+              margin-top: 2vh !important;
+              margin-bottom:2vh !important; 
+              //transform: translateX(-50%);
+              
+          }
+          .underLine2{
+            margin: auto;
+            width: 50%;
+              height: 5px;
+              width: 5vh;
+              margin-top: 2vh !important;
+              margin-bottom:2vh !important; 
+              background-color: orange;
+              //transform: translateX(-50%);
+              
+          }
+          .list{
+              margin-top:5vh !important;
+              z-index: 3;
+              position: relative;
+          }
+
+          .subtitle{
+           
+            font-family: Roboto;
+          }
+         
+          .userName{
+            font-family: Roboto;
+            font-size: 3vh;
+            color:rgba(255,255,255,.7);
+            padding-top:0!important;
+             margin-top:0!important;
+              display: block;
+              position: relative;
+              top: 50%;
+              transform: translateY(-50%);
+              
+          }
+        
+          .transition{
+            transition: background-size .3s ease-in;
+          }
+          .img{
+            height: 10vh;
+            width: 10vh;
+            border-radius: 50%;
+            position: absolute;
+            z-index: 5;
+            margin: auto;
+            right:2vh;
+            top:25vh;
+            text-align: center;
+            color:white;
+            background-color: #D4AF37;
+            ion-icon{
+                text-align: center;
+                font-size:8vh;
+                transform: translateY(50%);
+                line-height: 6vh;
+            }
+        }
+          .profileName{
+              color:white;
+              display: block;
+              position: relative;
+              //top: 50%;
+              //transform: translateY(-50%);
+              font-family: Roboto;
+              margin:0!important;
+              padding: 0!important;
+          }
+          .halfway{
+            top: 50%;
+            transform: translateY(90%);
+          }
+        
+          .content{
+            margin-top:0px !important;
+            background-color: #fff;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: top center;
+        
+          }
+          .arrow{
+              float: left;
+          }
+          .menuButton{
+              font-size:6vh;
+          }
+          .bg{
+            width: 100%;
+        height:35vh;
+        //overflow: hidden;
+        position: relative;
+        }
+       
+       
+        .bgImg{
+           min-width: 100%;
+          min-height:100%;
+       
+        object-fit:cover;
+    
+        position: relative;
+        }
+         .scroll-content {
+            background-color: #fff;
+        }
+        canvas{
+            display: inline-block;
+            width: 50%;
+        }
+        .alert{
+            color:purple;
+            text-align: center;
+        }
+        div.scrollmenu {
+            //height: 15vh !important;
+            //background-color: #333;
+            overflow: auto;
+            white-space: nowrap;
+        }
+}

@@ -84,9 +84,10 @@ position: relative;
 //class day
 .day{
     font-family: Raleway;
-    font-size: 5vh;
+    font-size: 2.5vh;
     padding-bottom:0 !important;
     margin-bottom:0 !important;
+    width: 10vh;
 }
 //class type
 .type{
@@ -126,5 +127,138 @@ position: relative;
 //class item: centers content within the ion-item
 .item{
     text-align: center;
+}
+#venn{
+    position: relative;
+    width:auto;
+}
+#venn div{
+    height: 7vh;
+    width: 7vh;
+    border-radius: 50%;
+    overflow: hidden;
+    img{
+        object-fit: cover;
+        min-height:7vh;
+    }
+}
+#venn div:nth-child(2){
+    position: absolute;
+    top:0;
+}   
+#venn div:nth-child(2){
+    position: absolute;
+    top:0;
+    left:5vh;
+
+}
+.container2{
+    width: 14vh !important;
+    margin-left:6vh !important;
+    position: relative;
+    margin: 0 !important;
+    padding:0 !important;
+    div{
+        border-radius: 50%;
+        overflow: hidden;
+        height:7vh;
+        width:7vh;
+        margin: 0 !important;
+        padding:0 !important;
+        border:2px solid white;
+    }
+    div:nth-child(1){
+        height:7vh;
+        width:7vh;
+        img{
+            object-fit: cover;
+            height:7vh;
+            width:7vh;
+        }
+    }
+    div:nth-child(2){
+        position: absolute;
+        top:0;
+        left:5vh;
+        height:7vh;
+        width:7vh;
+        img{
+            object-fit: cover;
+            height:7vh;
+            width:7vh;
+        }
+    
+    }
+}
+.container3{
+    width: 14vh !important;
+    position: relative;
+    margin: 0 !important;
+    padding:0 !important;
+    div{
+        border-radius: 50%;
+        overflow: hidden;
+        height:5vh;
+        width:5vh;
+        margin: 0 !important;
+        padding:0 !important;
+        border:2px solid white;
+    }
+    div:nth-child(1){
+        height:5vh;
+        width:5vh;
+        img{
+            object-fit: cover;
+            height:5vh;
+            width:5vh;
+        }
+    }
+    div:nth-child(2){
+        position: absolute;
+        z-index: 2;
+        top:2vh;
+        left:3vh;
+        height:5vh;
+        width:5vh;
+        img{
+            object-fit: cover;
+            height:5vh;
+            width:5vh;
+        }
+    }
+    div:nth-child(3){
+        position: absolute;
+        top:0;
+        left:5vh;
+        height:5vh;
+        width:5vh;
+        img{
+            object-fit: cover;
+            height:5vh;
+            width:5vh;
+        }
+    }
+}
+.container1{
+    width: 14vh !important;
+    margin-left:6vh !important;
+    position: relative;
+    margin: 0 !important;
+    padding:0 !important;
+    text-align: center;
+    border:2px solid white;
+    div{
+        border-radius: 50%;
+        overflow: hidden;
+       height:10vh;
+       width:10vh;
+        margin: 0 !important;
+        padding:0 !important;
+    }
+    img{
+        object-fit: cover;
+        height:10vh;
+        width:10vh;
+    }
 }         
 }

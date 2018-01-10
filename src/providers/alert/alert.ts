@@ -56,7 +56,9 @@ const successMessages = {
   friendRequestSent: { title: 'Friend Request Sent!', subTitle: 'Your friend request has been successfully sent!' },
   friendRequestRemoved: { title: 'Friend Request Deleted!', subTitle: 'Your friend request has been successfully deleted.' },
   groupUpdated: { title: 'Group Updated!', subTitle: 'This group has been successfully updated!' },
-  groupLeft: { title: 'Leave Group', subTitle: 'You have successfully left this group.' }
+  groupLeft: { title: 'Leave Group', subTitle: 'You have successfully left this group.' },
+  tripCreation: {title:'Trip Created', subTitle:'Your trip has successfully been created!'},
+  eventCreation: {title:'Event Created', subTitle:'Your event has successfully been created!'}
 };
 
 @Injectable()
@@ -66,6 +68,22 @@ export class AlertProvider {
   constructor(public alertCtrl: AlertController, public logoutProvider: LogoutProvider) {
     console.log("Initializing Alert Provider");
   }
+  // Show event added
+  showEventAdded() {
+    this.alert = this.alertCtrl.create({
+      title: successMessages.eventCreation["title"],
+      subTitle: successMessages.eventCreation["subTitle"],
+      buttons: ['OK']
+    }).present();
+  }
+     // Show trip created
+     showTripCreated() {
+      this.alert = this.alertCtrl.create({
+        title: successMessages.tripCreation["title"],
+        subTitle: successMessages.tripCreation["subTitle"],
+        buttons: ['OK']
+      }).present();
+    }
 
   // Show profile updated
   showProfileUpdatedMessage() {

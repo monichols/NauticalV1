@@ -5,7 +5,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { Camera } from '@ionic-native/camera';
 import { ImageProvider } from '../../providers/image/image';
 import { DataProvider } from '../../providers/data/data';
-
+import {AlertProvider} from '../../providers/alert/alert';
 import {AddMembersPage} from '../../pages/add-members/add-members';
 import { CalendarController } from "ion2-calendar";
 
@@ -20,7 +20,6 @@ import { CalendarController } from "ion2-calendar";
 @Component({
   selector: 'page-add-trip',
   templateUrl: 'add-trip.html'
-
 })
 export class AddTripPage {
   @ViewChild(Content) content: Content;
@@ -33,7 +32,7 @@ start;
 public _Members:any;
 end;
 location;
-cost;
+private cost: any=0;
 alert;
 _trips;
 private members:any;
@@ -44,7 +43,7 @@ private group: any;
 private groupMembers: any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl:ViewController, public dataProvider:DataProvider, public angularFire: AngularFireDatabase, public camera:Camera,
   public imageProvider:ImageProvider, public alertCtrl:AlertController, public ref:ChangeDetectorRef,
-public modalCtrl:ModalController, public calendarCtrl: CalendarController) {
+public modalCtrl:ModalController, public calendarCtrl: CalendarController, private alertProvider:AlertProvider) {
 
   this.members=[];
   this._Members=[];
@@ -135,16 +134,16 @@ public modalCtrl:ModalController, public calendarCtrl: CalendarController) {
 
   submit(){
     this._Members=[firebase.auth().currentUser.uid];
-    this.members.forEach((member)=>{
-      this._Members.push(member.userId);
-    });
+    if(this.members){
+      this.members.forEach((member)=>{
+        this._Members.push(member.userId);
+      });
+    }
     let start = this.start,
         end= this.end,
         location=this.location,
         cost=this.cost,
         trips = this.angularFire.list('/trips');
-       
-
     trips.push({
       created: new Date().toString(),
       start:start,
@@ -154,19 +153,18 @@ public modalCtrl:ModalController, public calendarCtrl: CalendarController) {
       owner:firebase.auth().currentUser.uid,
       members:this._Members,
       img:this.group.img,
-      saved:0
+      saved:0,
+      allocated:0
     }).then((data)=>
-    //alert(data.key)
     this.push2(data.key)
-  ); 
+  );
+  this.alertProvider.showTripCreated();
     this.navCtrl.pop();
   }
   push2(key){
-
     this._Members.forEach((member)=>{
       this._trips=[];
       this.dataProvider.getUser(member).subscribe((user)=>{
-        //let temp=user.trips;
         this._trips=[key];
         if(user.trips){
           for(var i=0; i<user.trips.length; i++){
@@ -177,41 +175,12 @@ public modalCtrl:ModalController, public calendarCtrl: CalendarController) {
         }else{
 
         }
-       
-        /*let trips = this.angularFire.list('/accounts/'+user.userId+'/trips/');
-        trips.push(key);*/
-       // alert('success');
       })
       let Trips = this.angularFire.object('/accounts/'+member);
       Trips.update({
         trips:this._trips
       });
-      
     })
-    /*this.trips=[key];
-    this._Members.forEach((member)=>{
-      this.dataProvider.getUser(member).subscribe((member)=>{
-      if(member.trips){
-        var _Trips = [member.trips];
-        _Trips.push(key);
-        let  trips = this.angularFire.list('/accounts/'+member.userId+'/trips');
-        trips.push({
-          trips:_Trips
-         }).then(()=>{
-          
-         })
-
-      }else{
-        let  trips = this.angularFire.list('/accounts/'+member.userId+'/trips');
-        trips.push({
-          trips:_Trips
-         }).then(()=>{
-        
-         })
-      }  
-     
-      })
-    })*/
   }
   addToGroup(friend) {
     this.groupMembers.push(friend);
@@ -227,7 +196,9 @@ public modalCtrl:ModalController, public calendarCtrl: CalendarController) {
   addPeople(){
     let addModal = this.modalCtrl.create(AddMembersPage);
     addModal.onDidDismiss(data => {
-    this.members=data;
+      if(data){
+        this.members.push(data);
+      }
     });
     addModal.present();
   }

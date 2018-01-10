@@ -38,27 +38,30 @@ Last Modified: 12/18/2017
   <img class='bgImg' src='assets/images/profileBg.jpeg'/><!-- displays our generic image-->
 </div>
 </div>
-<ion-list *ngIf='trips'  inset class='list'><!--list of user events starts here-->
-   <ion-item (click)='viewTrip(trip)' *ngFor="let trip of trips"><!--ion-items populate using *ngFor-->
-    <div item-left >
-     <h3 class='day'>{{trip.till}}</h3><!--shows the amount of time till the trip-->
-     <p class='type'>{{trip.amnt}}</p><!--shows the amount of money the trip will cost-->
+<ion-list no-lines *ngIf='trips'  inset class='list'><!--list of user events starts here-->
+   <ion-item no-lines (click)='viewTrip(trip)' *ngFor="let trip of trips | slice:0:showTrips() let i=index"><!--ion-items populate using *ngFor-->
+    <div item-left>
+     <h3 class='day'>{{trip.start | Date2Format}}</h3><!--shows the amount of time till the trip-->
      </div>
-        <ion-avatar *ngFor='let image of trip.images' class='tripImg' item-left><!-- Shows the images of those who are attending the trip-->
-            <img src='{{image}}'/>
-          </ion-avatar>
-     <div class='myTrip' item-left><!--wrapper that contains trip location and amount saved-->
+     <div [ngClass]='getClass(trip)' item-left>
+        <div *ngFor='let image of trip.images | slice:0:3 let i=index'><!-- Shows the images of those who are attending the trip-->
+          <img class='userImage' src='{{image}}'/>
+      </div>
+     </div>    
+     <div class='myTrip'><!--wrapper that contains trip location and amount saved-->
        <p class='tripName'>{{trip.location}}</p>
-       <p>$500 saved.</p>
+       <p>${{trip.saved}} saved.</p>
      </div>
      <div class='more-circle' item-right><!-- more circle that shows on the right-->
      </div>
    </ion-item>
-   <ion-item *ngIf='trips.length <= 0'>
+   <ion-item no-lines *ngIf='trips.length <= 0'>
       <h2 class='tripName'>No events to display at this time.</h2><!--if there are no events to show-->
     </ion-item>
 </ion-list>
-<ion-list>
-</ion-list>
+  <!-- infinite scroll is here-->
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="accounts && usersToShow < accounts.length">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more users..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>
 
