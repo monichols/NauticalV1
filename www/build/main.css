@@ -39462,8 +39462,8 @@ page-virtualcard .title {
   font-family: 'Times New Roman', Times, serif;
   font-size: 33px;
   position: relative;
-  left: 50px;
-  top: 10px;
+  left: 40px;
+  top: 1px;
 }
 
 page-virtualcard .switch {
@@ -39564,18 +39564,16 @@ page-virtualcard .cashout {
 }
 
 page-virtualcard .hambutton {
+  margin-top: -60px;
   opacity: 0;
-  top: 1px;
+  left: -5px;
+  height: 30px;
+  width: 3px;
 }
 
 page-virtualcard .hamburger {
-  top: 1px;
-}
-
-page-virtualcard .menu {
-  background-color: #f10808;
-  height: 20px;
-  width: 10px;
+  margin-top: -45px;
+  left: 15px;
 }
 
 page-virtualcard .line1 {

@@ -9,8 +9,8 @@ page-virtualcard {
         font-family: 'Times New Roman', Times, serif;
         font-size: 33px;
         position: relative;
-        left: 50px;
-        top: 10px;
+        left: 40px;
+        top: 1px;
     }
     .switch {
         position: fixed;
@@ -89,16 +89,15 @@ page-virtualcard {
         box-shadow: none;
     }
     .hambutton {
+        margin-top: -60px;
         opacity: 0;
-        top: 1px;
+        left: -5px;
+        height: 30px;
+        width: 3px;
     }
     .hamburger {
-        top: 1px;
-    }
-    .menu {
-        background-color: #f10808;
-        height: 20px;
-        width: 10px;
+        margin-top: -45px;
+        left: 15px;
     }
     .line1 {
         width: 17px;
