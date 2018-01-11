@@ -127,8 +127,17 @@ page-virtualcard {
         font-size: 3vh;
         position: relative;
         display: block;
+        margin-left: 140px;
+        margin-top: 5px;
+        font-weight: lighter;
+    }
+    .balance {
+        font-family: Roboto;
+        font-size: 3vh;
+        position: relative;
+        display: block;
         margin-left: 135px;
-        margin-top: 85px;
+        margin-top: 60px;
         font-weight: lighter;
     }
 }
