@@ -1,6 +1,6 @@
 page-virtualcard {
     .background {
-        background: url('../../assets/images/background.jpg');
+        background: url('../../assets/images/background2.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
@@ -13,11 +13,12 @@ page-virtualcard {
         left: 40px;
         top: 1px;
         font-weight: lighter;
+        color: white;
     }
     .switch {
         position: fixed;
         bottom: 220px;
-        left: 120px;
+        left: 140px;
     }
     .cmn-toggle {
         position: absolute;
@@ -33,9 +34,9 @@ page-virtualcard {
     }
     input.cmn-toggle-round+label {
         padding: 2px;
-        width: 120px;
-        height: 60px;
-        background-color: #f1f1f1;
+        width: 70px;
+        height: 30px;
+        background-color: #000000;
         border-radius: 60px;
     }
     input.cmn-toggle-round+label:before,
@@ -54,9 +55,9 @@ page-virtualcard {
         transition: background 0.4s;
     }
     input.cmn-toggle-round+label:after {
-        width: 58px;
+        width: 30px;
         background-color: #ffbc04b2;
-        border-radius: 100%;
+        border-radius: 90%;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         transition: margin 0.4s;
     }
@@ -64,12 +65,12 @@ page-virtualcard {
         background-color: #000000;
     }
     input.cmn-toggle-round:checked+label:after {
-        margin-left: 60px;
+        margin-left: 37px;
     }
     .button1 {
         position: fixed;
         bottom: 30px;
-        left: 7px;
+        left: 5px;
     }
     .button2 {
         position: fixed;
@@ -104,19 +105,19 @@ page-virtualcard {
     .line1 {
         width: 17px;
         height: 1px;
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
         margin: 5px 0;
     }
     .line2 {
         width: 14px;
         height: 1px;
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
         margin: 5px 0;
     }
     .line3 {
         width: 17px;
         height: 1px;
-        background-color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
         margin: 5px 0;
     }
     .physicalCard {
@@ -130,14 +131,16 @@ page-virtualcard {
         margin-left: 140px;
         margin-top: 5px;
         font-weight: lighter;
+        color: white;
     }
     .balance {
         font-family: Roboto;
-        font-size: 3vh;
+        font-size: 5vh;
         position: relative;
         display: block;
-        margin-left: 135px;
+        margin-left: 120px;
         margin-top: 60px;
         font-weight: lighter;
+        color: #ffbc04e1;
     }
 }
