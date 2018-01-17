@@ -21,5 +21,10 @@ export class VirtualcardPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad VirtualcardPage');
   }
+  
+  // Event Handler for Add Cash Button
+  addCashButton(){
+    alert("Add Cash Button");
+  }
 
 }
