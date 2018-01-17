@@ -1283,16 +1283,21 @@ var VirtualcardPage = (function () {
     VirtualcardPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad VirtualcardPage');
     };
+    // Event Handler for Toggle Button
     // Event Handler for Add Cash Button
     VirtualcardPage.prototype.addCashButton = function () {
         alert("Add Cash Button");
+    };
+    // Event Handler for Cash Out Button
+    VirtualcardPage.prototype.cashOutButton = function () {
+        alert("Cash Out Button");
     };
     return VirtualcardPage;
 }());
 VirtualcardPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* IonicPage */])(),
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        selector: 'page-virtualcard',template:/*ion-inline-start:"/Users/karlhenderson/Documents/GitHub/NauticalV1/src/pages/virtualcard/virtualcard.html"*/'<!--\n  Generated template for the VirtualcardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n\n<ion-header>\n\n    <ion-navbar>\n        <ion-title id="Card">Virtual Card</ion-title>\n    </ion-navbar>\n\n</ion-header>-->\n\n<ion-content padding class="background">\n\n    <div class="title">\n        Virtual Card\n    </div>\n\n    <button class=\'hambutton\' ion-button menuToggle>\n    </button>\n\n    <div class="hamburger">\n        <div class="line1"></div>\n        <div class="line2"></div>\n        <div class="line3"></div>\n    </div>\n\n    <div class="balance">\n        $0.00\n    </div>\n\n    <div class="currency">\n        Cash\n    </div>\n    \n    <img class="physicalCard" width="330px" height="180px" src="../../assets/images/VirtualCard.jpg">\n\n\n    <div class="switch">\n        <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox">\n        <label for="cmn-toggle-1"></label>\n    </div>\n\n    <div class=\'button1\'>\n        <button class=\'addcash\' ion-button color="dark" (click)="addCashButton()">Add Cash</button>\n    </div>\n\n    <div class=\'button2\'>\n        <button class=\'cashout\' ion-button color="dark">Cash Out</button>\n    </div>\n\n</ion-content>'/*ion-inline-end:"/Users/karlhenderson/Documents/GitHub/NauticalV1/src/pages/virtualcard/virtualcard.html"*/,
+        selector: 'page-virtualcard',template:/*ion-inline-start:"/Users/karlhenderson/Documents/GitHub/NauticalV1/src/pages/virtualcard/virtualcard.html"*/'<!--\n  Generated template for the VirtualcardPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n\n<ion-header>\n\n    <ion-navbar>\n        <ion-title id="Card">Virtual Card</ion-title>\n    </ion-navbar>\n\n</ion-header>-->\n\n<ion-content padding class="background">\n\n    <div class="title">\n        Virtual Card\n    </div>\n\n    <button class=\'hambutton\' ion-button menuToggle>\n    </button>\n\n    <div class="hamburger">\n        <div class="line1"></div>\n        <div class="line2"></div>\n        <div class="line3"></div>\n    </div>\n\n    <div class="balance">\n        $0.00\n    </div>\n\n    <div class="currency">\n        Cash\n    </div>\n    \n    <img class="physicalCard" width="330px" height="180px" src="../../assets/images/VirtualCard.jpg">\n\n\n    <div class="switch">\n        <input id="cmn-toggle-1" class="cmn-toggle cmn-toggle-round" type="checkbox"  >\n        <label for="cmn-toggle-1"></label>\n    </div>\n\n    <div class=\'button1\'>\n        <button class=\'addcash\' ion-button color="dark" (click)="addCashButton()">Add Cash</button>\n    </div>\n\n    <div class=\'button2\'>\n        <button class=\'cashout\' ion-button color="dark" (click)="cashOutButton()">Cash Out</button>\n    </div>\n\n</ion-content>'/*ion-inline-end:"/Users/karlhenderson/Documents/GitHub/NauticalV1/src/pages/virtualcard/virtualcard.html"*/,
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["q" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["s" /* NavParams */]) === "function" && _b || Object])
 ], VirtualcardPage);
