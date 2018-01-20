@@ -46,7 +46,7 @@
     <ion-list>
     
     <ion-item class="toggle">
-      <ion-toggle class="togglebutton" value="foo" checked="true"></ion-toggle>
+      <ion-toggle [(ngModel)]="isToggled" (ionChange)="toggleButtonHasChanged()"  ></ion-toggle>
     </ion-item>
     </ion-list>
 

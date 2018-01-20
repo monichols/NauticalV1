@@ -15,8 +15,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class VirtualcardPage {
 
+  public isToggled: boolean; 
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+    this.isToggled = false;
+ }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad VirtualcardPage');
@@ -32,5 +35,9 @@ export class VirtualcardPage {
   // Event Handler for Cash Out Button
   cashOutButton(){
     alert("Cash Out Button");
+  }
+
+  toggleButtonHasChanged(){
+    alert("Toggled:" + this.isToggled);
   }
 }
